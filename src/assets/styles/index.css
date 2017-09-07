@@ -1,0 +1,9 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lucida Sans Unicode';
+  background: #43cea2;
+
+  /* background: -webkit-linear-gradient(to left, #43cea2, #185a9d); */
+  background: linear-gradient(to left, #43cea2, #185a9d);
+}
