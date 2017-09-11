@@ -12,6 +12,7 @@ const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const getClientEnvironment = require('./env');
 const paths = require('./paths');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
+const pkg = require(paths.appPackageJson);
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.
@@ -160,13 +161,15 @@ module.exports = {
           // In production, we use a plugin to extract that CSS to a file, but
           // in development "style" loader enables hot editing of CSS.
           {
-            test: /\.css$/,
+            test: /\.s(c|a)ss$/,
             use: [
               require.resolve('style-loader'),
               {
                 loader: require.resolve('css-loader'),
                 options: {
                   importLoaders: 1,
+                  modules: true,
+                  localIdentName: '___[name]__[local]___[hash:base64:5]',
                 },
               },
               {
@@ -178,19 +181,18 @@ module.exports = {
                   plugins: () => [
                     require('postcss-flexbugs-fixes'),
                     autoprefixer({
-                      browsers: [
-                        '>1%',
-                        'last 4 versions',
-                        'Firefox ESR',
-                        'not ie < 9', // React doesn't support IE8 anyway
-                      ],
+                      browsers: pkg.browserslist,
                       flexbox: 'no-2009',
                     }),
                   ],
                 },
               },
+              {
+                loader: require.resolve('sass-loader'), // compiles Sass to CSS
+              },
             ],
           },
+
           // "file" loader makes sure those assets get served by WebpackDevServer.
           // When you `import` an asset, you get its (virtual) filename.
           // In production, they would get copied to the `build` folder.
@@ -249,9 +251,8 @@ module.exports = {
 
     new StyleLintPlugin({
       context: 'src',
-      files: '**/*.css',
-      failOnError: false,
       quiet: false,
+      syntax: 'scss',
     }),
   ],
   // Some libraries import Node modules but don't use them in the browser.

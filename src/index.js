@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import './assets/styles/normalize.css';
-import './assets/styles/index.css';
+import './assets/styles/normalize.scss';
+import './assets/styles/index.scss';
 import App from './containers/App';
 import store from './store';
 import registerServiceWorker from './utils/registerServiceWorker';

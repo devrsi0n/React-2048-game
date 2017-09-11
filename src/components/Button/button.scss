@@ -1,0 +1,60 @@
+@import '../../assets/styles/vars';
+
+@mixin arrow {
+  height: 0;
+  width: 0;
+}
+
+$trans-border: 10px solid transparent;
+$border: 10px solid $btn-color;
+
+.button {
+  align-items: center;
+  background-color: $btn-bg;
+  border-radius: 5px;
+  color: $btn-color;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  height: 30px;
+  justify-content: center;
+  margin: 1px 3px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.5s, color 0.5s;
+  width: 100px;
+
+  .arrow-up {
+    @include arrow;
+    border-bottom: $border;
+    border-left: $trans-border;
+    border-right: $trans-border;
+  }
+
+  .arrow-down {
+    @include arrow;
+    border-left: $trans-border;
+    border-right: $trans-border;
+    border-top: $border;
+  }
+
+  .arrow-left {
+    @include arrow;
+    border-bottom: $trans-border;
+    border-right: $border;
+    border-top: $trans-border;
+  }
+
+  .arrow-right {
+    @include arrow;
+    border-bottom: $trans-border;
+    border-left: $border;
+    border-top: $trans-border;
+  }
+
+  &:hover {
+    background-color: $btn-color;
+    color: $btn-bg;
+    transition: background-color 0.5s, color 0.5s;
+  }
+}

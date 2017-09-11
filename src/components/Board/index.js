@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Row from '../Row';
-import './Board.css';
+import styles from './board.scss';
 
 export default function Board({ matrix }) {
   return (
-    <table className="Board">
+    <table className={styles.board}>
       <tbody>
         { /* eslint-disable react/no-array-index-key */ }
         {

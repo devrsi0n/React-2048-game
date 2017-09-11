@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './cell.css';
+import classnames from 'classnames';
+import styles from './cell.scss';
 
 export default function Cell({ value }) {
   const color = `color-${value}`;
   return (
     <td>
-      <div className={`cell ${color}`}>
-        <div className="number">
+      <div className={classnames([styles.cell, { [styles[color]]: !!value }])}>
+        <div className={styles.number}>
           { value || null }
         </div>
       </div>

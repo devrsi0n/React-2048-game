@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "classnames": "^2.2.5",
     "object-assign": "4.1.1",
     "promise": "8.0.1",
     "prop-types": "^15.5.10",
@@ -53,9 +54,34 @@
   },
   "babel": {
     "presets": [
-      "react-app"
-    ]
+      [
+        "env",
+        {
+          "modules": false
+        }
+      ],
+      "react",
+      "stage-2"
+    ],
+    "env": {
+      "test": {
+        "presets": [
+          "env",
+          "stage-2"
+        ],
+        "sourceMaps": "inline"
+      }
+    }
   },
+  "engines": {
+    "node": ">= 6.10.0",
+    "npm": ">= 4.5.0"
+  },
+  "browserslist": [
+    ">5%",
+    "last 4 versions",
+    "ie > 9"
+  ],
   "eslintConfig": {
     "parser": "babel-eslint",
     "extends": "airbnb",
@@ -83,44 +109,70 @@
     }
   },
   "stylelint": {
-    "extends": "stylelint-config-standard"
+    "extends": "stylelint-config-sass-guidelines",
+    "rules": {
+      "selector-pseudo-class-no-unknown": [
+        true,
+        {
+          "ignorePseudoClasses": [
+            "global"
+          ]
+        }
+      ],
+      "selector-pseudo-element-no-unknown": [
+        true,
+        {
+          "ignorePseudoElements": [
+            "global"
+          ]
+        }
+      ]
+    },
+    "ignoreFiles": [
+      "src/assets/styles/normalize.scss",
+      "build/**/*.css"
+    ]
   },
   "devDependencies": {
-    "autoprefixer": "7.1.2",
-    "babel-core": "6.25.0",
-    "babel-eslint": "7.2.3",
-    "babel-jest": "20.0.3",
-    "babel-loader": "7.1.1",
-    "babel-preset-react-app": "^3.0.2",
-    "babel-runtime": "6.26.0",
-    "case-sensitive-paths-webpack-plugin": "2.1.1",
-    "chalk": "1.1.3",
-    "css-loader": "0.28.4",
-    "dotenv": "4.0.0",
+    "autoprefixer": "7.1.4",
+    "babel-core": "^6.25.0",
+    "babel-eslint": "^7.2.3",
+    "babel-jest": "^21.0.2",
+    "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-runtime": "^6.26.0",
+    "case-sensitive-paths-webpack-plugin": "^2.1.1",
+    "chalk": "^1.1.3",
+    "css-loader": "0.28.7",
+    "dotenv": "^4.0.0",
     "eslint": "^4.6.1",
     "eslint-config-airbnb": "^15.1.0",
     "eslint-loader": "^1.9.0",
     "eslint-plugin-html": "^3.2.1",
     "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-jsx-a11y": "5",
     "eslint-plugin-react": "^7.3.0",
-    "extract-text-webpack-plugin": "3.0.0",
+    "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "0.11.2",
     "fs-extra": "3.0.1",
-    "html-webpack-plugin": "2.29.0",
-    "jest": "20.0.4",
+    "html-webpack-plugin": "^2.29.0",
+    "jest": "^21.0.2",
     "jest-localstorage-mock": "^1.2.0",
-    "postcss-flexbugs-fixes": "3.2.0",
-    "postcss-loader": "2.0.6",
+    "node-sass": "^4.5.3",
+    "postcss-flexbugs-fixes": "^3.2.0",
+    "postcss-loader": "^2.0.6",
     "react-dev-utils": "^4.0.1",
+    "sass-loader": "^6.0.6",
     "style-loader": "0.18.2",
     "stylelint": "^8.1.1",
-    "stylelint-config-standard": "^17.0.0",
+    "stylelint-config-sass-guidelines": "^3.1.0",
     "stylelint-webpack-plugin": "^0.9.0",
     "sw-precache-webpack-plugin": "0.11.4",
     "url-loader": "0.5.9",
-    "webpack": "3.5.1",
-    "webpack-dev-server": "2.7.1",
-    "webpack-manifest-plugin": "1.2.1"
+    "webpack": "^3.5.1",
+    "webpack-dev-server": "^2.7.1",
+    "webpack-manifest-plugin": "^1.2.1"
   }
 }

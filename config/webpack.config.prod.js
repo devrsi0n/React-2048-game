@@ -13,6 +13,7 @@ const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const paths = require('./paths');
 const getClientEnvironment = require('./env');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
+const pkg = require(paths.appPackageJson);
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
@@ -167,7 +168,7 @@ module.exports = {
           // use the "style" loader inside the async code so CSS from them won't be
           // in the main CSS file.
           {
-            test: /\.css$/,
+            test: /\.s(c|a)ss$/,
             loader: ExtractTextPlugin.extract(
               Object.assign(
                 {
@@ -190,16 +191,14 @@ module.exports = {
                         plugins: () => [
                           require('postcss-flexbugs-fixes'),
                           autoprefixer({
-                            browsers: [
-                              '>1%',
-                              'last 4 versions',
-                              'Firefox ESR',
-                              'not ie < 9', // React doesn't support IE8 anyway
-                            ],
+                            browsers: pkg.browserslist,
                             flexbox: 'no-2009',
                           }),
                         ],
                       },
+                    },
+                    {
+                      loader: require.resolve('sass-loader'),
                     },
                   ],
                 },
@@ -325,9 +324,8 @@ module.exports = {
 
     new StyleLintPlugin({
       context: 'src',
-      files: '**/*.css',
-      failOnError: false,
       quiet: false,
+      syntax: 'scss',
     }),
   ],
   // Some libraries import Node modules but don't use them in the browser.

@@ -1,0 +1,42 @@
+@import '../../assets/styles/vars';
+
+.app {
+  text-align: center;
+}
+
+.game-over {
+  padding-bottom: 1em;
+  padding-top: 1em;
+}
+
+.box {
+  align-items: flex-end;
+  display: flex;
+  justify-content: center;
+}
+
+.board {
+  // flex: $flex;
+}
+
+.btn-group {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  .new-game {
+    align-items: center;
+    display: flex;
+    flex-grow: 1;
+  }
+
+  img {
+    color: $white;
+    width: 23px;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: row;
+  }
+}

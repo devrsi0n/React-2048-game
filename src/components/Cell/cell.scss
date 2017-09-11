@@ -1,0 +1,60 @@
+@import '../../assets/styles/vars';
+
+.cell {
+  align-items: center;
+  background-color: $black;
+  border-radius: 5px;
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  width: 100px;
+}
+
+.number {
+  color: $white;
+  font-size: 35px;
+}
+
+.color-2 {
+  background-color: $blue;
+}
+
+.color-4 {
+  background-color: $cyan;
+}
+
+.color-8 {
+  background-color: $purple;
+}
+
+.color-16 {
+  background-color: $yellow;
+}
+
+.color-32 {
+  background-color: $pink;
+}
+
+.color-64 {
+  background-color: $green;
+}
+
+.color-128 {
+  background-color: $indigo;
+}
+
+.color-256 {
+  background-color: $orange;
+}
+
+.color-512 {
+  background-color: $deep-purple;
+}
+
+.color-1024 {
+  background-color: $teal;
+}
+
+.color-2048 {
+  background-color: $light-blue;
+}

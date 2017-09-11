@@ -18,13 +18,15 @@ const initState = {
   ],
   score: 0,
   gameOver: false,
+  isMoved: true,
 };
 
 class Matrix {
-  constructor({ matrix, score, gameOver }) {
+  constructor({ matrix, score, gameOver, isMoved }) {
     this.matrix = JSON.parse(JSON.stringify(matrix));
     this.score = score;
     this.gameOver = gameOver;
+    this.isMoved = isMoved;
   }
 
   getEmptyCoordinates() {
@@ -67,12 +69,12 @@ class Matrix {
   }
 
   addRandomNumToMatrix() {
-    const preMatrix = this.matrix;
-    if (this.gameOver) {
-      return preMatrix;
+    const { matrix } = this;
+    if (this.gameOver || !this.isMoved) {
+      return { matrix };
     }
 
-    const newMatrix = JSON.parse(JSON.stringify(preMatrix));
+    const newMatrix = JSON.parse(JSON.stringify(matrix));
     const emptyCoordinates = this.getEmptyCoordinates();
     if (emptyCoordinates.length === 0) {
       if (this.checkGameOver(newMatrix)) {
@@ -202,6 +204,7 @@ class Matrix {
   }
 
   moveUp() {
+    const preMatrix = this.matrix;
     this.rotateRight();
     this.shiftRight();
     this.combineNumToRight();
@@ -209,33 +212,40 @@ class Matrix {
     this.rotateLeft();
 
     const { matrix, score } = this;
-    return { matrix, score };
+    const isMoved = this.isBoardMoved(preMatrix, matrix);
+    return { matrix, score, isMoved };
   }
 
   moveDown() {
+    const preMatrix = this.matrix;
     this.rotateRight();
     this.shiftLeft();
     this.combineNumToLeft();
     this.rotateLeft();
 
     const { matrix, score } = this;
-    return { matrix, score };
+    const isMoved = this.isBoardMoved(preMatrix, matrix);
+    return { matrix, score, isMoved };
   }
 
   moveLeft() {
+    const preMatrix = this.matrix;
     this.shiftLeft();
     this.combineNumToLeft();
 
     const { matrix, score } = this;
-    return { matrix, score };
+    const isMoved = this.isBoardMoved(preMatrix, matrix);
+    return { matrix, score, isMoved };
   }
 
   moveRight() {
+    const preMatrix = this.matrix;
     this.shiftRight();
     this.combineNumToRight();
 
     const { matrix, score } = this;
-    return { matrix, score };
+    const isMoved = this.isBoardMoved(preMatrix, matrix);
+    return { matrix, score, isMoved };
   }
 }
 

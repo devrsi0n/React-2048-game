@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import './App.css';
+import styles from './app.scss';
+import resetSvg from '../../assets/svg/reset.svg';
+import prevStepSvg from '../../assets/svg/prev-step.svg';
 import Board from '../../components/Board';
+import Button from '../../components/Button';
 import {
   initMatrix,
   moveUp,
@@ -39,31 +42,55 @@ class App extends Component {
       this.handleKeyDown.bind(this));
   }
 
+  handleMoveUp() {
+    this.props.onMoveUp();
+    this.props.onPlaceRandom();
+  }
+
+  handleMoveDown() {
+    this.props.onMoveDown();
+    this.props.onPlaceRandom();
+  }
+
+  handleMoveLeft() {
+    this.props.onMoveLeft();
+    this.props.onPlaceRandom();
+  }
+
+  handleMoveRight() {
+    this.props.onMoveRight();
+    this.props.onPlaceRandom();
+  }
+
   handleKeyDown(e) {
-    const up = 38;
-    const right = 39;
-    const down = 40;
-    const left = 37;
-    const n = 78;
+    const keyUp = 38;
+    const keyRight = 39;
+    const keyDown = 40;
+    const keyLeft = 37;
+    const keyW = 87;
+    const keyS = 83;
+    const keyA = 65;
+    const keyD = 68;
+    const keyN = 78;
 
     switch (e.keyCode) {
-      case up:
-        this.props.onMoveUp();
-        this.props.onPlaceRandom();
+      case keyW:
+      case keyUp:
+        this.handleMoveUp();
         break;
-      case down:
-        this.props.onMoveDown();
-        this.props.onPlaceRandom();
+      case keyS:
+      case keyDown:
+        this.handleMoveDown();
         break;
-      case left:
-        this.props.onMoveLeft();
-        this.props.onPlaceRandom();
+      case keyA:
+      case keyLeft:
+        this.handleMoveLeft();
         break;
-      case right:
-        this.props.onMoveRight();
-        this.props.onPlaceRandom();
+      case keyD:
+      case keyRight:
+        this.handleMoveRight();
         break;
-      case n:
+      case keyN:
         this.props.onReset();
         break;
       default:
@@ -74,11 +101,31 @@ class App extends Component {
   render() {
     const { matrix, score, gameOver } = this.props;
     return (
-      <div className="App">
+      <div className={styles.app}>
         Welcome to React-2048-Game
         <p>Your score is: { score }</p>
-        <p className="App-game-over">{ gameOver ? 'Game Over!' : '' }</p>
-        <Board matrix={matrix} />
+        <p className={styles['game-over']}>{ gameOver ? 'Game Over!' : '' }</p>
+        <div className={styles.box}>
+          <div className={styles.board}>
+            <Board matrix={matrix} />
+          </div>
+          <div className={styles['btn-group']}>
+            <div className={styles['new-game']}>
+              <Button>
+                <img src={prevStepSvg} alt="previous step" />
+              </Button>
+              <Button onClick={() => this.props.onReset()} >
+                <img src={resetSvg} alt="reset" />
+              </Button>
+            </div>
+            <Button arrow="up" onClick={() => this.handleMoveUp()} />
+            <div className={styles.buttons}>
+              <Button arrow="left" onClick={() => this.handleMoveLeft()} />
+              <Button arrow="down" onClick={() => this.handleMoveDown()} />
+              <Button arrow="right" onClick={() => this.handleMoveRight()} />
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
