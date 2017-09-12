@@ -7,6 +7,7 @@
 
 $trans-border: 10px solid transparent;
 $border: 10px solid $btn-color;
+$border-revert: 10px solid $btn-bg;
 
 .button {
   align-items: center;
@@ -51,10 +52,26 @@ $border: 10px solid $btn-color;
     border-left: $border;
     border-top: $trans-border;
   }
+}
 
-  &:hover {
-    background-color: $btn-color;
-    color: $btn-bg;
-    transition: background-color 0.5s, color 0.5s;
+.button:hover {
+  background-color: $btn-color;
+  color: $btn-bg;
+  transition: background-color 0.5s, color 0.5s;
+
+  .arrow-up {
+    border-bottom: $border-revert;
+  }
+
+  .arrow-down {
+    border-top: $border-revert;
+  }
+
+  .arrow-left {
+    border-right: $border-revert;
+  }
+
+  .arrow-right {
+    border-left: $border-revert;
   }
 }

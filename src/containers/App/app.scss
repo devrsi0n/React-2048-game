@@ -1,6 +1,7 @@
 @import '../../assets/styles/vars';
 
 .app {
+  margin: 20px;
   text-align: center;
 }
 
@@ -10,7 +11,7 @@
 }
 
 .box {
-  align-items: flex-end;
+  // align-items: flex-end;
   display: flex;
   justify-content: center;
 }
@@ -23,6 +24,8 @@
   align-items: center;
   display: flex;
   flex-direction: column;
+  margin-bottom: 2px;
+  margin-left: 50px;
 
   .new-game {
     align-items: center;

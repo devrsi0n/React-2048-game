@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Board /> component render 1`] = `
+<td>
+  <div
+    className="cell color-32"
+  >
+    <div
+      className="number"
+    >
+      32
+    </div>
+  </div>
+</td>
+`;
+
+exports[`<Board /> component render 2`] = `
+<td>
+  <div
+    className="cell color-2048"
+  >
+    <div
+      className="number"
+    >
+      2048
+    </div>
+  </div>
+</td>
+`;

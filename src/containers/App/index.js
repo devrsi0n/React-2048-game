@@ -14,6 +14,7 @@ import {
   moveRight,
   placeRandom,
   reset,
+  revert,
 } from '../../reducers/board';
 
 class App extends Component {
@@ -25,10 +26,16 @@ class App extends Component {
     onMoveRight: PropTypes.func.isRequired,
     onPlaceRandom: PropTypes.func.isRequired,
     onReset: PropTypes.func.isRequired,
+    onRevert: PropTypes.func.isRequired,
+
     matrix: PropTypes.arrayOf(PropTypes.array).isRequired,
     score: PropTypes.number.isRequired,
     gameOver: PropTypes.bool.isRequired,
   };
+
+  // constructor(...args) {
+  //   super(...args);
+  // }
 
   componentWillMount() {
     const board = JSON.parse(localStorage.getItem('board')) || null;
@@ -111,8 +118,8 @@ class App extends Component {
           </div>
           <div className={styles['btn-group']}>
             <div className={styles['new-game']}>
-              <Button>
-                <img src={prevStepSvg} alt="previous step" />
+              <Button onClick={() => this.props.onRevert()} >
+                <img src={prevStepSvg} alt="go back previous step" />
               </Button>
               <Button onClick={() => this.props.onReset()} >
                 <img src={resetSvg} alt="reset" />
@@ -157,6 +164,9 @@ const matDispatchToProps = dispatch => ({
   },
   onReset() {
     dispatch(reset());
+  },
+  onRevert() {
+    dispatch(revert());
   },
 });
 

@@ -7,10 +7,17 @@ const MOVE_DOWN = 'MOVE_DOWN';
 const MOVE_LEFT = 'MOVE_LEFT';
 const MOVE_RIGHT = 'MOVE_RIGHT';
 const RESET = 'RESET';
+const REVERT = 'REVERT';
 
 // Game board state
 const initState = {
   matrix: [
+    [0, 0, 0, 0],
+    [0, 0, 0, 0],
+    [0, 0, 0, 0],
+    [0, 0, 0, 0],
+  ],
+  prevMatrix: [
     [0, 0, 0, 0],
     [0, 0, 0, 0],
     [0, 0, 0, 0],
@@ -22,8 +29,9 @@ const initState = {
 };
 
 class Matrix {
-  constructor({ matrix, score, gameOver, isMoved }) {
+  constructor({ matrix, prevMatrix, score, gameOver, isMoved }) {
     this.matrix = JSON.parse(JSON.stringify(matrix));
+    this.prevMatrix = JSON.parse(JSON.stringify(prevMatrix));
     this.score = score;
     this.gameOver = gameOver;
     this.isMoved = isMoved;
@@ -70,11 +78,18 @@ class Matrix {
 
   addRandomNumToMatrix() {
     const { matrix } = this;
-    if (this.gameOver || !this.isMoved) {
+    const newMatrix = JSON.parse(JSON.stringify(matrix));
+    if (this.gameOver) {
+      return { matrix };
+    }
+    if (!this.isMoved) {
+      if (this.checkGameOver(newMatrix)) {
+        this.gameOver = true;
+        return { gameOver: true };
+      }
       return { matrix };
     }
 
-    const newMatrix = JSON.parse(JSON.stringify(matrix));
     const emptyCoordinates = this.getEmptyCoordinates();
     if (emptyCoordinates.length === 0) {
       if (this.checkGameOver(newMatrix)) {
@@ -203,49 +218,50 @@ class Matrix {
     return matrix;
   }
 
-  moveUp() {
-    const preMatrix = this.matrix;
-    this.rotateRight();
-    this.shiftRight();
-    this.combineNumToRight();
-    // Rotate board back upright
-    this.rotateLeft();
+  move(callback) {
+    const prevMatrix = JSON.parse(JSON.stringify(this.matrix));
+    callback();
 
     const { matrix, score } = this;
-    const isMoved = this.isBoardMoved(preMatrix, matrix);
-    return { matrix, score, isMoved };
+    const isMoved = this.isBoardMoved(prevMatrix, matrix);
+    const rsp = { matrix, score, isMoved };
+    if (isMoved) {
+      rsp.prevMatrix = prevMatrix;
+    }
+    return rsp;
+  }
+
+  moveUp() {
+    return this.move(() => {
+      this.rotateRight();
+      this.shiftRight();
+      this.combineNumToRight();
+      // Rotate board back upright
+      this.rotateLeft();
+    });
   }
 
   moveDown() {
-    const preMatrix = this.matrix;
-    this.rotateRight();
-    this.shiftLeft();
-    this.combineNumToLeft();
-    this.rotateLeft();
-
-    const { matrix, score } = this;
-    const isMoved = this.isBoardMoved(preMatrix, matrix);
-    return { matrix, score, isMoved };
+    return this.move(() => {
+      this.rotateRight();
+      this.shiftLeft();
+      this.combineNumToLeft();
+      this.rotateLeft();
+    });
   }
 
   moveLeft() {
-    const preMatrix = this.matrix;
-    this.shiftLeft();
-    this.combineNumToLeft();
-
-    const { matrix, score } = this;
-    const isMoved = this.isBoardMoved(preMatrix, matrix);
-    return { matrix, score, isMoved };
+    return this.move(() => {
+      this.shiftLeft();
+      this.combineNumToLeft();
+    });
   }
 
   moveRight() {
-    const preMatrix = this.matrix;
-    this.shiftRight();
-    this.combineNumToRight();
-
-    const { matrix, score } = this;
-    const isMoved = this.isBoardMoved(preMatrix, matrix);
-    return { matrix, score, isMoved };
+    return this.move(() => {
+      this.shiftRight();
+      this.combineNumToRight();
+    });
   }
 }
 
@@ -288,10 +304,16 @@ export default function (state = initState, action) {
     }
     case RESET:
     {
-      mat = new Matrix(initState);
+      const copy = JSON.parse(JSON.stringify(initState));
+      mat = new Matrix(copy);
       mat.addRandomNumToMatrix();
       const result = mat.addRandomNumToMatrix();
-      return { ...initState, ...result };
+      return { ...copy, ...result };
+    }
+    case REVERT:
+    {
+      const { prevMatrix } = state;
+      return { ...state, matrix: prevMatrix };
     }
     default:
     {
@@ -306,26 +328,15 @@ export const initMatrix = board => ({
   board,
 });
 
-export const placeRandom = () => ({
-  type: PLACE_RANDOM,
+const actionCreator = type => () => ({
+  type,
 });
 
-export const moveUp = () => ({
-  type: MOVE_UP,
-});
+export const placeRandom = actionCreator(PLACE_RANDOM);
 
-export const moveDown = () => ({
-  type: MOVE_DOWN,
-});
-
-export const moveLeft = () => ({
-  type: MOVE_LEFT,
-});
-
-export const moveRight = () => ({
-  type: MOVE_RIGHT,
-});
-
-export const reset = () => ({
-  type: RESET,
-});
+export const moveUp = actionCreator(MOVE_UP);
+export const moveDown = actionCreator(MOVE_DOWN);
+export const moveLeft = actionCreator(MOVE_LEFT);
+export const moveRight = actionCreator(MOVE_RIGHT);
+export const reset = actionCreator(RESET);
+export const revert = actionCreator(REVERT);

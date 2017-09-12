@@ -13,5 +13,24 @@
     "sourceMapPathOverrides": {
       "webpack:///src/*": "${webRoot}/*"
     }
+  }, {
+    "name": "tests",
+    "type": "node",
+    "request": "launch",
+    "program": "${workspaceRoot}/node_modules/jest-cli/bin/jest.js",
+    "stopOnEntry": false,
+    "args": ["--runInBand", "--env=jsdom"],
+    "cwd": "${workspaceRoot}",
+    "preLaunchTask": null,
+    "runtimeExecutable": null,
+    "runtimeArgs": [
+        "--nolazy"
+    ],
+    "env": {
+        "NODE_ENV": "development"
+    },
+    // "externalConsole": false,
+    "sourceMaps": false
+    // "outDir": null
   }]
 }
