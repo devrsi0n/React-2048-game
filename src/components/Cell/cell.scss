@@ -5,14 +5,14 @@
   background-color: $black;
   border-radius: 5px;
   display: flex;
-  height: 100px;
+  height: 80px;
   justify-content: center;
-  width: 100px;
+  width: 80px;
 }
 
 .number {
   color: $white;
-  font-size: 35px;
+  font-size: 25px;
 }
 
 .color-2 {
@@ -57,4 +57,12 @@
 
 .color-2048 {
   background-color: $light-blue;
+}
+
+.color-4096 {
+  background-color: $red;
+}
+
+.color-8192 {
+  background-color: $lime;
 }

@@ -6,13 +6,8 @@ exports[`<App /> component render 1`] = `
 >
   Welcome to React-2048-Game
   <p>
-    Your score is: 
+    Score: 
     0
-  </p>
-  <p
-    className="game-over"
-  >
-    
   </p>
   <div
     className="box"
@@ -196,6 +191,17 @@ exports[`<App /> component render 1`] = `
         >
           
           <img
+            alt="speaker controller"
+            src="speaker-on.svg"
+          />
+        </a>
+        <a
+          className="button"
+          href="#"
+          onClick={[Function]}
+        >
+          
+          <img
             alt="go back previous step"
             src="prev-step.svg"
           />
@@ -255,6 +261,46 @@ exports[`<App /> component render 1`] = `
           />
           
         </a>
+      </div>
+    </div>
+  </div>
+  <div
+    className="hidden"
+  >
+    <div
+      className="overlay"
+    />
+    <div
+      className="modal center"
+    >
+      <div
+        className="gameover"
+      >
+        <div
+          className="text"
+        >
+          Game over!
+        </div>
+        <div
+          className="score"
+        >
+          Your score is 0
+        </div>
+        <div
+          className="button"
+        >
+          <a
+            className="button"
+            href="#"
+            onClick={[Function]}
+          >
+            
+            <img
+              alt="reset"
+              src="reset.svg"
+            />
+          </a>
+        </div>
       </div>
     </div>
   </div>

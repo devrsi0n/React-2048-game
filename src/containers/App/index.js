@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import debounce from 'lodash.debounce';
 import styles from './app.scss';
 import resetSvg from '../../assets/svg/reset.svg';
 import prevStepSvg from '../../assets/svg/prev-step.svg';
 import Board from '../../components/Board';
 import Button from '../../components/Button';
+import Modal from '../../components/Modal';
+import Firework from '../../components/Firework';
+import Speaker from '../Speaker';
 import {
   initMatrix,
   moveUp,
@@ -16,6 +20,8 @@ import {
   reset,
   revert,
 } from '../../reducers/board';
+import moveAudio from '../../assets/audio/move.mp3';
+import popupAudio from '../../assets/audio/popup.mp3';
 
 class App extends Component {
   static propTypes = {
@@ -31,11 +37,30 @@ class App extends Component {
     matrix: PropTypes.arrayOf(PropTypes.array).isRequired,
     score: PropTypes.number.isRequired,
     gameOver: PropTypes.bool.isRequired,
+    isMoved: PropTypes.bool.isRequired,
   };
 
-  // constructor(...args) {
-  //   super(...args);
-  // }
+  constructor(...args) {
+    super(...args);
+
+    this.audioMove = new Audio(moveAudio);
+    this.audioPopup = new Audio(popupAudio);
+
+    this.handleMoveUp = this.handleMoveUp.bind(this);
+    this.handleMoveDown = this.handleMoveDown.bind(this);
+    this.handleMoveLeft = this.handleMoveLeft.bind(this);
+    this.handleMoveRight = this.handleMoveRight.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.handleSpeakerClick = this.handleSpeakerClick.bind(this);
+
+    // debounce delay in ms
+    this.delay = process.env.NODE_ENV === 'production' ? 500 : 1;
+    console.log('delay', this.delay);
+
+    this.state = {
+      speakerOn: true,
+    };
+  }
 
   componentWillMount() {
     const board = JSON.parse(localStorage.getItem('board')) || null;
@@ -45,28 +70,48 @@ class App extends Component {
       this.props.onInit();
     }
     const { body } = document;
+    const { delay } = this;
     body.addEventListener('keyup',
-      this.handleKeyDown.bind(this));
+      debounce(this.handleKeyDown, delay, {
+        leading: true,
+      }));
+  }
+
+  generalMove(func) {
+    func();
+    const { isMoved } = this.props;
+    const { speakerOn } = this.state;
+    if (speakerOn && isMoved) {
+      this.audioMove.play();
+    }
+    setTimeout(() => {
+      this.props.onPlaceRandom();
+      if (speakerOn && isMoved) {
+        this.audioPopup.play();
+      }
+    }, 300);
+  }
+
+  handleSpeakerClick(speakerOn) {
+    this.setState({
+      speakerOn,
+    });
   }
 
   handleMoveUp() {
-    this.props.onMoveUp();
-    this.props.onPlaceRandom();
+    return this.generalMove(this.props.onMoveUp);
   }
 
   handleMoveDown() {
-    this.props.onMoveDown();
-    this.props.onPlaceRandom();
+    this.generalMove(this.props.onMoveDown);
   }
 
   handleMoveLeft() {
-    this.props.onMoveLeft();
-    this.props.onPlaceRandom();
+    this.generalMove(this.props.onMoveLeft);
   }
 
   handleMoveRight() {
-    this.props.onMoveRight();
-    this.props.onPlaceRandom();
+    this.generalMove(this.props.onMoveRight);
   }
 
   handleKeyDown(e) {
@@ -106,33 +151,51 @@ class App extends Component {
   }
 
   render() {
+    const { delay } = this;
     const { matrix, score, gameOver } = this.props;
+    const ResetButton = () => (
+      <Button onClick={debounce(this.props.onReset, delay)} >
+        <img src={resetSvg} alt="reset" />
+      </Button>
+    );
+
     return (
       <div className={styles.app}>
         Welcome to React-2048-Game
-        <p>Your score is: { score }</p>
-        <p className={styles['game-over']}>{ gameOver ? 'Game Over!' : '' }</p>
+        <p>Score: { score }</p>
         <div className={styles.box}>
           <div className={styles.board}>
             <Board matrix={matrix} />
           </div>
           <div className={styles['btn-group']}>
             <div className={styles['new-game']}>
-              <Button onClick={() => this.props.onRevert()} >
+              <Speaker onClick={this.handleSpeakerClick} />
+              <Button onClick={debounce(this.props.onRevert, delay)} >
                 <img src={prevStepSvg} alt="go back previous step" />
               </Button>
-              <Button onClick={() => this.props.onReset()} >
-                <img src={resetSvg} alt="reset" />
-              </Button>
+              <ResetButton />
             </div>
-            <Button arrow="up" onClick={() => this.handleMoveUp()} />
+            <Button arrow="up" onClick={debounce(this.handleMoveUp, delay)} />
             <div className={styles.buttons}>
-              <Button arrow="left" onClick={() => this.handleMoveLeft()} />
-              <Button arrow="down" onClick={() => this.handleMoveDown()} />
-              <Button arrow="right" onClick={() => this.handleMoveRight()} />
+              <Button arrow="left" onClick={debounce(this.handleMoveLeft, delay)} />
+              <Button arrow="down" onClick={debounce(this.handleMoveDown, delay)} />
+              <Button arrow="right" onClick={debounce(this.handleMoveRight, delay)} />
             </div>
           </div>
         </div>
+        {/* <Modal display > */}
+        <Modal display={gameOver} >
+          <div className={styles.gameover}>
+            <div className={styles.text}>Game over!</div>
+            <div className={styles.score}>{`Your score is ${score}`}</div>
+            <div className={styles.button}>
+              <ResetButton />
+            </div>
+          </div>
+          {
+            score > 999 ? <Firework /> : null
+          }
+        </Modal>
       </div>
     );
   }
@@ -142,6 +205,7 @@ const mapStateToProps = state => ({
   matrix: state.board.matrix,
   score: state.board.score,
   gameOver: state.board.gameOver,
+  isMoved: state.board.isMoved,
 });
 const matDispatchToProps = dispatch => ({
   onInit(board) {

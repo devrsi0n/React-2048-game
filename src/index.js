@@ -6,10 +6,12 @@ import './assets/styles/index.scss';
 import App from './containers/App';
 import store from './store';
 import registerServiceWorker from './utils/registerServiceWorker';
+// import Firework from './components/Firework';
 
 ReactDOM.render(
   <Provider store={store} >
     <App />
+    {/* <Firework /> */}
   </Provider>,
   document.getElementById('root'));
 

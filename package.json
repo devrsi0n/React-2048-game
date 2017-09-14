@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "classnames": "^2.2.5",
+    "lodash.debounce": "^4.0.8",
     "object-assign": "4.1.1",
     "promise": "8.0.1",
     "prop-types": "^15.5.10",

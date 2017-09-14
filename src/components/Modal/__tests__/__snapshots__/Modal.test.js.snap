@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Modal /> component render 1`] = `
+<div
+  className=""
+>
+  <div
+    className="overlay"
+  />
+  <div
+    className="modal center"
+  >
+    <div>
+      test
+    </div>
+  </div>
+</div>
+`;

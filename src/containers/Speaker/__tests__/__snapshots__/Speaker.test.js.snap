@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Speaker /> component render 1`] = `
+<a
+  className="button"
+  href="#"
+  onClick={[Function]}
+>
+  
+  <img
+    alt="speaker controller"
+    src="speaker-on.svg"
+  />
+</a>
+`;
