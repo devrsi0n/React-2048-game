@@ -2,17 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './button.scss';
 
-export default function Button({ children, arrow, onClick }) {
-  /* eslint-disable jsx-a11y/href-no-hash */
+const capital = str => str.charAt(0).toUpperCase() + str.slice(1);
+
+export default function Button({ children, onClick, type, size }) {
+  const { btnFlat } = styles;
+  const sizeCls = styles[`btn${capital(size)}`];
+  const typeCls = styles[`btn${capital(type)}`];
   return (
-    <a className={styles.button} onClick={onClick} href="#">
-      {
-        arrow
-          ? <em className={styles[`arrow-${arrow}`]} />
-          : ''
-      }
+    <button className={`${btnFlat} ${sizeCls} ${typeCls}`} onClick={onClick}>
       { children }
-    </a>
+    </button>
   );
 }
 
@@ -20,18 +19,26 @@ Button.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.node,
   ]),
-  arrow: PropTypes.oneOf([
-    'up',
-    'down',
-    'left',
-    'right',
-    '',
-  ]),
   onClick: PropTypes.func,
+  size: PropTypes.oneOf([
+    'lg',
+    'md',
+    'sm',
+    'xs',
+  ]),
+  type: PropTypes.oneOf([
+    'default',
+    'primary',
+    'warn',
+    'danger',
+    'success',
+    'royal',
+  ]),
 };
 
 Button.defaultProps = {
   children: '',
-  arrow: '',
   onClick() {},
+  size: 'md',
+  type: 'default',
 };

@@ -2,7 +2,7 @@
 
 exports[`<Firework /> component render 1`] = `
 <div
-  className="pyro"
+  className="firework"
 >
   <div
     className="before"

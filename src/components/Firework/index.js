@@ -4,7 +4,7 @@ import './firework.scss';
 
 export default function Firework() {
   return (
-    <div className="pyro">
+    <div className="firework">
       <div className="before" />
       <div className="after" />
     </div>

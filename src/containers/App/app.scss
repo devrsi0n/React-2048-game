@@ -15,29 +15,6 @@
   // flex: $flex;
 }
 
-.btn-group {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 2px;
-  margin-left: 50px;
-
-  .new-game {
-    align-items: center;
-    display: flex;
-    flex-grow: 1;
-  }
-
-  img {
-    width: 23px;
-  }
-
-  .buttons {
-    display: flex;
-    flex-direction: row;
-  }
-}
-
 .gameover {
   .text {
     margin-bottom: 10px;

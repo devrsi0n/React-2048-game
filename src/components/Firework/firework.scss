@@ -1,6 +1,6 @@
 :global {
 
-  $particles: 50;
+  $particles: 80;
   $width: 500;
   $height: 500;
 
@@ -9,41 +9,26 @@
   $box-shadow2: ();
   @for $i from 0 through $particles {
     $box-shadow: $box-shadow,
-      random($width)-$width / 2 + px
-      random($height)-$height / 1.2 + px
+      random($width) - $width / 2 + px
+      random($height) - $height / 1.2 + px
       hsl(random(360), 100, 50);
     $box-shadow2: $box-shadow2, 0 0 #fff;
   }
 
-  @mixin animation-delay ($settings) {
-    animation-delay: $settings;
-  }
-
-  @mixin animation-duration ($settings) {
-    animation-duration: $settings;
-  }
-
-  @mixin animation ($settings) {
-    animation: $settings;
-  }
-
-  @mixin transform ($settings) {
-    transform: $settings;
-  }
-
-  .pyro > .before,
-  .pyro > .after {
+  .firework > .before,
+  .firework > .after {
+    animation: 1s bang ease-out infinite backwards,
+      1s gravity ease-in infinite backwards, 5s position linear infinite backwards;
     border-radius: 50%;
     box-shadow: $box-shadow2;
     height: 5px;
     position: absolute;
     width: 5px;
-    @include animation((1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards));
   }
 
-  .pyro > .after {
-    @include animation-delay((1.25s, 1.25s, 1.25s));
-    @include animation-duration((1.25s, 1.25s, 6.25s));
+  .firework > .after {
+    // animation-delay: 10s, 10s, 10s;
+    animation-duration: 1.25s, 1.25s, 6.25s;
   }
 
   /* stylelint-disable max-nesting-depth */
@@ -55,8 +40,8 @@
 
   @keyframes :global(gravity) {
     to {
-      @include transform(translateY(200px));
       opacity: 0;
+      transform: translateY(200px);
     }
   }
 

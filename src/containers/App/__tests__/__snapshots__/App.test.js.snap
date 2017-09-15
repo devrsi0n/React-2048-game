@@ -179,88 +179,110 @@ exports[`<App /> component render 1`] = `
       </table>
     </div>
     <div
-      className="btn-group"
+      className="panel"
     >
       <div
-        className="new-game"
+        className="rowBtn"
       >
-        <a
-          className="button"
-          href="#"
-          onClick={[Function]}
+        <div
+          className="btn"
         >
-          
-          <img
-            alt="speaker controller"
-            src="speaker-on.svg"
-          />
-        </a>
-        <a
-          className="button"
-          href="#"
-          onClick={[Function]}
+          <button
+            className="btnFlat btnMd btnDefault"
+            onClick={[Function]}
+          >
+            <img
+              alt="speaker controller"
+              src="speaker-on.svg"
+            />
+          </button>
+        </div>
+        <div
+          className="btn"
         >
-          
-          <img
-            alt="go back previous step"
-            src="prev-step.svg"
-          />
-        </a>
-        <a
-          className="button"
-          href="#"
-          onClick={[Function]}
+          <button
+            className="btnFlat btnMd btnDefault"
+            onClick={[Function]}
+          >
+            <img
+              alt="undo"
+              src="undo.svg"
+            />
+          </button>
+        </div>
+        <div
+          className="btn"
         >
-          
-          <img
-            alt="reset"
-            src="reset.svg"
-          />
-        </a>
+          <button
+            className="btnFlat btnMd btnDefault"
+            onClick={[Function]}
+          >
+            <img
+              alt="reset"
+              src="reset.svg"
+            />
+          </button>
+        </div>
       </div>
-      <a
-        className="button"
-        href="#"
-        onClick={[Function]}
-      >
-        <em
-          className="arrow-up"
-        />
-        
-      </a>
       <div
-        className="buttons"
+        className="btn"
       >
-        <a
-          className="button"
-          href="#"
+        <button
+          className="btnFlat btnMd btnPrimary"
           onClick={[Function]}
         >
-          <em
-            className="arrow-left"
+          <img
+            alt="arrow up"
+            className="up"
+            src="arrow.svg"
           />
-          
-        </a>
-        <a
-          className="button"
-          href="#"
-          onClick={[Function]}
+        </button>
+      </div>
+      <div
+        className="arrows"
+      >
+        <div
+          className="btn"
         >
-          <em
-            className="arrow-down"
-          />
-          
-        </a>
-        <a
-          className="button"
-          href="#"
-          onClick={[Function]}
+          <button
+            className="btnFlat btnMd btnPrimary"
+            onClick={[Function]}
+          >
+            <img
+              alt="arrow left"
+              className="left"
+              src="arrow.svg"
+            />
+          </button>
+        </div>
+        <div
+          className="btn"
         >
-          <em
-            className="arrow-right"
-          />
-          
-        </a>
+          <button
+            className="btnFlat btnMd btnPrimary"
+            onClick={[Function]}
+          >
+            <img
+              alt="arrow down"
+              className="down"
+              src="arrow.svg"
+            />
+          </button>
+        </div>
+        <div
+          className="btn"
+        >
+          <button
+            className="btnFlat btnMd btnPrimary"
+            onClick={[Function]}
+          >
+            <img
+              alt="arrow right"
+              className="right"
+              src="arrow.svg"
+            />
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -289,17 +311,15 @@ exports[`<App /> component render 1`] = `
         <div
           className="button"
         >
-          <a
-            className="button"
-            href="#"
+          <button
+            className="btnFlat btnMd btnDefault"
             onClick={[Function]}
           >
-            
             <img
               alt="reset"
               src="reset.svg"
             />
-          </a>
+          </button>
         </div>
       </div>
     </div>

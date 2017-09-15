@@ -1,38 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Board /> component render 1`] = `
-<a
-  className="button"
-  href="#"
+<button
+  className="btnFlat btnMd btnDefault"
   onClick={[Function]}
 >
   
-  
-</a>
+</button>
 `;
 
 exports[`<Board /> component render 2`] = `
-<a
-  className="button"
-  href="#"
+<button
+  className="btnFlat btnMd btnDefault"
   onClick={[Function]}
 >
-  <em
-    className="arrow-up"
-  />
   
-</a>
+</button>
 `;
 
 exports[`<Board /> component render 3`] = `
-<a
-  className="button"
-  href="#"
+<button
+  className="btnFlat btnMd btnDefault"
   onClick={[Function]}
 >
-  
   <span>
     test
   </span>
-</a>
+</button>
 `;

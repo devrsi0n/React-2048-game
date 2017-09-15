@@ -1,0 +1,45 @@
+@import '../../assets/styles/vars';
+
+$border: 10px solid $btn-color;
+$trans-border: 10px solid transparent;
+
+.panel {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2px;
+  margin-left: 50px;
+
+  .row-btn {
+    align-items: center;
+    display: flex;
+    flex-grow: 1;
+  }
+
+  .btn {
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+
+  img {
+    margin-top: 4px;
+    width: 27px;
+  }
+
+  .arrows {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .left {
+    transform: rotate(270deg);
+  }
+
+  .right {
+    transform: rotate(90deg);
+  }
+
+  .down {
+    transform: rotate(180deg);
+  }
+}

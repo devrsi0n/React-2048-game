@@ -1,77 +1,151 @@
 @import '../../assets/styles/vars';
 
-@mixin arrow {
-  height: 0;
-  width: 0;
+.btn-default {
+  color: #fff;
 }
 
-$trans-border: 10px solid transparent;
-$border: 10px solid $btn-color;
-$border-revert: 10px solid $btn-bg;
+.btn-primary,
+.btn,
+.btn-lg,
+.btn-md,
+.btn-sm,
+.btn-xs {
+  color: #1d89ff;
+}
 
-.button {
-  align-items: center;
-  background-color: $btn-bg;
-  border-radius: 5px;
-  color: $btn-color;
+.btn-warn {
+  color: #feab3a;
+}
+
+.btn-danger {
+  color: #ff5964;
+}
+
+.btn-success {
+  color: #28b78d;
+}
+
+.btn-royal {
+  color: #bd2df5;
+}
+
+.btn,
+.btn-lg,
+.btn-md,
+.btn-sm,
+.btn-xs {
+  background: transparent;
+  border-color: transparent;
+  border-width: 0;
   cursor: pointer;
-  display: flex;
-  flex-direction: row;
-  height: 30px;
-  justify-content: center;
-  margin: 1px 3px;
-  text-align: center;
-  text-decoration: none;
-  transition: background-color 0.5s, color 0.5s;
-  width: 100px;
-
-  .arrow-up {
-    @include arrow;
-    border-bottom: $border;
-    border-left: $trans-border;
-    border-right: $trans-border;
-  }
-
-  .arrow-down {
-    @include arrow;
-    border-left: $trans-border;
-    border-right: $trans-border;
-    border-top: $border;
-  }
-
-  .arrow-left {
-    @include arrow;
-    border-bottom: $trans-border;
-    border-right: $border;
-    border-top: $trans-border;
-  }
-
-  .arrow-right {
-    @include arrow;
-    border-bottom: $trans-border;
-    border-left: $border;
-    border-top: $trans-border;
-  }
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  position: relative;
 }
 
-.button:hover {
-  background-color: $btn-color;
-  color: $btn-bg;
-  transition: background-color 0.5s, color 0.5s;
+.btn-lg {
+  font-family: inherit;
+  font-size: 24px;
+  padding: 8px 15px;
+}
 
-  .arrow-up {
-    border-bottom: $border-revert;
+.btn-md {
+  font-family: inherit;
+  font-size: 20px;
+  padding: 5px 12px;
+}
+
+.btn-sm {
+  font-family: inherit;
+  font-size: 16px;
+  padding: 4px 10px;
+}
+
+.btn-xs {
+  font-family: inherit;
+  font-size: 12px;
+  padding: 3px 8px;
+}
+
+.btn-flat {
+  background: transparent;
+  background: #fff;
+  border-color: transparent;
+  border-radius: 2px;
+  border-width: 0;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.18), 0 1px 5px 0 rgba(0, 0, 0, 0.15);
+  color: #1d89ff;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0;
+  overflow: hidden;
+  padding: 5px 12px;
+  position: relative;
+  text-transform: uppercase;
+  transform: translate3d(0, 0, 0);
+  transition: all 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+    outline: 0;
+    transition: box-shadow 0.4s ease-out;
   }
 
-  .arrow-down {
-    border-top: $border-revert;
+  &.btn-xs {
+    font-family: inherit;
+    font-size: 12px;
+    padding: 3px 8px;
   }
 
-  .arrow-left {
-    border-right: $border-revert;
+  &.btn-sm {
+    font-family: inherit;
+    font-size: 16px;
+    padding: 4px 10px;
   }
 
-  .arrow-right {
-    border-left: $border-revert;
+  &.btn-md {
+    font-family: inherit;
+    font-size: 20px;
+    padding: 5px 12px;
+  }
+
+  &.btn-lg {
+    font-family: inherit;
+    font-size: 24px;
+    padding: 8px 15px;
+  }
+
+  &.btn-default {
+    background: #fff;
+    color: #1d89ff;
+  }
+
+  &.btn-primary {
+    background: #1d89ff;
+    color: #fff;
+  }
+
+  &.btn-warn {
+    background: #feab3a;
+    color: #fff;
+  }
+
+  &.btn-danger {
+    background: #ff5964;
+    color: #fff;
+  }
+
+  &.btn-success {
+    background: #28b78d;
+    color: #fff;
+  }
+
+  &.btn-royal {
+    background: #bd2df5;
+    color: #fff;
   }
 }
