@@ -2,7 +2,7 @@
 
 exports[`<Board /> component render 1`] = `
 <button
-  className="btnFlat btnMd btnDefault"
+  className="btn-flat btn-md btn-default"
   onClick={[Function]}
 >
   
@@ -11,7 +11,7 @@ exports[`<Board /> component render 1`] = `
 
 exports[`<Board /> component render 2`] = `
 <button
-  className="btnFlat btnMd btnDefault"
+  className="btn-flat btn-md btn-default"
   onClick={[Function]}
 >
   
@@ -20,7 +20,7 @@ exports[`<Board /> component render 2`] = `
 
 exports[`<Board /> component render 3`] = `
 <button
-  className="btnFlat btnMd btnDefault"
+  className="btn-flat btn-md btn-default"
   onClick={[Function]}
 >
   <span>

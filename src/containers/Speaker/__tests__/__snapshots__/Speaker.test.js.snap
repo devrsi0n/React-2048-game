@@ -2,7 +2,7 @@
 
 exports[`<Speaker /> component render 1`] = `
 <button
-  className="btnFlat btnMd btnDefault"
+  className="btn-flat btn-md btn-default"
   onClick={[Function]}
 >
   <img

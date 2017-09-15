@@ -11,7 +11,7 @@ exports[`<ControlPanel /> component render 1`] = `
       className="btn"
     >
       <button
-        className="btnFlat btnMd btnDefault"
+        className="btn-flat btn-md btn-default"
         onClick={[Function]}
       >
         <img
@@ -24,7 +24,7 @@ exports[`<ControlPanel /> component render 1`] = `
       className="btn"
     >
       <button
-        className="btnFlat btnMd btnDefault"
+        className="btn-flat btn-md btn-default"
         onClick={[Function]}
       >
         <img
@@ -37,7 +37,7 @@ exports[`<ControlPanel /> component render 1`] = `
       className="btn"
     >
       <button
-        className="btnFlat btnMd btnDefault"
+        className="btn-flat btn-md btn-default"
         onClick={[Function]}
       >
         <img
@@ -51,7 +51,7 @@ exports[`<ControlPanel /> component render 1`] = `
     className="btn"
   >
     <button
-      className="btnFlat btnMd btnPrimary"
+      className="btn-flat btn-md btn-primary"
       onClick={[Function]}
     >
       <img
@@ -68,7 +68,7 @@ exports[`<ControlPanel /> component render 1`] = `
       className="btn"
     >
       <button
-        className="btnFlat btnMd btnPrimary"
+        className="btn-flat btn-md btn-primary"
         onClick={[Function]}
       >
         <img
@@ -82,7 +82,7 @@ exports[`<ControlPanel /> component render 1`] = `
       className="btn"
     >
       <button
-        className="btnFlat btnMd btnPrimary"
+        className="btn-flat btn-md btn-primary"
         onClick={[Function]}
       >
         <img
@@ -96,7 +96,7 @@ exports[`<ControlPanel /> component render 1`] = `
       className="btn"
     >
       <button
-        className="btnFlat btnMd btnPrimary"
+        className="btn-flat btn-md btn-primary"
         onClick={[Function]}
       >
         <img

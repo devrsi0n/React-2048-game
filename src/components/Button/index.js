@@ -1,15 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './button.scss';
-
-const capital = str => str.charAt(0).toUpperCase() + str.slice(1);
+import './button.scss';
 
 export default function Button({ children, onClick, type, size }) {
-  const { btnFlat } = styles;
-  const sizeCls = styles[`btn${capital(size)}`];
-  const typeCls = styles[`btn${capital(type)}`];
+  const sizeCls = `btn-${size}`;
+  const typeCls = `btn-${type}`;
   return (
-    <button className={`${btnFlat} ${sizeCls} ${typeCls}`} onClick={onClick}>
+    <button className={`btn-flat ${sizeCls} ${typeCls}`} onClick={onClick}>
       { children }
     </button>
   );
