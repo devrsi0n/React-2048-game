@@ -2,15 +2,15 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
 import store from '../../../store';
-import ControlPanel from '..';
+import Scores from '..';
 
-describe('<ControlPanel />', () => {
+describe('<Scores />', () => {
   it('component render', () => {
-    const panel = renderer.create(
+    const scores = renderer.create(
       <Provider store={store}>
-        <ControlPanel delay={1} />
+        <Scores score={1234} bestScore={4321} />
       </Provider>,
     ).toJSON();
-    expect(panel).toMatchSnapshot();
+    expect(scores).toMatchSnapshot();
   });
 });

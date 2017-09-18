@@ -9,8 +9,10 @@ const store = createStore(rootReducer,
 let preBoard = null;
 store.subscribe(() => {
   const { board } = store.getState();
-  if (JSON.stringify(preBoard) !== JSON.stringify(board)) {
-    localStorage.setItem('board', JSON.stringify(board));
+  const prev = JSON.stringify(preBoard);
+  const curr = JSON.stringify(board);
+  if (prev !== curr) {
+    localStorage.setItem('board', curr);
     preBoard = board;
   }
 });

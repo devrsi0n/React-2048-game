@@ -15,15 +15,12 @@
 }
 
 .modal {
-  background-color: lighten($blue, 20%);
-  border-radius: 5px;
-  height: 200px;
+  background-color: transparent;
   left: 50%;
   margin-left: -150px;
   margin-top: -100px;
   position: fixed;
   top: 50%;
-  width: 300px;
   z-index: 11; /* 1px higher than the overlay layer */
 }
 

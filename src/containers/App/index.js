@@ -5,10 +5,10 @@ import debounce from 'lodash.debounce';
 import styles from './app.scss';
 import resetSvg from '../../assets/svg/reset.svg';
 import Board from '../../components/Board';
-import Button from '../../components/Button';
 import Modal from '../../components/Modal';
 import Firework from '../../components/Firework';
 import ControlPanel from '../ControlPanel';
+import Scores from '../Scores';
 import {
   initMatrix,
   reset,
@@ -44,32 +44,40 @@ class App extends Component {
   render() {
     const { delay } = this;
     const { matrix, score, gameOver } = this.props;
-    const ResetButton = () => (
-      <Button onClick={debounce(this.props.onReset, delay)} >
-        <img src={resetSvg} alt="reset" />
-      </Button>
-    );
 
     return (
       <div className={styles.app}>
-        Welcome to React-2048-Game
-        <p>Score: { score }</p>
         <div className={styles.box}>
           <div className={styles.board}>
+            <h1>2048</h1>
             <Board matrix={matrix} />
           </div>
-          <ControlPanel delay={delay} />
+          <div className={styles.panel}>
+            <div>
+              <Scores />
+            </div>
+            <ControlPanel delay={delay} />
+          </div>
         </div>
-        {/* <Modal display > */}
         <Modal display={gameOver} >
+          {/* <Modal display > */}
           {
             score > 999 ? <Firework /> : null
           }
-          <div className={styles.gameover}>
-            <div className={styles.text}>Game over!</div>
-            <div className={styles.score}>{`Your score is ${score}`}</div>
-            <div className={styles.button}>
-              <ResetButton />
+          <div>
+            <div className={styles.gameover}>
+              <div className={styles.text}> Score </div>
+              <div className={styles.banner}>
+                <p>{score}</p>
+              </div>
+            </div>
+            <div className={styles.buttonWrapper}>
+              <button
+                className={styles.button}
+                onClick={debounce(this.props.onReset, delay)}
+              >
+                <img src={resetSvg} alt="reset" />
+              </button>
             </div>
           </div>
         </Modal>

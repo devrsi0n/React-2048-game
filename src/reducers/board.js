@@ -24,15 +24,17 @@ const initState = {
     [0, 0, 0, 0],
   ],
   score: 0,
+  bestScore: 0,
   gameOver: false,
   isMoved: true,
 };
 
 class Matrix {
-  constructor({ matrix, prevMatrix, score, gameOver, isMoved }) {
+  constructor({ matrix, prevMatrix, score, bestScore, gameOver, isMoved }) {
     this.matrix = JSON.parse(JSON.stringify(matrix));
     this.prevMatrix = JSON.parse(JSON.stringify(prevMatrix));
     this.score = score;
+    this.bestScore = bestScore;
     this.gameOver = gameOver;
     this.isMoved = isMoved;
   }
@@ -222,9 +224,14 @@ class Matrix {
     const prevMatrix = JSON.parse(JSON.stringify(this.matrix));
     callback();
 
-    const { matrix, score } = this;
+    const { matrix, score, bestScore } = this;
     const isMoved = this.isBoardMoved(prevMatrix, matrix);
-    const rsp = { matrix, score, isMoved };
+    const rsp = {
+      matrix,
+      score,
+      bestScore: score > bestScore ? score : bestScore,
+      isMoved,
+    };
     if (isMoved) {
       rsp.prevMatrix = prevMatrix;
     }
@@ -308,7 +315,7 @@ export default function (state = initState, action) {
       mat = new Matrix(copy);
       mat.addRandomNumToMatrix();
       const result = mat.addRandomNumToMatrix();
-      return { ...copy, ...result };
+      return { ...copy, ...result, bestScore: state.bestScore };
     }
     case REVERT:
     {
@@ -333,7 +340,6 @@ const actionCreator = type => () => ({
 });
 
 export const placeRandom = actionCreator(PLACE_RANDOM);
-
 export const moveUp = actionCreator(MOVE_UP);
 export const moveDown = actionCreator(MOVE_DOWN);
 export const moveLeft = actionCreator(MOVE_LEFT);

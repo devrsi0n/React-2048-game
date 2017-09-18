@@ -1,0 +1,54 @@
+.index {
+  display: flex;
+  justify-content: center;
+
+  .score {
+    background: transparent;
+    border-radius: 0;
+    border-width: 0;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    height: 40px;
+    margin: 0;
+    padding: 12px 25px;
+    position: relative;
+    z-index: 0;
+  }
+
+  .text {
+    color: #fafafa;
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+
+  .score::before {
+    // background: #fafafa;
+    background: rgba(29, 137, 255, 0.9);
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: skewX(20deg);
+    width: 100%;
+    z-index: -1;
+  }
+
+  .score::after {
+    background: rgba(250, 250, 250, 0.3);
+    content: '';
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transform: skewX(20deg);
+    width: 0;
+    z-index: -1;
+  }
+
+  .best {
+    margin-left: 15px;
+  }
+}

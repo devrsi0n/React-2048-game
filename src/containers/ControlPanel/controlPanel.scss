@@ -6,9 +6,9 @@ $trans-border: 10px solid transparent;
 .panel {
   align-items: center;
   display: flex;
+  flex: 1;
   flex-direction: column;
   margin-bottom: 2px;
-  margin-left: 50px;
 
   .row-btn {
     align-items: center;

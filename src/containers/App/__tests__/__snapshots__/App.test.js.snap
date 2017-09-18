@@ -4,17 +4,15 @@ exports[`<App /> component render 1`] = `
 <div
   className="app"
 >
-  Welcome to React-2048-Game
-  <p>
-    Score: 
-    0
-  </p>
   <div
     className="box"
   >
     <div
       className="board"
     >
+      <h1>
+        2048
+      </h1>
       <table
         className="board"
       >
@@ -181,79 +179,81 @@ exports[`<App /> component render 1`] = `
     <div
       className="panel"
     >
-      <div
-        className="rowBtn"
-      >
+      <div>
         <div
-          className="btn"
+          className="index"
         >
-          <button
-            className="btn-flat btn-md btn-default"
-            onClick={[Function]}
+          <h2
+            className="score"
           >
-            <img
-              alt="speaker controller"
-              src="speaker-on.svg"
-            />
-          </button>
-        </div>
-        <div
-          className="btn"
-        >
-          <button
-            className="btn-flat btn-md btn-default"
-            onClick={[Function]}
+            <p
+              className="text"
+            >
+              SCORE
+            </p>
+            <p>
+              0
+            </p>
+          </h2>
+          <h2
+            className="score best"
           >
-            <img
-              alt="undo"
-              src="undo.svg"
-            />
-          </button>
-        </div>
-        <div
-          className="btn"
-        >
-          <button
-            className="btn-flat btn-md btn-default"
-            onClick={[Function]}
-          >
-            <img
-              alt="reset"
-              src="reset.svg"
-            />
-          </button>
+            <p
+              className="text"
+            >
+              BEST
+            </p>
+            <p>
+              0
+            </p>
+          </h2>
         </div>
       </div>
       <div
-        className="btn"
-      >
-        <button
-          className="btn-flat btn-md btn-primary"
-          onClick={[Function]}
-        >
-          <img
-            alt="arrow up"
-            className="up"
-            src="arrow.svg"
-          />
-        </button>
-      </div>
-      <div
-        className="arrows"
+        className="panel"
       >
         <div
-          className="btn"
+          className="rowBtn"
         >
-          <button
-            className="btn-flat btn-md btn-primary"
-            onClick={[Function]}
+          <div
+            className="btn"
           >
-            <img
-              alt="arrow left"
-              className="left"
-              src="arrow.svg"
-            />
-          </button>
+            <button
+              className="btn-flat btn-md btn-default"
+              onClick={[Function]}
+            >
+              <img
+                alt="speaker controller"
+                src="speaker-on.svg"
+              />
+            </button>
+          </div>
+          <div
+            className="btn"
+          >
+            <button
+              className="btn-flat btn-md btn-default"
+              onClick={[Function]}
+            >
+              <img
+                alt="undo"
+                src="undo.svg"
+              />
+            </button>
+          </div>
+          <div
+            className="btn"
+          >
+            <button
+              className="btn-flat btn-md btn-default"
+              onClick={[Function]}
+            >
+              <img
+                alt="reset"
+                src="reset.svg"
+              />
+            </button>
+          </div>
         </div>
         <div
           className="btn"
@@ -263,25 +263,57 @@ exports[`<App /> component render 1`] = `
             onClick={[Function]}
           >
             <img
-              alt="arrow down"
-              className="down"
+              alt="arrow up"
+              className="up"
               src="arrow.svg"
             />
           </button>
         </div>
         <div
-          className="btn"
+          className="arrows"
         >
-          <button
-            className="btn-flat btn-md btn-primary"
-            onClick={[Function]}
+          <div
+            className="btn"
           >
-            <img
-              alt="arrow right"
-              className="right"
-              src="arrow.svg"
-            />
-          </button>
+            <button
+              className="btn-flat btn-md btn-primary"
+              onClick={[Function]}
+            >
+              <img
+                alt="arrow left"
+                className="left"
+                src="arrow.svg"
+              />
+            </button>
+          </div>
+          <div
+            className="btn"
+          >
+            <button
+              className="btn-flat btn-md btn-primary"
+              onClick={[Function]}
+            >
+              <img
+                alt="arrow down"
+                className="down"
+                src="arrow.svg"
+              />
+            </button>
+          </div>
+          <div
+            className="btn"
+          >
+            <button
+              className="btn-flat btn-md btn-primary"
+              onClick={[Function]}
+            >
+              <img
+                alt="arrow right"
+                className="right"
+                src="arrow.svg"
+              />
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -295,24 +327,28 @@ exports[`<App /> component render 1`] = `
     <div
       className="modal center"
     >
-      <div
-        className="gameover"
-      >
+      <div>
         <div
-          className="text"
+          className="gameover"
         >
-          Game over!
+          <div
+            className="text"
+          >
+             Score 
+          </div>
+          <div
+            className="banner"
+          >
+            <p>
+              0
+            </p>
+          </div>
         </div>
         <div
-          className="score"
-        >
-          Your score is 0
-        </div>
-        <div
-          className="button"
+          className="buttonWrapper"
         >
           <button
-            className="btn-flat btn-md btn-default"
+            className="button"
             onClick={[Function]}
           >
             <img
