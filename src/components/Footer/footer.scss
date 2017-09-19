@@ -1,0 +1,32 @@
+@import '../../assets/styles/vars';
+
+.footer {
+  bottom: 25px;
+  color: $black;
+  display: inline-block;
+  left: 0;
+  position: absolute;
+  right: 0;
+
+  .icon {
+    margin-right: 10px;
+  }
+
+  .github {
+    margin-bottom: -6px;
+    width: 32px;
+  }
+
+  .heart {
+    color: $peach;
+    font-size: 18px;
+    margin: 0 10px;
+    transform: scale(0.9);
+  }
+
+  .link {
+    border-bottom: 1px dotted;
+    margin-left: 10px;
+    text-decoration: none;
+  }
+}

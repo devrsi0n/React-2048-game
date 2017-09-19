@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Tips /> component render 1`] = `
+<div
+  className="tips"
+>
+  <p
+    className="content"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": <p>
+          hello 
+          <span>
+            world
+          </span>
+        </p>,
+      }
+    }
+  />
+</div>
+`;

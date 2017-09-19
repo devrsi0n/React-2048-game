@@ -1,3 +1,5 @@
+@import '../../assets/styles/vars';
+
 .index {
   display: flex;
   justify-content: center;
@@ -6,7 +8,7 @@
     background: transparent;
     border-radius: 0;
     border-width: 0;
-    color: #fff;
+    color: $white;
     font-size: 18px;
     font-weight: 500;
     height: 40px;
@@ -17,7 +19,7 @@
   }
 
   .text {
-    color: #fafafa;
+    color: $gray;
     font-size: 12px;
     margin-bottom: 6px;
   }

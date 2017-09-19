@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer /> component render 1`] = `
+<div
+  className="footer"
+>
+  <a
+    className="icon"
+    href="http://test.com"
+  >
+    <img
+      alt="github repo"
+      className="github"
+      src="github.png"
+    />
+  </a>
+  Made with
+  <span
+    className="heart"
+  >
+    ♥
+  </span>
+  by
+  <a
+    className="link"
+    href="http://profile.test"
+  >
+    test
+  </a>
+</div>
+`;

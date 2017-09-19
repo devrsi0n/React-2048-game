@@ -7,6 +7,8 @@ import resetSvg from '../../assets/svg/reset.svg';
 import Board from '../../components/Board';
 import Modal from '../../components/Modal';
 import Firework from '../../components/Firework';
+import Tips from '../../components/Tips';
+import Footer from '../../components/Footer';
 import ControlPanel from '../ControlPanel';
 import Scores from '../Scores';
 import {
@@ -52,7 +54,7 @@ class App extends Component {
       <div className={styles.app}>
         <div className={styles.box}>
           <div className={styles.board}>
-            <h1>2048</h1>
+            <h1 className={styles.title}>2048</h1>
             <Board matrix={matrix} />
           </div>
           <div className={styles.panel}>
@@ -62,6 +64,14 @@ class App extends Component {
             <ControlPanel delay={delay} />
           </div>
         </div>
+        <Tips>
+          {i18n.tips}
+        </Tips>
+        <Footer
+          name={'devrsi0n'}
+          profileUrl={'https://github.com/devrsi0n'}
+          repoUrl={'https://github.com/devrsi0n/React-2048-game'}
+        />
         <Modal display={gameOver} >
           {/* <Modal display > */}
           {
