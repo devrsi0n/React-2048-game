@@ -15,8 +15,8 @@ const data = {
       en: 'BEST',
     },
     tips: {
-      cn: '<strong>提示</strong>： 使用键盘箭头键（或 WASD ）控制方块;<br/>不小心按错了？点击回退按钮可返回到上一步的状态。',
-      en: '<strong>Tips</strong>: User keyboard arrow keys (or `WASD` if you like) control blocks;<br/>Click undo button to revert to last step status if you regret',
+      cn: '<strong>提示</strong>： 使用键盘箭头键（或 WASD ）控制方块;<br/>不小心按错了？点回退按钮可返回到上一步的状态。',
+      en: '<strong>Tips</strong>: User keyboard arrow keys (or `WASD` if you like) control blocks;<br/>Click undo button to revert to last step status if you regrets',
     },
   },
 };

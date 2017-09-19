@@ -327,7 +327,7 @@ exports[`<App /> component render 1`] = `
       className="content"
       dangerouslySetInnerHTML={
         Object {
-          "__html": "<strong>Tips</strong>: User keyboard arrow keys (or \`WASD\` if you like) control blocks;<br/>Click undo button to revert to last step status if you regret",
+          "__html": "<strong>Tips</strong>: User keyboard arrow keys (or \`WASD\` if you like) control blocks;<br/>Click undo button to revert to last step status if you regrets",
         }
       }
     />
