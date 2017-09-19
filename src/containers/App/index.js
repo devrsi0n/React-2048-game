@@ -13,6 +13,9 @@ import {
   initMatrix,
   reset,
 } from '../../reducers/board';
+import i18n from '../../utils/i18n';
+
+document.title = i18n.title;
 
 class App extends Component {
   static propTypes = {
@@ -66,7 +69,7 @@ class App extends Component {
           }
           <div>
             <div className={styles.gameover}>
-              <div className={styles.text}> Score </div>
+              <div className={styles.text}> {i18n.score} </div>
               <div className={styles.banner}>
                 <p>{score}</p>
               </div>

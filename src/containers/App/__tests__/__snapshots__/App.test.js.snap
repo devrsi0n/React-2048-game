@@ -334,7 +334,9 @@ exports[`<App /> component render 1`] = `
           <div
             className="text"
           >
-             Score 
+             
+            SCORE
+             
           </div>
           <div
             className="banner"
