@@ -2,6 +2,7 @@
 
 ----
 2048 是一个经典的消除小游戏，基于 React 和 Redux 的最佳实践构建一个好玩又好看的小游戏是我这段时间以来的目标。
+点：[https://devrsi0n.github.io/React-2048-game/](https://devrsi0n.github.io/React-2048-game/) 直接玩。
 
 ## 填坑
 ----

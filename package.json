@@ -1,7 +1,7 @@
 {
   "name": "react-2048-game",
   "version": "0.1.0",
-  "homepage": "http://devrsi0n.github.io/2048",
+  "homepage": "https://devrsi0n.github.io/React-2048-game/",
   "license": "MIT",
   "dependencies": {
     "classnames": "^2.2.5",
@@ -20,7 +20,9 @@
     "prepush": "PRE_PUSH=true node scripts/test.js --env=jsdom",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "predeploy": "node scripts/build.js",
+    "deploy": "gh-pages -d build"
   },
   "jest": {
     "collectCoverageFrom": [
