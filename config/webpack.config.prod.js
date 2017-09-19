@@ -22,7 +22,7 @@ const publicPath = paths.servedPath;
 // For these, "homepage" can be set to "." to enable relative asset paths.
 const shouldUseRelativeAssetPaths = publicPath === './';
 // Source maps are resource heavy and can cause out of memory issue for large source files.
-const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
+const shouldUseSourceMap = false;
 // `publicUrl` is just like `publicPath`, but we will provide it to our app
 // as %PUBLIC_URL% in `index.html` and `process.env.PUBLIC_URL` in JavaScript.
 // Omit trailing slash as %PUBLIC_URL%/xyz looks better than %PUBLIC_URL%xyz.
@@ -36,7 +36,6 @@ if (env.stringified['process.env'].NODE_ENV !== '"production"') {
   throw new Error('Production builds must have NODE_ENV=production.');
 }
 
-// Note: defined here because it will be used more than once.
 const cssFilename = 'static/css/[name].[contenthash:8].css';
 
 // ExtractTextPlugin expects the build output to be flat.
@@ -50,7 +49,6 @@ const extractTextPluginOptions = shouldUseRelativeAssetPaths
 
 // This is the production configuration.
 // It compiles slowly and is focused on producing a fast and minimal bundle.
-// The development configuration is different and lives in a separate file.
 module.exports = {
   // Don't attempt to continue if there are any errors.
   bail: true,
@@ -180,6 +178,7 @@ module.exports = {
                         camelCase: true,
                         importLoaders: 1,
                         minimize: true,
+                        modules: true,
                         sourceMap: shouldUseSourceMap,
                       },
                     },

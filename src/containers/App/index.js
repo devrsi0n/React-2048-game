@@ -28,7 +28,7 @@ class App extends Component {
     super(...args);
 
     // debounce delay in ms
-    this.delay = process.env.NODE_ENV === 'production' ? 500 : 1;
+    this.delay = process.env.NODE_ENV === 'production' ? 300 : 1;
     console.log('delay', this.delay);
   }
 

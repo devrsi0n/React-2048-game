@@ -1,7 +1,7 @@
 {
   "name": "react-2048-game",
   "version": "0.1.0",
-  "private": true,
+  "homepage" : "http://devrsi0n.github.io/public",
   "dependencies": {
     "classnames": "^2.2.5",
     "lodash.debounce": "^4.0.8",
