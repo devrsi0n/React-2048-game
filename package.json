@@ -1,7 +1,7 @@
 {
   "name": "react-2048-game",
   "version": "0.1.0",
-  "homepage" : "http://devrsi0n.github.io/public",
+  "homepage" : "http://devrsi0n.github.io/2048",
   "dependencies": {
     "classnames": "^2.2.5",
     "lodash.debounce": "^4.0.8",
@@ -16,7 +16,7 @@
   },
   "scripts": {
     "precommit": "eslint --ext .js src",
-    "prepush": "jest",
+    "prepush": "PRE_PUSH=true node scripts/test.js --env=jsdom",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
