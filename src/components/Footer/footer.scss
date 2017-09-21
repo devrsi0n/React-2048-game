@@ -1,15 +1,11 @@
 @import '../../assets/styles/vars';
 
 .footer {
-  border-top: 1px solid $gray;
-  bottom: 25px;
+  border-top: 1px $border-color solid !important;
   color: $black;
   display: inline-block;
-  left: 0;
-  // position: absolute;
   margin-top: 30px;
-  padding-top: 40px;
-  right: 0;
+  padding: 40px 0 20px;
   width: 750px;
 
   .icon {

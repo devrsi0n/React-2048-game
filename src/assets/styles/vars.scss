@@ -4,11 +4,11 @@ $purple: #bd2df5;
 $deep-purple: lighten(#311b92, 10%);
 $indigo: lighten(#1a237e, 10%);
 $blue: #1d89ff;
-$light-blue: lighten(#1d89ff, 10%);
+$light-blue: lighten(#1d89ff, 20%);
 $cyan: lighten(#006064, 10%);
 $teal: lighten(#004d40, 10%);
 $green: #28b78d;
-$light-green: lighten(#28b78d, 10%);
+$light-green: lighten(#28b78d, 20%);
 $lime: lighten(#827717, 10%);
 $yellow: #feab3a;
 $amber: lighten(#ff6f00, 10%);
@@ -25,3 +25,5 @@ $peach: #ff79c6;
 
 $btn-bg: $black;
 $btn-color: $white;
+
+$border-color: #e1e4e8;
