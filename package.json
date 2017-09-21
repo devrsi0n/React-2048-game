@@ -135,10 +135,10 @@
             "global"
           ]
         }
-      ]
+      ],
+      "max-nesting-depth": 2
     },
     "ignoreFiles": [
-      "src/assets/styles/normalize.scss",
       "build/**/*.css"
     ]
   },

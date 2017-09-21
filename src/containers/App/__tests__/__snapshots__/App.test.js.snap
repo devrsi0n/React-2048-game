@@ -333,8 +333,18 @@ exports[`<App /> component render 1`] = `
     />
   </div>
   <div
-    id="comments"
-  />
+    className="comments"
+  >
+    <div
+      id="gitmentHeader"
+    />
+    <div
+      id="gitmentComments"
+    />
+    <div
+      id="gitmentEditor"
+    />
+  </div>
   <div
     className="footer"
   >

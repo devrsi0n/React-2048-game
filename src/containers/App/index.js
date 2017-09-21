@@ -16,7 +16,7 @@ import {
   reset,
 } from '../../reducers/board';
 import i18n from '../../utils/i18n';
-import gitcomments from '../../utils/renderGitComments';
+import comments from '../../utils/gitComments';
 
 document.title = i18n.title;
 
@@ -47,7 +47,9 @@ class App extends Component {
   }
 
   componentDidMount() {
-    gitcomments.render(document.getElementById('comments'));
+    comments.renderHeader(document.getElementById('gitmentHeader'));
+    comments.renderComments(document.getElementById('gitmentComments'));
+    comments.renderEditor(document.getElementById('gitmentEditor'));
   }
 
   render() {
@@ -71,7 +73,12 @@ class App extends Component {
         <Tips>
           {i18n.tips}
         </Tips>
-        <div id="comments" />
+        <div className={styles.comments} >
+          {/* <p className={styles.commentsTitle}>{i18n.commentTitle}</p> */}
+          <div id="gitmentHeader" />
+          <div id="gitmentComments" />
+          <div id="gitmentEditor" />
+        </div>
         <Footer
           name={'devrsi0n'}
           profileUrl={'https://github.com/devrsi0n'}

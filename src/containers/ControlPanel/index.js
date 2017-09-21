@@ -20,6 +20,17 @@ import arrowSvg from '../../assets/svg/arrow.svg';
 import moveAudio from '../../assets/audio/move.mp3';
 import popupAudio from '../../assets/audio/popup.mp3';
 
+const keyUp = 38;
+const keyRight = 39;
+const keyDown = 40;
+const keyLeft = 37;
+const keyW = 87;
+const keyS = 83;
+const keyA = 65;
+const keyD = 68;
+const keyN = 78;
+const keySpace = 32;
+
 class ControlPanel extends Component {
   static propTypes = {
     delay: PropTypes.number.isRequired,
@@ -53,23 +64,28 @@ class ControlPanel extends Component {
 
   componentWillMount() {
     const { delay } = this.props;
-    document.body.addEventListener('keyup',
+    window.addEventListener('keyup',
       debounce(this.handleKeyDown, delay, {
         leading: true,
       }));
+
+    // Disable arrow and space keys scroll page
+    window.addEventListener('keydown', (e) => {
+      switch (e.keyCode) {
+        case keyUp:
+        case keyDown:
+        case keyLeft:
+        case keyRight:
+        case keySpace:
+          e.preventDefault();
+          break;
+        default:
+          break;
+      }
+    }, false);
   }
 
   handleKeyDown(e) {
-    const keyUp = 38;
-    const keyRight = 39;
-    const keyDown = 40;
-    const keyLeft = 37;
-    const keyW = 87;
-    const keyS = 83;
-    const keyA = 65;
-    const keyD = 68;
-    const keyN = 78;
-
     switch (e.keyCode) {
       case keyW:
       case keyUp:

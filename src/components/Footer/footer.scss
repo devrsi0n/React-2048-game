@@ -1,12 +1,16 @@
 @import '../../assets/styles/vars';
 
 .footer {
+  border-top: 1px solid $gray;
   bottom: 25px;
   color: $black;
   display: inline-block;
   left: 0;
-  position: absolute;
+  // position: absolute;
+  margin-top: 30px;
+  padding-top: 40px;
   right: 0;
+  width: 750px;
 
   .icon {
     margin-right: 10px;
@@ -25,8 +29,14 @@
   }
 
   .link {
-    border-bottom: 1px dotted;
     margin-left: 10px;
-    text-decoration: none;
+    outline: none !important;
+    text-decoration: none !important;
+
+    &:hover,
+    &:active,
+    &:focus {
+      outline: none !important;
+    }
   }
 }

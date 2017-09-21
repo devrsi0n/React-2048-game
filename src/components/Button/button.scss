@@ -12,23 +12,23 @@
   .btn-md,
   .btn-sm,
   .btn-xs {
-    color: #1d89ff;
+    color: $blue;
   }
 
   .btn-warn {
-    color: #feab3a;
+    color: $yellow;
   }
 
   .btn-danger {
-    color: #ff5964;
+    color: $red;
   }
 
   .btn-success {
-    color: #28b78d;
+    color: $green;
   }
 
   .btn-royal {
-    color: #bd2df5;
+    color: $purple;
   }
 
   .btn,
@@ -94,7 +94,7 @@
     border-radius: 2px;
     border-width: 0;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.18), 0 1px 5px 0 rgba(0, 0, 0, 0.15);
-    color: #1d89ff;
+    color: $blue;
     cursor: pointer;
     font-family: inherit;
     font-size: 20px;
@@ -158,7 +158,7 @@
 
     &.btn-default {
       background: #fff;
-      color: #1d89ff;
+      color: $blue;
 
       &::after {
         background: rgba(29, 137, 255, 0.5);
@@ -166,12 +166,12 @@
     }
 
     &.btn-primary {
-      background: #1d89ff;
+      background: $blue;
       color: #fff;
     }
 
     &.btn-warn {
-      background: #feab3a;
+      background: $yellow;
       color: #fff;
 
       &::after {
@@ -180,7 +180,7 @@
     }
 
     &.btn-danger {
-      background: #ff5964;
+      background: $red;
       color: #fff;
 
       &::after {
@@ -189,7 +189,7 @@
     }
 
     &.btn-success {
-      background: #28b78d;
+      background: $green;
       color: #fff;
 
       &::after {
@@ -198,7 +198,7 @@
     }
 
     &.btn-royal {
-      background: #bd2df5;
+      background: $purple;
       color: #fff;
 
       &::after {
