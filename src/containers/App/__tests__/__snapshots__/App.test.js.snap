@@ -333,6 +333,9 @@ exports[`<App /> component render 1`] = `
     />
   </div>
   <div
+    id="comments"
+  />
+  <div
     className="footer"
   >
     <a

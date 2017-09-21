@@ -2821,6 +2821,12 @@ gh-pages@^1.0.0:
     graceful-fs "4.1.11"
     rimraf "^2.5.4"
 
+gitment@^0.0.3:
+  version "0.0.3"
+  resolved "http://registry.npm.taobao.org/gitment/download/gitment-0.0.3.tgz#dbccbad7480b1345b656913bd70eff792a7b38b8"
+  dependencies:
+    mobx "^3.1.7"
+
 glob-base@^0.3.0:
   version "0.3.0"
   resolved "http://registry.npm.taobao.org/glob-base/download/glob-base-0.3.0.tgz#dbb164f6221b1c0b1ccf82aea328b497df0ea3c4"
@@ -4391,6 +4397,10 @@ mkdirp@0.5.1, mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdi
   resolved "http://registry.npm.taobao.org/mkdirp/download/mkdirp-0.5.1.tgz#30057438eac6cf7f8c4767f38648d6697d75c903"
   dependencies:
     minimist "0.0.8"
+
+mobx@^3.1.7:
+  version "3.3.0"
+  resolved "http://registry.npm.taobao.org/mobx/download/mobx-3.3.0.tgz#1bc1dd7e78547065af04b49bdb7f2098cada47aa"
 
 ms@2.0.0:
   version "2.0.0"

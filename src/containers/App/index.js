@@ -16,6 +16,7 @@ import {
   reset,
 } from '../../reducers/board';
 import i18n from '../../utils/i18n';
+import gitcomments from '../../utils/renderGitComments';
 
 document.title = i18n.title;
 
@@ -34,7 +35,6 @@ class App extends Component {
 
     // debounce delay in ms
     this.delay = process.env.NODE_ENV === 'production' ? 300 : 1;
-    console.log('delay', this.delay);
   }
 
   componentWillMount() {
@@ -44,6 +44,10 @@ class App extends Component {
     } else {
       this.props.onInit();
     }
+  }
+
+  componentDidMount() {
+    gitcomments.render(document.getElementById('comments'));
   }
 
   render() {
@@ -67,6 +71,7 @@ class App extends Component {
         <Tips>
           {i18n.tips}
         </Tips>
+        <div id="comments" />
         <Footer
           name={'devrsi0n'}
           profileUrl={'https://github.com/devrsi0n'}
