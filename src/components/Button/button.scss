@@ -48,26 +48,26 @@
 
   .btn-lg {
     font-family: inherit;
-    font-size: 24px;
-    padding: 8px 15px;
+    font-size: 2.2rem;
+    padding: 0.62vw 1.15vw;
   }
 
   .btn-md {
     font-family: inherit;
-    font-size: 20px;
-    padding: 5px 12px;
+    font-size: 2rem;
+    padding: 0.38vw 0.92vw;
   }
 
   .btn-sm {
     font-family: inherit;
-    font-size: 16px;
-    padding: 4px 10px;
+    font-size: 1.8rem;
+    padding: 0.31vw 0.77vw;
   }
 
   .btn-xs {
     font-family: inherit;
-    font-size: 12px;
-    padding: 3px 8px;
+    font-size: 1.6rem;
+    padding: 0.23vw 0.62vw;
   }
 
   @keyframes :global(ripple) {
@@ -97,11 +97,11 @@
     color: $blue;
     cursor: pointer;
     font-family: inherit;
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 400;
     margin: 0;
     overflow: hidden;
-    padding: 5px 12px;
+    padding: 0.38vw 0.92vw;
     position: relative;
     text-transform: uppercase;
     transform: translate3d(0, 0, 0);
@@ -134,26 +134,26 @@
 
     &.btn-xs {
       font-family: inherit;
-      font-size: 12px;
-      padding: 3px 8px;
+      font-size: 1.6rem;
+      padding: 0.23vw 0.62vw;
     }
 
     &.btn-sm {
       font-family: inherit;
-      font-size: 16px;
-      padding: 4px 10px;
+      font-size: 1.8rem;
+      padding: 0.31vw 0.77vw;
     }
 
     &.btn-md {
       font-family: inherit;
-      font-size: 20px;
-      padding: 5px 12px;
+      font-size: 2rem;
+      padding: 0.304vw 0.763vw;
     }
 
     &.btn-lg {
       font-family: inherit;
-      font-size: 24px;
-      padding: 8px 15px;
+      font-size: 2.2rem;
+      padding: 0.62vw 1.15vw;
     }
 
     &.btn-default {

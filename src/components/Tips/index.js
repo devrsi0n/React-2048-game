@@ -2,15 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './tips.scss';
 
-export default function Tips({ children }) {
+export default function Tips({ title, content }) {
   return (
     <div className={styles.tips}>
-      {/* eslint-disable react/no-danger */}
-      <p className={styles.content} dangerouslySetInnerHTML={{ __html: children }} />
+      <p className={styles.title}>{ title }</p>
+      <p className={styles.content}>{ content }</p>
     </div>
   );
 }
 
 Tips.propTypes = {
-  children: PropTypes.node.isRequired,
+  title: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
 };

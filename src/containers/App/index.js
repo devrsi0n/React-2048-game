@@ -70,11 +70,13 @@ class App extends Component {
             <ControlPanel delay={delay} />
           </div>
         </div>
-        <Tips>
-          {i18n.tips}
-        </Tips>
+        <Tips title={i18n.tipTitle} content={i18n.tipContent} />
         <div className={styles.comments} >
-          {/* <p className={styles.commentsTitle}>{i18n.commentTitle}</p> */}
+          {/* eslint-disable react/no-danger */}
+          <p
+            className={styles.commentsTitle}
+            dangerouslySetInnerHTML={{ __html: i18n.commentTitle }}
+          />
           <div id="gitmentHeader" />
           <div id="gitmentComments" />
           <div id="gitmentEditor" />
@@ -84,8 +86,8 @@ class App extends Component {
           profileUrl={'https://github.com/devrsi0n'}
           repoUrl={'https://github.com/devrsi0n/React-2048-game'}
         />
+        {/* <Modal display >{gameOver} */}
         <Modal display={gameOver} >
-          {/* <Modal display > */}
           {
             score > 999 ? <Firework /> : null
           }

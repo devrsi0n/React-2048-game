@@ -9,19 +9,18 @@
     border-radius: 0;
     border-width: 0;
     color: $white;
-    font-size: 18px;
+    font-size: 1.25rem;
     font-weight: 500;
-    height: 40px;
     margin: 0;
-    padding: 12px 25px;
+    padding: 1vw 2vw;
     position: relative;
     z-index: 0;
   }
 
   .text {
     color: $gray;
-    font-size: 12px;
-    margin-bottom: 6px;
+    font-size: 0.5rem;
+    margin-bottom: 0.5vw;
   }
 
   .score::before {
@@ -51,6 +50,6 @@
   }
 
   .best {
-    margin-left: 15px;
+    margin-left: 1vw;
   }
 }

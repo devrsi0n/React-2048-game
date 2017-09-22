@@ -1,8 +1,5 @@
 @import '../../assets/styles/vars';
 
-$border: 10px solid $btn-color;
-$trans-border: 10px solid transparent;
-
 .panel {
   align-items: center;
   display: flex;
@@ -17,13 +14,13 @@ $trans-border: 10px solid transparent;
   }
 
   .btn {
-    margin-right: 10px;
-    margin-top: 10px;
+    margin-right: 0.77vw;
+    margin-top: 0.77vw;
   }
 
   img {
-    margin-top: 4px;
-    width: 27px;
+    margin-bottom: -0.35vw;
+    width: 2.1vw;
   }
 
   .arrows {

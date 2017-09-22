@@ -3,9 +3,8 @@
 // stylelint-disable
 :global {
   .gitment-container {
-    color: #333;
-    font-family: sans-serif;
-    font-size: 14px;
+    color: $black;
+    font-size: 1.05rem;
     line-height: 1.5;
     word-wrap: break-word;
   }
@@ -82,13 +81,13 @@
 
   a.gitment-header-issue-link,
   a.gitment-header-issue-link:visited {
-    color: #666;
+    color: $light-black;
     float: right;
     line-height: 30px;
   }
 
   a.gitment-header-issue-link:hover {
-    color: #666;
+    color: $light-black;
   }
 
   .gitment-comments-loading,
@@ -135,8 +134,9 @@
 
   .gitment-comment-main,
   .gitment-editor-main {
+    background: $white;
     position: relative;
-    border: 1px solid #CFD8DC;
+    border: 1px solid $border-color;
     border-radius: 0;
   }
 
@@ -159,7 +159,7 @@
   .gitment-editor-main::before,
   .gitment-comment-main::before {
     border-width: 8px;
-    border-right-color: #CFD8DC;
+    border-right-color: $border-color;
   }
 
   .gitment-editor-main::after,
@@ -171,22 +171,22 @@
   }
 
   .gitment-comment-header {
-    margin: 12px 15px;
     color: #666;
-    background-color: #fff;
-    border-radius: 3px;
+    text-align: left;
+    border-bottom: 1px solid $border-color;
+    padding: 12px 12px 12px 12px;
   }
 
   .gitment-editor-header {
     padding: 0;
     margin: 0;
-    border-bottom: 1px solid #CFD8DC;
+    border-bottom: 1px solid $border-color;
   }
 
   a.gitment-comment-name,
   a.gitment-comment-name:visited {
     font-weight: 600;
-    color: #666;
+    color: $light-black;
   }
 
   .gitment-editor-tabs {
@@ -197,9 +197,9 @@
   .gitment-editor-tab {
     display: inline-block;
     padding: 11px 12px;
-    font-size: 14px;
+    font-size: 1.05rem;
     line-height: 20px;
-    color: #666;
+    color: $light-black;
     text-decoration: none;
     background-color: transparent;
     border-width: 0 1px;
@@ -217,7 +217,7 @@
   .gitment-editor-tab.gitment-selected {
     color: #333;
     background-color: #fff;
-    border-color: #CFD8DC;
+    border-color: $border-color;
   }
 
   .gitment-editor-login {
@@ -235,7 +235,7 @@
 
   a.gitment-editor-logout-link,
   a.gitment-editor-logout-link:visited {
-    color: #666;
+    color: $light-black;
   }
 
   a.gitment-editor-logout-link:hover {
@@ -248,6 +248,7 @@
     margin: 12px 15px;
     overflow: hidden;
     border-radius: 3px;
+    text-align: left;
   }
 
   .gitment-comment-body-folded {
@@ -271,7 +272,7 @@
     display: block !important;
     content: "Click to Expand" !important;
     text-align: center;
-    color: #666;
+    color: $light-black;
     position: absolute;
     width: 100%;
     height: 50px;
@@ -306,7 +307,7 @@
 
     max-width: 100%;
     margin: 0;
-    font-size: 14px;
+    font-size: 1.05rem;
     line-height: 1.6;
 
     background-color: #fff;
@@ -327,13 +328,10 @@
 
   .gitment-editor-preview {
     min-height: 150px;
-
     padding: 16px;
     background-color: transparent;
-
     width: 100%;
-    font-size: 14px;
-
+    font-size: 1.05rem;
     line-height: 1.5;
     word-wrap: break-word;
   }
@@ -352,8 +350,8 @@
   a.gitment-editor-footer-tip {
     display: inline-block;
     padding-top: 10px;
-    font-size: 12px;
-    color: #666;
+    font-size: 0.9rem;
+    color: $light-black;
   }
 
   a.gitment-editor-footer-tip:hover {
@@ -371,7 +369,7 @@
   .gitment-comments-page-item {
     display: inline-block;
     cursor: pointer;
-    border: 1px solid #CFD8DC;
+    border: 1px solid $border-color;
     margin-left: -1px;
     padding: .25rem .5rem;
   }
@@ -393,7 +391,7 @@
     position: relative;
     display: inline-block;
     padding: 7px 13px;
-    font-size: 14px;
+    font-size: 1.05rem;
     font-weight: 600;
     line-height: 20px;
     white-space: nowrap;
@@ -430,7 +428,7 @@
     margin-top: 30px;
     margin-bottom: 20px;
     text-align: right;
-    font-size: 12px;
+    font-size: 0.9rem;
   }
 
   /*
@@ -443,7 +441,7 @@
     line-height: 1.5;
     color: #333;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 16px;
+    font-size: 1.2rem;
     line-height: 1.5;
     word-wrap: break-word;
   }
@@ -509,7 +507,7 @@
   }
 
   .gitment-markdown .pl-sr .pl-cce {
-    font-weight: bold;
+    font-weight: 500;
     color: #63a35c;
   }
 
@@ -520,7 +518,7 @@
   .gitment-markdown .pl-mh,
   .gitment-markdown .pl-mh .pl-en,
   .gitment-markdown .pl-ms {
-    font-weight: bold;
+    font-weight: 500;
     color: #1d3e81;
   }
 
@@ -605,7 +603,7 @@
   }
 
   .gitment-markdown h1 {
-    font-size: 2em;
+    font-size: 2rem;
     margin: 0.67em 0;
   }
 
@@ -621,7 +619,7 @@
   .gitment-markdown kbd,
   .gitment-markdown pre {
     font-family: monospace, monospace;
-    font-size: 1em;
+    font-size: 1rem;
   }
 
   .gitment-markdown hr {
@@ -708,32 +706,32 @@
   }
 
   .gitment-markdown h1 {
-    font-size: 32px;
+    font-size: 2.41rem;
     font-weight: 600;
   }
 
   .gitment-markdown h2 {
-    font-size: 24px;
+    font-size: 1.8rem;
     font-weight: 600;
   }
 
   .gitment-markdown h3 {
-    font-size: 20px;
+    font-size: 1.5rem;
     font-weight: 600;
   }
 
   .gitment-markdown h4 {
-    font-size: 16px;
+    font-size: 1.2rem;
     font-weight: 600;
   }
 
   .gitment-markdown h5 {
-    font-size: 14px;
+    font-size: 1.05rem;
     font-weight: 600;
   }
 
   .gitment-markdown h6 {
-    font-size: 12px;
+    font-size: 0.9rem;
     font-weight: 600;
   }
 
@@ -771,7 +769,7 @@
 
   .gitment-markdown code {
     font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-    font-size: 12px;
+    font-size: 0.9rem;
   }
 
   .gitment-markdown pre {
@@ -883,7 +881,7 @@
   .gitment-markdown kbd {
     display: inline-block;
     padding: 3px 5px;
-    font-size: 11px;
+    font-size: 0.83rem;
     line-height: 10px;
     color: #444d56;
     vertical-align: middle;
@@ -937,36 +935,36 @@
 
   .gitment-markdown h1 {
     padding-bottom: 0.3em;
-    font-size: 2em;
+    font-size: 2rem;
     border-bottom: 1px solid #eaecef;
   }
 
   .gitment-markdown h2 {
     padding-bottom: 0.3em;
-    font-size: 1.5em;
+    font-size: 1.5rem;
     border-bottom: 1px solid #eaecef;
   }
 
   .gitment-markdown h3 {
-    font-size: 1.25em;
+    font-size: 1.25rem;
   }
 
   .gitment-markdown h4 {
-    font-size: 1em;
+    font-size: 1rem;
   }
 
   .gitment-markdown h5 {
-    font-size: 0.875em;
+    font-size: 0.875rem;
   }
 
   .gitment-markdown h6 {
-    font-size: 0.85em;
+    font-size: 0.85rem;
     color: #6a737d;
   }
 
   .gitment-markdown ul,
   .gitment-markdown ol {
-    padding-left: 2em;
+    padding-left: 2rem;
   }
 
   .gitment-markdown ul ul,
@@ -992,7 +990,7 @@
   .gitment-markdown dl dt {
     padding: 0;
     margin-top: 16px;
-    font-size: 1em;
+    font-size: 1rem;
     font-style: italic;
     font-weight: 600;
   }

@@ -1,6 +1,10 @@
 @import './vars';
 
 :global {
+  html {
+    font-size: 1vw;
+  }
+
   body {
     background: #fff;
     font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
@@ -11,11 +15,14 @@
   input,
   button,
   submit {
-    // stylelint-disable-next-line
-    border: none;
+    border: 0;
   }
 
   p {
     margin: 0;
+  }
+
+  img {
+    max-width: 100%;
   }
 }

@@ -5,17 +5,10 @@ exports[`<Tips /> component render 1`] = `
   className="tips"
 >
   <p
+    className="title"
+  />
+  <p
     className="content"
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": <p>
-          hello 
-          <span>
-            world
-          </span>
-        </p>,
-      }
-    }
   />
 </div>
 `;

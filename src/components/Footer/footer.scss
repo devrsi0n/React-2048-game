@@ -4,12 +4,13 @@
   border-top: 1px $border-color solid !important;
   color: $black;
   display: inline-block;
-  margin-top: 30px;
-  padding: 40px 0 20px;
-  width: 750px;
+  font-size: 1.25rem;
+  margin-top: 3.08vw;
+  padding: 3.08vw 0 1.54vw;
+  width: 45vw;
 
   .icon {
-    margin-right: 10px;
+    margin-right: 0.77vw;
   }
 
   .github {
@@ -19,13 +20,13 @@
 
   .heart {
     color: $peach;
-    font-size: 18px;
-    margin: 0 10px;
+    font-size: 1rem;
+    margin: 0 0.77vw;
     transform: scale(0.9);
   }
 
   .link {
-    margin-left: 10px;
+    margin-left: 0.77vw;
     outline: none !important;
     text-decoration: none !important;
 
