@@ -23,13 +23,16 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "ci": "CI=true node scripts/test.js --env=jsdom",
+    "codecov": "CI=true node scripts/test.js --env=jsdom --coverage && codecov",
     "predeploy": "node scripts/build.js",
     "deploy": "gh-pages -d build"
   },
   "jest": {
+    "collectCoverage": true,
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}"
     ],
+    "coverageDirectory": "./coverage/",
     "setupFiles": [
       "<rootDir>/config/polyfills.js",
       "jest-localstorage-mock"

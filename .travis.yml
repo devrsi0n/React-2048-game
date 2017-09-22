@@ -5,5 +5,10 @@ node_js:
 cache:
   directories:
     - "node_modules"
+install:
+  - npm install -g codecov
 script:
-  yarn ci
+  - yarn run ci
+after_script:
+  - yarn run codecov
+  - yarn run deploy
