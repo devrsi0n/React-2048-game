@@ -3,8 +3,8 @@ const data = {
   default: 'cn',
   text: {
     title: {
-      cn: '2048 游戏',
-      en: '2048 game',
+      cn: '2048',
+      en: '2048',
     },
     score: {
       cn: '得分',
@@ -29,7 +29,7 @@ const lang = (() => {
   let lan = navigator.language || navigator.userLanguage;
   lan = lan === 'zh-CN' ? 'cn' : lan;
   lan = lan === 'en-US' ? 'en' : lan;
-  lan = ['cn', 'en'].includes(lan) ? lan : 'en'; // Set 'en' as default language
+  lan = ['cn', 'en'].includes(lan) ? lan : data.default; // Set default language
   return lan;
 })();
 
