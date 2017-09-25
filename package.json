@@ -1,7 +1,7 @@
 {
   "name": "react-2048-game",
   "version": "0.1.0",
-  "homepage": "https://devrsi0n.github.io/React-2048-game/",
+  "homepage": "https://devrsi0n.github.io/react-2048-game/",
   "license": "MIT",
   "dependencies": {
     "classnames": "^2.2.5",

@@ -4,29 +4,25 @@ exports[`<Scores /> component render 1`] = `
 <div
   className="index"
 >
-  <h2
+  <p
     className="score"
   >
+    SCORE
     <p
       className="text"
     >
-      SCORE
-    </p>
-    <p>
       0
     </p>
-  </h2>
-  <h2
+  </p>
+  <p
     className="score best"
   >
+    BEST
     <p
       className="text"
     >
-      BEST
-    </p>
-    <p>
       0
     </p>
-  </h2>
+  </p>
 </div>
 `;

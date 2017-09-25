@@ -4,27 +4,27 @@ import { connect } from 'react-redux';
 import styles from './scores.scss';
 import i18n from '../../utils/i18n';
 
-function Title({ score, bestScore }) {
+function Scores({ score, bestScore }) {
   const { index, text, best } = styles;
   return (
     <div className={index}>
-      <h2 className={styles.score}>
-        <p className={text}>{i18n.score}</p>
-        <p>
+      <p className={styles.score}>
+        {i18n.score}
+        <p className={text}>
           {score}
         </p>
-      </h2>
-      <h2 className={`${styles.score} ${best}`}>
-        <p className={text}>{i18n.best}</p>
-        <p>
+      </p>
+      <p className={`${styles.score} ${best}`}>
+        {i18n.best}
+        <p className={text}>
           { bestScore }
         </p>
-      </h2>
+      </p>
     </div>
   );
 }
 
-Title.propTypes = {
+Scores.propTypes = {
   score: PropTypes.number.isRequired,
   bestScore: PropTypes.number.isRequired,
 };
@@ -34,4 +34,4 @@ const mapStateToProps = state => ({
   bestScore: state.board.bestScore,
 });
 
-export default connect(mapStateToProps)(Title);
+export default connect(mapStateToProps)(Scores);

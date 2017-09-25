@@ -185,30 +185,26 @@ exports[`<App /> component render 1`] = `
         <div
           className="index"
         >
-          <h2
+          <p
             className="score"
           >
+            SCORE
             <p
               className="text"
             >
-              SCORE
-            </p>
-            <p>
               0
             </p>
-          </h2>
-          <h2
+          </p>
+          <p
             className="score best"
           >
+            BEST
             <p
               className="text"
             >
-              BEST
-            </p>
-            <p>
               0
             </p>
-          </h2>
+          </p>
         </div>
       </div>
       <div
@@ -360,7 +356,7 @@ exports[`<App /> component render 1`] = `
   >
     <a
       className="icon"
-      href="https://github.com/devrsi0n/React-2048-game"
+      href="https://github.com/devrsi0n/react-2048-game"
     >
       <img
         alt="github repo"

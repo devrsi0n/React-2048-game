@@ -1,4 +1,4 @@
-# React-2048-game
+# react-2048-game
 
 [![travis-ci](https://travis-ci.org/devrsi0n/React-2048-game.svg?branch=master)](https://travis-ci.org/devrsi0n/React-2048-game)
 [![codecov](https://codecov.io/gh/devrsi0n/React-2048-game/branch/master/graph/badge.svg)](https://codecov.io/gh/devrsi0n/React-2048-game)
@@ -6,12 +6,12 @@
 
 2048 是一个经典的消除小游戏，基于 React 和 Redux 的最佳实践构建一个好玩又好看的小游戏是我这段时间以来的目标。
 
-👉 [开始游戏](https://devrsi0n.github.io/React-2048-game/)
+👉 [开始游戏](https://devrsi0n.github.io/react-2048-game/)
 
 ## 预览
 
-<a href="https://devrsi0n.github.io/React-2048-game/">
-  <img src="https://github.com/devrsi0n/React-2048-game/blob/master/screenshot.png" width="500px" alt="screenshot">
+<a href="https://devrsi0n.github.io/react-2048-game/">
+  <img src="https://github.com/devrsi0n/react-2048-game/blob/master/screenshot.png" width="500px" alt="screenshot">
 </a>
 
 ## 运行 & 测试 & 打包
@@ -19,8 +19,8 @@
 建议使用 yarn 来管理依赖包。
 
 ```bash
-  git clone git@github.com:devrsi0n/React-2048-game.git
-  cd React-2048-game
+  git clone git@github.com:devrsi0n/react-2048-game.git
+  cd react-2048-game
   yarn # 安装依赖包
   yarn start # 开启调试模式
   yarn test # 自动测试
