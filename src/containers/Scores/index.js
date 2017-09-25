@@ -10,15 +10,15 @@ function Scores({ score, bestScore }) {
     <div className={index}>
       <p className={styles.score}>
         {i18n.score}
-        <p className={text}>
+        <em className={text}>
           {score}
-        </p>
+        </em>
       </p>
       <p className={`${styles.score} ${best}`}>
         {i18n.best}
-        <p className={text}>
+        <em className={text}>
           { bestScore }
-        </p>
+        </em>
       </p>
     </div>
   );
@@ -30,8 +30,8 @@ Scores.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  score: state.board.score,
-  bestScore: state.board.bestScore,
+  score: state.present.board.present.score,
+  bestScore: state.present.board.present.bestScore,
 });
 
 export default connect(mapStateToProps)(Scores);

@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { ActionCreators } from 'redux-undo';
 import debounce from 'lodash.debounce';
+
 import WrapperButton from './WrapperButton';
 import Speaker from '../Speaker';
 import styles from './controlPanel.scss';
@@ -12,7 +14,6 @@ import {
   moveRight,
   placeRandom,
   reset,
-  revert,
 } from '../../reducers/board';
 import resetSvg from '../../assets/svg/reset.svg';
 import undoSvg from '../../assets/svg/undo.svg';
@@ -40,8 +41,9 @@ class ControlPanel extends Component {
     onMoveRight: PropTypes.func.isRequired,
     onPlaceRandom: PropTypes.func.isRequired,
     onReset: PropTypes.func.isRequired,
-    onRevert: PropTypes.func.isRequired,
+    onUndo: PropTypes.func.isRequired,
     isMoved: PropTypes.bool.isRequired,
+    pastLen: PropTypes.number.isRequired,
   }
 
   constructor(...args) {
@@ -56,6 +58,7 @@ class ControlPanel extends Component {
     this.handleMoveRight = this.handleMoveRight.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.handleSpeakerClick = this.handleSpeakerClick.bind(this);
+    this.handleUndo = this.handleUndo.bind(this);
 
     this.state = {
       speakerOn: true,
@@ -148,6 +151,12 @@ class ControlPanel extends Component {
     this.generalMove(this.props.onMoveRight);
   }
 
+  handleUndo() {
+    if (this.props.pastLen > 3) {
+      this.props.onUndo();
+    }
+  }
+
   render() {
     const { delay } = this.props;
     return (
@@ -156,7 +165,7 @@ class ControlPanel extends Component {
           <div className={styles.btn}>
             <Speaker onClick={this.handleSpeakerClick} />
           </div>
-          <WrapperButton onClick={debounce(this.props.onRevert, delay)} >
+          <WrapperButton onClick={debounce(this.handleUndo, delay)} >
             <img src={undoSvg} alt="undo" />
           </WrapperButton>
           <WrapperButton onClick={debounce(this.props.onReset, delay)} >
@@ -183,7 +192,8 @@ class ControlPanel extends Component {
 }
 
 const mapStateToProps = state => ({
-  isMoved: state.board.isMoved,
+  isMoved: state.present.board.present.isMoved,
+  pastLen: state.past.length,
 });
 const mapDispatchToProps = dispatch => ({
   onPlaceRandom() {
@@ -204,8 +214,10 @@ const mapDispatchToProps = dispatch => ({
   onReset() {
     dispatch(reset());
   },
-  onRevert() {
-    dispatch(revert());
+  onUndo() {
+    // Undo move and generated cell
+    dispatch(ActionCreators.undo());
+    dispatch(ActionCreators.undo());
   },
 });
 

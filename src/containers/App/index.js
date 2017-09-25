@@ -38,10 +38,16 @@ class App extends Component {
   }
 
   componentWillMount() {
-    const board = JSON.parse(localStorage.getItem('board')) || null;
-    if (board && !board.gameOver) {
-      this.props.onInit(board);
-    } else {
+    let isEmpty = true;
+    for (const row of this.props.matrix) {
+      for (const cell of row) {
+        if (cell > 0) {
+          isEmpty = false;
+          break;
+        }
+      }
+    }
+    if (isEmpty) {
       this.props.onInit();
     }
   }
@@ -114,9 +120,9 @@ class App extends Component {
 }
 
 const mapStateToProps = state => ({
-  matrix: state.board.matrix,
-  score: state.board.score,
-  gameOver: state.board.gameOver,
+  matrix: state.present.board.present.matrix,
+  score: state.present.board.present.score,
+  gameOver: state.present.board.present.gameOver,
 });
 const mapDispatchToProps = dispatch => ({
   onInit(board) {

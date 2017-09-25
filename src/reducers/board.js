@@ -7,17 +7,10 @@ const MOVE_DOWN = 'MOVE_DOWN';
 const MOVE_LEFT = 'MOVE_LEFT';
 const MOVE_RIGHT = 'MOVE_RIGHT';
 const RESET = 'RESET';
-const REVERT = 'REVERT';
 
 // Game board state
 const initState = {
   matrix: [
-    [0, 0, 0, 0],
-    [0, 0, 0, 0],
-    [0, 0, 0, 0],
-    [0, 0, 0, 0],
-  ],
-  prevMatrix: [
     [0, 0, 0, 0],
     [0, 0, 0, 0],
     [0, 0, 0, 0],
@@ -30,9 +23,8 @@ const initState = {
 };
 
 class Matrix {
-  constructor({ matrix, prevMatrix, score, bestScore, gameOver, isMoved }) {
+  constructor({ matrix, score, bestScore, gameOver, isMoved }) {
     this.matrix = JSON.parse(JSON.stringify(matrix));
-    this.prevMatrix = JSON.parse(JSON.stringify(prevMatrix));
     this.score = score;
     this.bestScore = bestScore;
     this.gameOver = gameOver;
@@ -317,11 +309,6 @@ export default function (state = initState, action) {
       const result = mat.addRandomNumToMatrix();
       return { ...copy, ...result, bestScore: state.bestScore };
     }
-    case REVERT:
-    {
-      const { prevMatrix } = state;
-      return { ...state, matrix: prevMatrix };
-    }
     default:
     {
       return state;
@@ -345,4 +332,3 @@ export const moveDown = actionCreator(MOVE_DOWN);
 export const moveLeft = actionCreator(MOVE_LEFT);
 export const moveRight = actionCreator(MOVE_RIGHT);
 export const reset = actionCreator(RESET);
-export const revert = actionCreator(REVERT);

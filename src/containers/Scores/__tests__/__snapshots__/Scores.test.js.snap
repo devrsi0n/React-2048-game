@@ -8,21 +8,21 @@ exports[`<Scores /> component render 1`] = `
     className="score"
   >
     SCORE
-    <p
+    <em
       className="text"
     >
       0
-    </p>
+    </em>
   </p>
   <p
     className="score best"
   >
     BEST
-    <p
+    <em
       className="text"
     >
       0
-    </p>
+    </em>
   </p>
 </div>
 `;
