@@ -57,4 +57,20 @@
   .best {
     margin-left: 1vw;
   }
+
+  @media all and (max-width: $break-point) {
+    .score {
+      height: 11vw;
+      padding: 3vw 0 2vw;
+      width: 20vw;
+    }
+
+    .text {
+      padding-top: 1.35vw;
+    }
+
+    .best {
+      margin-left: 2vw;
+    }
+  }
 }

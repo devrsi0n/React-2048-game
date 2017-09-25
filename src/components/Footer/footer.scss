@@ -10,7 +10,7 @@
   width: 45vw;
 
   .icon {
-    margin-right: 0.77vw;
+    margin-right: 10px;
   }
 
   .github {
@@ -21,12 +21,12 @@
   .heart {
     color: $peach;
     font-size: 1rem;
-    margin: 0 0.77vw;
+    margin: 0 10px;
     transform: scale(0.9);
   }
 
   .link {
-    margin-left: 0.77vw;
+    margin-left: 10px;
     outline: none !important;
     text-decoration: none !important;
 
@@ -35,5 +35,12 @@
     &:focus {
       outline: none !important;
     }
+  }
+}
+
+@media all and (max-width: $break-point) {
+  .footer {
+    margin-top: 8vw;
+    width: 85vw;
   }
 }

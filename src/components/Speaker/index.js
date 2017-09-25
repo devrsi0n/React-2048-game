@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Button from '../../components/Button';
+import Button from '../Button';
 import speakerOn from '../../assets/svg/speaker-on.svg';
 import speakerOff from '../../assets/svg/speaker-off.svg';
 

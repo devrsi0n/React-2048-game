@@ -1,0 +1,41 @@
+.mobile-app {
+  padding: 8vw 4vw 0;
+  text-align: center;
+
+  .head {
+    display: flex;
+    justify-content: space-around;
+
+    .title {
+      font-size: 3rem;
+      // margin-top: -2.5vw;
+      text-align: left;
+    }
+  }
+
+  .row-btn {
+    align-items: center;
+    display: flex;
+    flex-grow: 1;
+    margin: 3vw 0 6vw;
+
+    .btn {
+      margin-right: 4vw;
+      margin-top: 4vw;
+    }
+
+    img {
+      margin-bottom: -1vw;
+      // width: 2.1vw;
+    }
+
+    .last {
+      margin-right: -1.5vw;
+    }
+  }
+
+  .board {
+    display: flex;
+    justify-content: center;
+  }
+}

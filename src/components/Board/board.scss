@@ -1,4 +1,12 @@
+@import '../../assets/styles/vars';
+
 .board {
   border-collapse: separate;
   border-spacing: 0.25vw;
+}
+
+@media all and (max-width: $break-point) {
+  .board {
+    border-spacing: 1vw;
+  }
 }

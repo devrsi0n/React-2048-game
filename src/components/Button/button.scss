@@ -150,6 +150,13 @@
       padding: 0.304vw 0.763vw;
     }
 
+    // TODO: Add more media query on button size
+    @media all and (max-width: $break-point) {
+      &.btn-md {
+        padding: 1vw 3vw;
+      }
+    }
+
     &.btn-lg {
       font-family: inherit;
       font-size: 2.2rem;

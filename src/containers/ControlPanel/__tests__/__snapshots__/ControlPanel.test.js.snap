@@ -21,7 +21,7 @@ exports[`<ControlPanel /> component render 1`] = `
       </button>
     </div>
     <div
-      className="btn"
+      className="btn "
     >
       <button
         className="btn-flat btn-md btn-default"
@@ -34,7 +34,7 @@ exports[`<ControlPanel /> component render 1`] = `
       </button>
     </div>
     <div
-      className="btn"
+      className="btn "
     >
       <button
         className="btn-flat btn-md btn-default"
@@ -48,7 +48,7 @@ exports[`<ControlPanel /> component render 1`] = `
     </div>
   </div>
   <div
-    className="btn"
+    className="btn "
   >
     <button
       className="btn-flat btn-md btn-primary"
@@ -65,7 +65,7 @@ exports[`<ControlPanel /> component render 1`] = `
     className="arrows"
   >
     <div
-      className="btn"
+      className="btn "
     >
       <button
         className="btn-flat btn-md btn-primary"
@@ -79,7 +79,7 @@ exports[`<ControlPanel /> component render 1`] = `
       </button>
     </div>
     <div
-      className="btn"
+      className="btn "
     >
       <button
         className="btn-flat btn-md btn-primary"
@@ -93,7 +93,7 @@ exports[`<ControlPanel /> component render 1`] = `
       </button>
     </div>
     <div
-      className="btn"
+      className="btn "
     >
       <button
         className="btn-flat btn-md btn-primary"

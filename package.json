@@ -19,19 +19,22 @@
   },
   "scripts": {
     "precommit": "eslint --ext .js src",
-    "prepush": "PRE_PUSH=true node scripts/test.js --env=jsdom",
+    "prepush": "PRE_PUSH=true node scripts/test.js",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom",
-    "ci": "CI=true node scripts/test.js --env=jsdom",
-    "codecov": "CI=true node scripts/test.js --env=jsdom --coverage && codecov",
+    "test": "node scripts/test.js",
+    "ci": "CI=true node scripts/test.js",
+    "codecov": "CI=true node scripts/test.js --coverage && codecov",
     "predeploy": "node scripts/build.js",
     "deploy": "gh-pages -d build"
   },
   "jest": {
     "collectCoverage": true,
     "collectCoverageFrom": [
-      "src/**/*.{js,jsx}"
+      "src/components/**/*.{js,jsx}",
+      "src/containers/**/*.{js,jsx}",
+      "src/reducers/**/*.{js,jsx}",
+      "src/utils/**/*.{js,jsx}"
     ],
     "coverageDirectory": "./coverage/",
     "setupFiles": [
@@ -42,7 +45,7 @@
       "<rootDir>/src/**/__tests__/**/*.js?(x)",
       "<rootDir>/src/**/?(*.)(spec|test).js?(x)"
     ],
-    "testEnvironment": "node",
+    "testEnvironment": "jsdom",
     "testURL": "http://localhost",
     "transform": {
       "^.+\\.(js|jsx)$": "<rootDir>/node_modules/babel-jest",

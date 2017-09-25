@@ -1,6 +1,7 @@
 @import '../../assets/styles/vars';
 
-$len: 6vw;
+$web-len: 6vw;
+$mobile-len: 20vw;
 
 .cell {
   align-items: center;
@@ -8,9 +9,16 @@ $len: 6vw;
   border-radius: 5px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.18), 0 1px 5px 0 rgba(0, 0, 0, 0.15);
   display: flex;
-  height: $len;
+  height: $web-len;
   justify-content: center;
-  width: $len;
+  width: $web-len;
+}
+
+@media all and (max-width: $break-point) {
+  .cell {
+    height: $mobile-len;
+    width: $mobile-len;
+  }
 }
 
 .number {

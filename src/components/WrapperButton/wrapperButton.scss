@@ -1,0 +1,13 @@
+@import '../../assets/styles/vars';
+
+.btn {
+  margin-right: 0.77vw;
+  margin-top: 0.77vw;
+}
+
+@media all and (max-width: $break-point) {
+  .btn {
+    margin-right: 4vw;
+    margin-top: 4vw;
+  }
+}

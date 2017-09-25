@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import { ActionCreators } from 'redux-undo';
 import debounce from 'lodash.debounce';
 
-import WrapperButton from './WrapperButton';
-import Speaker from '../Speaker';
+import WrapperButton from '../../components/WrapperButton';
+import Speaker from '../../components/Speaker';
 import styles from './controlPanel.scss';
 import {
   moveUp,
@@ -18,8 +18,6 @@ import {
 import resetSvg from '../../assets/svg/reset.svg';
 import undoSvg from '../../assets/svg/undo.svg';
 import arrowSvg from '../../assets/svg/arrow.svg';
-import moveAudio from '../../assets/audio/move.mp3';
-import popupAudio from '../../assets/audio/popup.mp3';
 
 const keyUp = 38;
 const keyRight = 39;
@@ -44,13 +42,12 @@ class ControlPanel extends Component {
     onUndo: PropTypes.func.isRequired,
     isMoved: PropTypes.bool.isRequired,
     pastLen: PropTypes.number.isRequired,
+    audioMove: PropTypes.instanceOf(Audio).isRequired,
+    audioPopup: PropTypes.instanceOf(Audio).isRequired,
   }
 
   constructor(...args) {
     super(...args);
-
-    this.audioMove = new Audio(moveAudio);
-    this.audioPopup = new Audio(popupAudio);
 
     this.handleMoveUp = this.handleMoveUp.bind(this);
     this.handleMoveDown = this.handleMoveDown.bind(this);
@@ -125,18 +122,18 @@ class ControlPanel extends Component {
     const { isMoved } = this.props;
     const { speakerOn } = this.state;
     if (speakerOn && isMoved) {
-      this.audioMove.play();
+      this.props.audioMove.play();
     }
     setTimeout(() => {
       this.props.onPlaceRandom();
       if (speakerOn && isMoved) {
-        this.audioPopup.play();
+        this.props.audioPopup.play();
       }
     }, 300);
   }
 
   handleMoveUp() {
-    return this.generalMove(this.props.onMoveUp);
+    this.generalMove(this.props.onMoveUp);
   }
 
   handleMoveDown() {
@@ -163,12 +160,12 @@ class ControlPanel extends Component {
       <div className={styles.panel}>
         <div className={styles.rowBtn}>
           <div className={styles.btn}>
-            <Speaker onClick={this.handleSpeakerClick} />
+            <Speaker onClick={debounce(this.handleSpeakerClick, 500)} />
           </div>
-          <WrapperButton onClick={debounce(this.handleUndo, delay)} >
+          <WrapperButton onClick={debounce(this.handleUndo, 500)} >
             <img src={undoSvg} alt="undo" />
           </WrapperButton>
-          <WrapperButton onClick={debounce(this.props.onReset, delay)} >
+          <WrapperButton onClick={debounce(this.props.onReset, 500)} >
             <img src={resetSvg} alt="reset" />
           </WrapperButton>
         </div>

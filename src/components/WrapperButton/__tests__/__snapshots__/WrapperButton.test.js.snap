@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<WrapperButton /> component render 1`] = `
+<div
+  className="btn "
+>
+  <button
+    className="btn-flat btn-md btn-default"
+    onClick={[Function]}
+  >
+    <p>
+      test
+    </p>
+  </button>
+</div>
+`;

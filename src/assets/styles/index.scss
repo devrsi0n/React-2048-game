@@ -3,6 +3,7 @@
 :global {
   html {
     font-size: 1vw;
+    touch-action: manipulation;
   }
 
   body {
@@ -12,12 +13,23 @@
     padding: 0;
   }
 
+  @media all and (max-width: $break-point) {
+    html {
+      font-size: 4vw;
+    }
+  }
+
   input,
   button,
   submit {
     border: 0;
   }
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
   h6,
   p {
     margin: 0;

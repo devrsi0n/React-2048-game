@@ -5,14 +5,10 @@ import Tips from '..';
 describe('<Tips />', () => {
   it('component render', () => {
     let tips = renderer.create(
-      <Tips>
-        test
-      </Tips>,
+      <Tips title={'test'} content={'hello'} />,
     ).toJSON();
     tips = renderer.create(
-      <Tips>
-        <p>hello <span>world</span></p>
-      </Tips>,
+      <Tips title={'hello'} content={'world'} />,
     ).toJSON();
     expect(tips).toMatchSnapshot();
   });

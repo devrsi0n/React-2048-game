@@ -4,14 +4,15 @@
 [![codecov](https://codecov.io/gh/devrsi0n/React-2048-game/branch/master/graph/badge.svg)](https://codecov.io/gh/devrsi0n/React-2048-game)
 [![codebeat](https://codebeat.co/badges/9b33ea0e-5cf5-44b3-9a52-438667fb2673)](https://codebeat.co/projects/github-com-devrsi0n-react-2048-game-master)
 
-2048 是一个经典的消除小游戏，基于 React 和 Redux 的最佳实践构建一个好玩又好看的小游戏是我这段时间以来的目标。
+基于 React 和 Redux 最佳实践构建的一个好玩又好看的消除小游戏， 2048。
 
 👉 [开始游戏](https://devrsi0n.github.io/react-2048-game/)
 
 ## 预览
 
 <a href="https://devrsi0n.github.io/react-2048-game/">
-  <img src="https://github.com/devrsi0n/react-2048-game/blob/master/screenshot.png" width="500px" alt="screenshot">
+  <img src="https://github.com/devrsi0n/react-2048-game/blob/master/screenshot.png" width="45%" alt="screenshot">
+  <img src="https://github.com/devrsi0n/react-2048-game/blob/master/screenshot-iPhone.png" width="45%" alt="screenshot">
 </a>
 
 ## 运行 & 测试 & 打包
