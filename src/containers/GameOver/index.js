@@ -15,7 +15,6 @@ function GameOver({ gameOver, score, onReset }) {
         {
           score > 999 ? <Firework /> : null
         }
-        <Firework />
         <div>
           <div className={styles.gameover}>
             <div className={styles.text}> {i18n.score} </div>

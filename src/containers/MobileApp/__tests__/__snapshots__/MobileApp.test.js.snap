@@ -282,16 +282,6 @@ exports[`<MobileApp /> component render 1`] = `
       <div
         className="modal center"
       >
-        <div
-          className="firework"
-        >
-          <div
-            className="before"
-          />
-          <div
-            className="after"
-          />
-        </div>
         <div>
           <div
             className="gameover"
