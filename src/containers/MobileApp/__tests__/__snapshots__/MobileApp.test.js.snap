@@ -258,7 +258,7 @@ exports[`<MobileApp /> component render 1`] = `
         src="github.png"
       />
     </a>
-    Made with
+    Build with
     <span
       className="heart"
     >

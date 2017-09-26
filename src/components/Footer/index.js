@@ -9,7 +9,7 @@ export default function Footer({ name, repoUrl, profileUrl }) {
       <a href={repoUrl} className={styles.icon}>
         <img src={github} className={styles.github} alt="github repo" />
       </a>
-      Made with
+      Build with
       <span className={styles.heart}>♥</span>
       by
       <a href={profileUrl} className={styles.link}>{ name }</a>
