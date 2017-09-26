@@ -10,13 +10,13 @@
 
 ## 预览
 
-#### 移动端
+### 移动端
 
 <a href="https://devrsi0n.github.io/react-2048-game/">
     <img src="https://github.com/devrsi0n/react-2048-game/blob/master/screenshot-iPhone.png" width="25%" alt="screenshot">
 </a>
 
-#### 桌面端
+### 桌面端
 
 <a href="https://devrsi0n.github.io/react-2048-game/">
   <img src="https://github.com/devrsi0n/react-2048-game/blob/master/screenshot.png" width="80%" alt="screenshot">
