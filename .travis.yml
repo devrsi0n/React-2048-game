@@ -3,6 +3,7 @@ node_js:
   - "node"
   - "6"
 install:
+  - yarn
   - npm install -g codecov
 script:
   - yarn run ci
