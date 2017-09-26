@@ -1,7 +1,7 @@
 # react-2048-game
 
-[![travis-ci](https://travis-ci.org/devrsi0n/React-2048-game.svg?branch=master)](https://travis-ci.org/devrsi0n/react-2048-game)
-[![codecov](https://codecov.io/gh/devrsi0n/React-2048-game/branch/master/graph/badge.svg)](https://codecov.io/gh/devrsi0n/react-2048-game)
+[![travis-ci](https://travis-ci.org/devrsi0n/react-2048-game.svg?branch=master)](https://travis-ci.org/devrsi0n/react-2048-game)
+[![codecov](https://codecov.io/gh/devrsi0n/react-2048-game/branch/master/graph/badge.svg)](https://codecov.io/gh/devrsi0n/react-2048-game)
 [![codebeat](https://codebeat.co/badges/9b33ea0e-5cf5-44b3-9a52-438667fb2673)](https://codebeat.co/projects/github-com-devrsi0n-react-2048-game-master)
 
 基于 React 和 Redux 最佳实践构建的一个好玩又好看的消除小游戏， 2048。
