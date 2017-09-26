@@ -31,10 +31,7 @@
   "jest": {
     "collectCoverage": true,
     "collectCoverageFrom": [
-      "src/components/**/*.{js,jsx}",
-      "src/containers/**/*.{js,jsx}",
-      "src/reducers/**/*.{js,jsx}",
-      "src/utils/**/*.{js,jsx}"
+      "src/**/*.{js,jsx}"
     ],
     "coverageDirectory": "./coverage/",
     "setupFiles": [
@@ -44,6 +41,10 @@
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.js?(x)",
       "<rootDir>/src/**/?(*.)(spec|test).js?(x)"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/src/containers/WebApp/__tests__/WebApp.test.js",
+      "<rootDir>/src/containers/App/__tests__/App.test.js"
     ],
     "testEnvironment": "jsdom",
     "testURL": "http://localhost",

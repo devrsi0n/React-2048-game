@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import debounce from 'lodash.debounce';
 import { ActionCreators } from 'redux-undo';
 import Board from '../../components/Board';
 import swipeDetect from '../../utils/mobileEvents';
@@ -85,7 +84,7 @@ class MobileApp extends Component {
       if (speakerOn && isMoved) {
         this.props.audioPopup.play();
       }
-    }, 300);
+    }, 100);
   }
 
   handleMoveUp() {
@@ -127,12 +126,12 @@ class MobileApp extends Component {
             <Scores />
             <div className={styles.rowBtn}>
               <div className={styles.btn}>
-                <Speaker onClick={debounce(this.handleSpeakerClick, 500)} />
+                <Speaker onClick={this.handleSpeakerClick} />
               </div>
-              <WrapperButton onClick={debounce(this.handleUndo, 500)} >
+              <WrapperButton onClick={this.handleUndo} >
                 <img src={undoSvg} alt="undo" />
               </WrapperButton>
-              <WrapperButton onClick={debounce(this.props.onReset, 500)} cls={styles.last} >
+              <WrapperButton onClick={this.props.onReset} cls={styles.last} >
                 <img src={resetSvg} alt="reset" />
               </WrapperButton>
             </div>
