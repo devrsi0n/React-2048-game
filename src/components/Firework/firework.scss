@@ -1,8 +1,14 @@
+@import '../../assets/styles/vars';
+
 :global {
 
-  $particles: 80;
+  $particles: 100;
   $width: 500;
   $height: 500;
+
+  @media #{$mobile} {
+    $particles: 30;
+  }
 
   // Create the explosion...
   $box-shadow: ();

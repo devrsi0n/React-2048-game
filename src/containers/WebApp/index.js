@@ -1,19 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import debounce from 'lodash.debounce';
 import styles from './webApp.scss';
-import resetSvg from '../../assets/svg/reset.svg';
 import Board from '../../components/Board';
-import Modal from '../../components/Modal';
-import Firework from '../../components/Firework';
 import Tips from '../../components/Tips';
 import Footer from '../../components/Footer';
 import ControlPanel from '../ControlPanel';
+import GameOver from '../GameOver';
 import Scores from '../Scores';
-import {
-  reset,
-} from '../../reducers/board';
 import i18n from '../../utils/i18n';
 import comments from '../../utils/gitComments';
 
@@ -21,11 +15,7 @@ document.title = i18n.title;
 
 class WebApp extends Component {
   static propTypes = {
-    onReset: PropTypes.func.isRequired,
-
     matrix: PropTypes.arrayOf(PropTypes.array).isRequired,
-    score: PropTypes.number.isRequired,
-    gameOver: PropTypes.bool.isRequired,
     audioMove: PropTypes.instanceOf(Audio).isRequired,
     audioPopup: PropTypes.instanceOf(Audio).isRequired,
   };
@@ -45,7 +35,7 @@ class WebApp extends Component {
 
   render() {
     const { delay } = this;
-    const { matrix, score, gameOver, audioMove, audioPopup } = this.props;
+    const { matrix, audioMove, audioPopup } = this.props;
 
     return (
       <div className={styles.app}>
@@ -77,28 +67,7 @@ class WebApp extends Component {
           profileUrl={'https://github.com/devrsi0n'}
           repoUrl={'https://github.com/devrsi0n/react-2048-game'}
         />
-        {/* <Modal display >{gameOver} */}
-        <Modal display={gameOver} >
-          {
-            score > 999 ? <Firework /> : null
-          }
-          <div>
-            <div className={styles.gameover}>
-              <div className={styles.text}> {i18n.score} </div>
-              <div className={styles.banner}>
-                <p>{score}</p>
-              </div>
-            </div>
-            <div className={styles.buttonWrapper}>
-              <button
-                className={styles.button}
-                onClick={debounce(this.props.onReset, delay)}
-              >
-                <img src={resetSvg} alt="reset" />
-              </button>
-            </div>
-          </div>
-        </Modal>
+        <GameOver />
       </div>
     );
   }
@@ -106,13 +75,6 @@ class WebApp extends Component {
 
 const mapStateToProps = state => ({
   matrix: state.present.board.present.matrix,
-  score: state.present.board.present.score,
-  gameOver: state.present.board.present.gameOver,
-});
-const mapDispatchToProps = dispatch => ({
-  onReset() {
-    dispatch(reset());
-  },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(WebApp);
+export default connect(mapStateToProps)(WebApp);

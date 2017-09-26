@@ -31,3 +31,10 @@ $border-color: #e1e4e8;
 
 // sizes
 $break-point: 768px;
+$mobile: 'all and (max-width : #{$break-point})';
+
+
+@function get-vw($object) {
+  $vw: (1440 * 0.01) * 1px;
+  @return ($object / $vw) * 1vw;
+}

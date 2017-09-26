@@ -24,6 +24,13 @@
   z-index: 11; /* 1px higher than the overlay layer */
 }
 
+@media #{$mobile} {
+  .modal {
+    margin-left: -37.5vw;
+    margin-top: -15vw;
+  }
+}
+
 .center {
   align-content: center;
   align-items: center;

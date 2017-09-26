@@ -18,11 +18,11 @@ export default function swipeDetect(el, callback) {
   let distX;
   let distY;
   // required min distance traveled to be considered swipe
-  const threshold = 25;
+  const threshold = 75;
   // maximum distance allowed at the same time in perpendicular direction
-  const restraint = 25;
+  const restraint = 50;
   // maximum time allowed to travel that distance
-  const allowedTime = 750;
+  const allowedTime = 300;
   let elapsedTime;
   let startTime;
   const handleSwipe = callback || (() => {});

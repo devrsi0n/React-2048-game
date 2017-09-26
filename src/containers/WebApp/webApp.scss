@@ -30,59 +30,6 @@
   margin-left: 3vw;
 }
 
-
-$box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.18), 0 1px 5px 0 rgba(0, 0, 0, 0.15);
-
-.gameover {
-  background: #e1f5fe;
-  border-radius: 10px;
-  box-shadow: $box-shadow;
-  height: 10vw;
-  width: 30vw;
-
-  .text {
-    color: $blue;
-    font-size: 1.5rem;
-    padding: 0.7vw 0;
-  }
-
-  .banner {
-    background: $blue;
-    box-shadow: $box-shadow;
-    color: #fff;
-    font-size: 3rem;
-    height: 5vw;
-    line-height: 5vw;
-    margin: 0 -3px 0 -3px;
-  }
-
-}
-
-.button-wrapper {
-  background: #fff;
-  border: 0;
-  border-radius: 3vw;
-  box-shadow: $box-shadow;
-  flex: 0 0 100%;
-  margin: auto;
-  margin-top: 1vw;
-  width: 80%;
-
-  .button {
-    background: transparent;
-    cursor: pointer;
-  }
-
-  .button:focus {
-    outline: 0;
-  }
-
-  img {
-    padding: 0.5vw;
-    width: 3vw;
-  }
-}
-
 .comments {
   background: $gray;
   border-radius: 5px;

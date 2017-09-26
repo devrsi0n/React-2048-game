@@ -14,6 +14,7 @@ import {
 } from '../../reducers/board';
 import styles from './mobileApp.scss';
 import Scores from '../Scores';
+import GameOver from '../GameOver';
 import Speaker from '../../components/Speaker';
 import WrapperButton from '../../components/WrapperButton';
 import Footer from '../../components/Footer';
@@ -145,6 +146,7 @@ class MobileApp extends Component {
           profileUrl={'https://github.com/devrsi0n'}
           repoUrl={'https://github.com/devrsi0n/react-2048-game'}
         />
+        <GameOver />
       </div>
     );
   }

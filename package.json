@@ -42,10 +42,6 @@
       "<rootDir>/src/**/__tests__/**/*.js?(x)",
       "<rootDir>/src/**/?(*.)(spec|test).js?(x)"
     ],
-    "testPathIgnorePatterns": [
-      "<rootDir>/src/containers/WebApp/__tests__/WebApp.test.js",
-      "<rootDir>/src/containers/App/__tests__/App.test.js"
-    ],
     "testEnvironment": "jsdom",
     "testURL": "http://localhost",
     "transform": {

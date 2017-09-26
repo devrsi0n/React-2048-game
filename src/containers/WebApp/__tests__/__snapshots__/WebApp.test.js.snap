@@ -374,46 +374,58 @@ exports[`<App /> component render 1`] = `
       devrsi0n
     </a>
   </div>
-  <div
-    className="hidden"
-  >
+  <div>
     <div
-      className="overlay"
-    />
-    <div
-      className="modal center"
+      className="hidden"
     >
-      <div>
+      <div
+        className="overlay"
+      />
+      <div
+        className="modal center"
+      >
         <div
-          className="gameover"
+          className="firework"
         >
           <div
-            className="text"
-          >
-             
-            SCORE
-             
-          </div>
+            className="before"
+          />
           <div
-            className="banner"
-          >
-            <p>
-              0
-            </p>
-          </div>
+            className="after"
+          />
         </div>
-        <div
-          className="buttonWrapper"
-        >
-          <button
-            className="button"
-            onClick={[Function]}
+        <div>
+          <div
+            className="gameover"
           >
-            <img
-              alt="reset"
-              src="reset.svg"
-            />
-          </button>
+            <div
+              className="text"
+            >
+               
+              SCORE
+               
+            </div>
+            <div
+              className="banner"
+            >
+              <p>
+                0
+              </p>
+            </div>
+          </div>
+          <div
+            className="buttonWrapper"
+          >
+            <button
+              className="button"
+              onClick={[Function]}
+            >
+              <img
+                alt="reset"
+                src="reset.svg"
+              />
+            </button>
+          </div>
         </div>
       </div>
     </div>
