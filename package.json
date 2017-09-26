@@ -22,6 +22,7 @@
     "prepush": "PRE_PUSH=true node scripts/test.js",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
+    "analyze": "ANALYZE=true node scripts/build.js",
     "test": "node scripts/test.js",
     "ci": "CI=true node scripts/test.js",
     "codecov": "CI=true node scripts/test.js --coverage && codecov",
@@ -191,6 +192,7 @@
     "sw-precache-webpack-plugin": "0.11.4",
     "url-loader": "0.5.9",
     "webpack": "^3.5.1",
+    "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-server": "^2.7.1",
     "webpack-manifest-plugin": "^1.2.1"
   }
