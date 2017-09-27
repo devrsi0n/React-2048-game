@@ -14,6 +14,7 @@ const paths = require('./paths');
 const getClientEnvironment = require('./env');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const pkg = require(paths.appPackageJson);
+const CompressionPlugin = require("compression-webpack-plugin");
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 // Webpack uses `publicPath` to determine where the app is being served from.
@@ -73,6 +74,11 @@ const prodConfig = {
       path
         .relative(paths.appSrc, info.absoluteResourcePath)
         .replace(/\\/g, '/'),
+  },
+  externals: {
+    // Use CDN
+    "react": "React",
+    "react-dom": "ReactDOM",
   },
   resolve: {
     // This allows you to set a fallback for where Webpack should look for modules.
@@ -322,6 +328,14 @@ const prodConfig = {
     // https://github.com/jmblog/how-to-optimize-momentjs-with-webpack
     // You can remove this if you don't use Moment.js:
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+
+    new CompressionPlugin({
+      asset: "[path].gz[query]",
+      algorithm: "gzip",
+      test: /\.(js|html|css)$/,
+      threshold: 10240,
+      minRatio: 0.8,
+    }),
 
     new StyleLintPlugin({
       context: 'src',
