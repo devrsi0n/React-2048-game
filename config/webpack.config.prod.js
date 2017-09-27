@@ -79,6 +79,7 @@ const prodConfig = {
     // Use CDN
     "react": "React",
     "react-dom": "ReactDOM",
+    "mobx": "mobx", // gitment dependency
   },
   resolve: {
     // This allows you to set a fallback for where Webpack should look for modules.

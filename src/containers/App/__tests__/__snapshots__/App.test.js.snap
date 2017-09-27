@@ -357,7 +357,7 @@ exports[`<MobileApp /> component render 1`] = `
     >
       <a
         className="icon"
-        href="https://github.com/devrsi0n/react-2048-game"
+        href="https://github.com/devrsi0n/React-2048-game"
       >
         <img
           alt="github repo"

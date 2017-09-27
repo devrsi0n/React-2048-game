@@ -65,7 +65,7 @@ class WebApp extends Component {
         <Footer
           name={'devrsi0n'}
           profileUrl={'https://github.com/devrsi0n'}
-          repoUrl={'https://github.com/devrsi0n/react-2048-game'}
+          repoUrl={'https://github.com/devrsi0n/React-2048-game'}
         />
         <GameOver />
       </div>
