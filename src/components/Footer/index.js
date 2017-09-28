@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styles from './footer.scss';
-import github from '../../assets/images/github.png';
+import React from "react";
+import PropTypes from "prop-types";
+import styles from "./footer.scss";
+import github from "../../assets/images/github.png";
 
 export default function Footer({ name, repoUrl, profileUrl }) {
   return (
@@ -12,7 +12,9 @@ export default function Footer({ name, repoUrl, profileUrl }) {
       Build with
       <span className={styles.heart}>♥</span>
       by
-      <a href={profileUrl} className={styles.link}>{ name }</a>
+      <a href={profileUrl} className={styles.link}>
+        {name}
+      </a>
     </div>
   );
 }
@@ -20,5 +22,5 @@ export default function Footer({ name, repoUrl, profileUrl }) {
 Footer.propTypes = {
   name: PropTypes.string.isRequired,
   repoUrl: PropTypes.string.isRequired,
-  profileUrl: PropTypes.string.isRequired,
+  profileUrl: PropTypes.string.isRequired
 };

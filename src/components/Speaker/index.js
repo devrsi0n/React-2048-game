@@ -1,19 +1,19 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import Button from '../Button';
-import speakerOn from '../../assets/svg/speaker-on.svg';
-import speakerOff from '../../assets/svg/speaker-off.svg';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import Button from "../Button";
+import speakerOn from "../../assets/svg/speaker-on.svg";
+import speakerOff from "../../assets/svg/speaker-off.svg";
 
 export default class Speaker extends Component {
   static propTypes = {
-    onClick: PropTypes.func.isRequired,
-  }
+    onClick: PropTypes.func.isRequired
+  };
 
   constructor(...args) {
     super(...args);
 
     this.state = {
-      speaker: speakerOn,
+      speaker: speakerOn
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -22,7 +22,7 @@ export default class Speaker extends Component {
     const { speaker } = this.state;
     const prevStatus = speaker === speakerOn;
     this.setState({
-      speaker: prevStatus ? speakerOff : speakerOn,
+      speaker: prevStatus ? speakerOff : speakerOn
     });
     this.props.onClick(!prevStatus);
   }

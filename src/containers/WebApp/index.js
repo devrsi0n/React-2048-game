@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import styles from './webApp.scss';
-import Board from '../../components/Board';
-import Tips from '../../components/Tips';
-import Footer from '../../components/Footer';
-import ControlPanel from '../ControlPanel';
-import GameOver from '../GameOver';
-import Scores from '../Scores';
-import i18n from '../../utils/i18n';
-import comments from '../../utils/gitComments';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import styles from "./webApp.scss";
+import Board from "../../components/Board";
+import Tips from "../../components/Tips";
+import Footer from "../../components/Footer";
+import ControlPanel from "../ControlPanel";
+import GameOver from "../GameOver";
+import Scores from "../Scores";
+import i18n from "../../utils/i18n";
+import comments from "../../utils/gitComments";
 
 document.title = i18n.title;
 
@@ -17,20 +17,20 @@ class WebApp extends Component {
   static propTypes = {
     matrix: PropTypes.arrayOf(PropTypes.array).isRequired,
     audioMove: PropTypes.instanceOf(Audio).isRequired,
-    audioPopup: PropTypes.instanceOf(Audio).isRequired,
+    audioPopup: PropTypes.instanceOf(Audio).isRequired
   };
 
   constructor(...args) {
     super(...args);
 
     // debounce delay in ms
-    this.delay = process.env.NODE_ENV === 'production' ? 300 : 1;
+    this.delay = process.env.NODE_ENV === "production" ? 300 : 1;
   }
 
   componentDidMount() {
-    comments.renderHeader(document.getElementById('gitmentHeader'));
-    comments.renderComments(document.getElementById('gitmentComments'));
-    comments.renderEditor(document.getElementById('gitmentEditor'));
+    comments.renderHeader(document.getElementById("gitmentHeader"));
+    comments.renderComments(document.getElementById("gitmentComments"));
+    comments.renderEditor(document.getElementById("gitmentEditor"));
   }
 
   render() {
@@ -48,11 +48,15 @@ class WebApp extends Component {
             <div>
               <Scores />
             </div>
-            <ControlPanel delay={delay} audioMove={audioMove} audioPopup={audioPopup} />
+            <ControlPanel
+              delay={delay}
+              audioMove={audioMove}
+              audioPopup={audioPopup}
+            />
           </div>
         </div>
         <Tips title={i18n.tipTitle} content={i18n.tipContent} />
-        <div className={styles.comments} >
+        <div className={styles.comments}>
           {/* eslint-disable react/no-danger */}
           <p
             className={styles.commentsTitle}
@@ -63,9 +67,9 @@ class WebApp extends Component {
           <div id="gitmentEditor" />
         </div>
         <Footer
-          name={'devrsi0n'}
-          profileUrl={'https://github.com/devrsi0n'}
-          repoUrl={'https://github.com/devrsi0n/React-2048-game'}
+          name={"devrsi0n"}
+          profileUrl={"https://github.com/devrsi0n"}
+          repoUrl={"https://github.com/devrsi0n/React-2048-game"}
         />
         <GameOver />
       </div>
@@ -74,7 +78,7 @@ class WebApp extends Component {
 }
 
 const mapStateToProps = state => ({
-  matrix: state.present.board.present.matrix,
+  matrix: state.present.board.present.matrix
 });
 
 export default connect(mapStateToProps)(WebApp);

@@ -1,11 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classnames from 'classnames';
-import styles from './cell.scss';
+import React from "react";
+import PropTypes from "prop-types";
+import classnames from "classnames";
+import styles from "./cell.scss";
 
 export default class Cell extends React.Component {
   static propTypes = {
-    value: PropTypes.number.isRequired,
+    value: PropTypes.number.isRequired
   };
 
   // constructor(props) {
@@ -17,17 +17,15 @@ export default class Cell extends React.Component {
   }
 
   render() {
-    const {
-      props: { value },
-    } = this;
+    const { props: { value } } = this;
 
     const color = `color-${value}`;
     return (
       <td>
-        <div className={classnames([styles.cell, { [styles[color]]: !!value }])}>
-          <div className={styles.number}>
-            { value || null }
-          </div>
+        <div
+          className={classnames([styles.cell, { [styles[color]]: !!value }])}
+        >
+          <div className={styles.number}>{value || null}</div>
         </div>
       </td>
     );

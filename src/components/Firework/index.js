@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 // import PropTypes from 'prop-types';
-import './firework.scss';
+import "./firework.scss";
 
 export default function Firework() {
   return (
@@ -10,4 +10,3 @@ export default function Firework() {
     </div>
   );
 }
-

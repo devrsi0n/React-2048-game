@@ -1,41 +1,34 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import './button.scss';
+import React from "react";
+import PropTypes from "prop-types";
+import "./button.scss";
 
 export default function Button({ children, onClick, type, size }) {
   const sizeCls = `btn-${size}`;
   const typeCls = `btn-${type}`;
   return (
     <button className={`btn-flat ${sizeCls} ${typeCls}`} onClick={onClick}>
-      { children }
+      {children}
     </button>
   );
 }
 
 Button.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.node,
-  ]),
+  children: PropTypes.oneOfType([PropTypes.node]),
   onClick: PropTypes.func,
-  size: PropTypes.oneOf([
-    'lg',
-    'md',
-    'sm',
-    'xs',
-  ]),
+  size: PropTypes.oneOf(["lg", "md", "sm", "xs"]),
   type: PropTypes.oneOf([
-    'default',
-    'primary',
-    'warn',
-    'danger',
-    'success',
-    'royal',
-  ]),
+    "default",
+    "primary",
+    "warn",
+    "danger",
+    "success",
+    "royal"
+  ])
 };
 
 Button.defaultProps = {
-  children: '',
+  children: "",
   onClick() {},
-  size: 'md',
-  type: 'default',
+  size: "md",
+  type: "default"
 };

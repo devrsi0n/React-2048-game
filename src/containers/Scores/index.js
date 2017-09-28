@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import styles from './scores.scss';
-import i18n from '../../utils/i18n';
+import React from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import styles from "./scores.scss";
+import i18n from "../../utils/i18n";
 
 function Scores({ score, bestScore }) {
   const { index, text, best } = styles;
@@ -10,15 +10,11 @@ function Scores({ score, bestScore }) {
     <div className={index}>
       <p className={styles.score}>
         {i18n.score}
-        <em className={text}>
-          {score}
-        </em>
+        <em className={text}>{score}</em>
       </p>
       <p className={`${styles.score} ${best}`}>
         {i18n.best}
-        <em className={text}>
-          { bestScore }
-        </em>
+        <em className={text}>{bestScore}</em>
       </p>
     </div>
   );
@@ -26,12 +22,12 @@ function Scores({ score, bestScore }) {
 
 Scores.propTypes = {
   score: PropTypes.number.isRequired,
-  bestScore: PropTypes.number.isRequired,
+  bestScore: PropTypes.number.isRequired
 };
 
 const mapStateToProps = state => ({
   score: state.present.board.present.score,
-  bestScore: state.present.board.present.bestScore,
+  bestScore: state.present.board.present.bestScore
 });
 
 export default connect(mapStateToProps)(Scores);

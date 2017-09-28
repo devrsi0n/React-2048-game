@@ -1,25 +1,19 @@
-
 // Actions
-const INIT = 'INIT';
-const PLACE_RANDOM = 'PLACE_RANDOM';
-const MOVE_UP = 'MOVE_UP';
-const MOVE_DOWN = 'MOVE_DOWN';
-const MOVE_LEFT = 'MOVE_LEFT';
-const MOVE_RIGHT = 'MOVE_RIGHT';
-const RESET = 'RESET';
+const INIT = "INIT";
+const PLACE_RANDOM = "PLACE_RANDOM";
+const MOVE_UP = "MOVE_UP";
+const MOVE_DOWN = "MOVE_DOWN";
+const MOVE_LEFT = "MOVE_LEFT";
+const MOVE_RIGHT = "MOVE_RIGHT";
+const RESET = "RESET";
 
 // Game board state
 const initState = {
-  matrix: [
-    [0, 0, 0, 0],
-    [0, 0, 0, 0],
-    [0, 0, 0, 0],
-    [0, 0, 0, 0],
-  ],
+  matrix: [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]],
   score: 0,
   bestScore: 0,
   gameOver: false,
-  isMoved: true,
+  isMoved: true
 };
 
 class Matrix {
@@ -55,7 +49,7 @@ class Matrix {
 
   checkGameOver(matrix) {
     const copy = JSON.parse(JSON.stringify(matrix));
-    const check = (func) => {
+    const check = func => {
       const isMoved = this.isBoardMoved(copy, func(copy).matrix);
       this.matrix = copy; // Reset to origin matrix
       return isMoved;
@@ -64,7 +58,7 @@ class Matrix {
       check(this.moveUp.bind(this)),
       check(this.moveDown.bind(this)),
       check(this.moveLeft.bind(this)),
-      check(this.moveRight.bind(this)),
+      check(this.moveRight.bind(this))
     ];
 
     return !moves.includes(true);
@@ -222,7 +216,7 @@ class Matrix {
       matrix,
       score,
       bestScore: score > bestScore ? score : bestScore,
-      isMoved,
+      isMoved
     };
     if (isMoved) {
       rsp.prevMatrix = prevMatrix;
@@ -264,53 +258,45 @@ class Matrix {
   }
 }
 
-export default function (state = initState, action) {
+export default function(state = initState, action) {
   let mat = new Matrix(state);
   switch (action.type) {
-    case INIT:
-    {
+    case INIT: {
       if (action.board) {
-        return { ...state, ...(action.board) };
+        return { ...state, ...action.board };
       }
       mat.addRandomNumToMatrix();
       const result = mat.addRandomNumToMatrix();
       return { ...state, ...result };
     }
-    case PLACE_RANDOM:
-    {
+    case PLACE_RANDOM: {
       const result = mat.addRandomNumToMatrix();
       return { ...state, ...result };
     }
-    case MOVE_UP:
-    {
+    case MOVE_UP: {
       const result = mat.moveUp();
       return { ...state, ...result };
     }
-    case MOVE_DOWN:
-    {
+    case MOVE_DOWN: {
       const result = mat.moveDown();
       return { ...state, ...result };
     }
-    case MOVE_LEFT:
-    {
+    case MOVE_LEFT: {
       const result = mat.moveLeft();
       return { ...state, ...result };
     }
-    case MOVE_RIGHT:
-    {
+    case MOVE_RIGHT: {
       const result = mat.moveRight();
       return { ...state, ...result };
     }
-    case RESET:
-    {
+    case RESET: {
       const copy = JSON.parse(JSON.stringify(initState));
       mat = new Matrix(copy);
       mat.addRandomNumToMatrix();
       const result = mat.addRandomNumToMatrix();
       return { ...copy, ...result, bestScore: state.bestScore };
     }
-    default:
-    {
+    default: {
       return state;
     }
   }
@@ -319,11 +305,11 @@ export default function (state = initState, action) {
 // Action creators
 export const initMatrix = board => ({
   type: INIT,
-  board,
+  board
 });
 
 const actionCreator = type => () => ({
-  type,
+  type
 });
 
 export const placeRandom = actionCreator(PLACE_RANDOM);

@@ -1,23 +1,23 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { ActionCreators } from 'redux-undo';
-import debounce from 'lodash.debounce';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { ActionCreators } from "redux-undo";
+import debounce from "lodash.debounce";
 
-import WrapperButton from '../../components/WrapperButton';
-import Speaker from '../../components/Speaker';
-import styles from './controlPanel.scss';
+import WrapperButton from "../../components/WrapperButton";
+import Speaker from "../../components/Speaker";
+import styles from "./controlPanel.scss";
 import {
   moveUp,
   moveDown,
   moveLeft,
   moveRight,
   placeRandom,
-  reset,
-} from '../../reducers/board';
-import resetSvg from '../../assets/svg/reset.svg';
-import undoSvg from '../../assets/svg/undo.svg';
-import arrowSvg from '../../assets/svg/arrow.svg';
+  reset
+} from "../../reducers/board";
+import resetSvg from "../../assets/svg/reset.svg";
+import undoSvg from "../../assets/svg/undo.svg";
+import arrowSvg from "../../assets/svg/arrow.svg";
 
 const keyUp = 38;
 const keyRight = 39;
@@ -43,8 +43,8 @@ class ControlPanel extends Component {
     isMoved: PropTypes.bool.isRequired,
     pastLen: PropTypes.number.isRequired,
     audioMove: PropTypes.instanceOf(Audio).isRequired,
-    audioPopup: PropTypes.instanceOf(Audio).isRequired,
-  }
+    audioPopup: PropTypes.instanceOf(Audio).isRequired
+  };
 
   constructor(...args) {
     super(...args);
@@ -58,19 +58,14 @@ class ControlPanel extends Component {
     this.handleUndo = this.handleUndo.bind(this);
 
     this.state = {
-      speakerOn: true,
+      speakerOn: true
     };
-  }
 
-  componentWillMount() {
     const { delay } = this.props;
-    window.addEventListener('keyup',
-      debounce(this.handleKeyDown, delay, {
-        leading: true,
-      }));
-
-    // Disable arrow and space keys scroll page
-    window.addEventListener('keydown', (e) => {
+    this.keyUpHandler = debounce(this.handleKeyDown, delay, {
+      leading: true
+    });
+    this.keyDownHandler = e => {
       switch (e.keyCode) {
         case keyUp:
         case keyDown:
@@ -82,7 +77,19 @@ class ControlPanel extends Component {
         default:
           break;
       }
-    }, false);
+    };
+  }
+
+  componentWillMount() {
+    window.addEventListener("keyup", this.keyUpHandler, false);
+
+    // Disable arrow and space keys scroll page
+    window.addEventListener("keydown", this.keyDownHandler, false);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("keyup", this.keyUpHandler, false);
+    window.removeEventListener("keydown", this.keyDownHandler, false);
   }
 
   handleKeyDown(e) {
@@ -113,7 +120,7 @@ class ControlPanel extends Component {
 
   handleSpeakerClick(speakerOn) {
     this.setState({
-      speakerOn,
+      speakerOn
     });
   }
 
@@ -162,24 +169,36 @@ class ControlPanel extends Component {
           <div className={styles.btn}>
             <Speaker onClick={debounce(this.handleSpeakerClick, 500)} />
           </div>
-          <WrapperButton onClick={debounce(this.handleUndo, 500)} >
+          <WrapperButton onClick={debounce(this.handleUndo, 500)}>
             <img src={undoSvg} alt="undo" />
           </WrapperButton>
-          <WrapperButton onClick={debounce(this.props.onReset, 500)} >
+          <WrapperButton onClick={debounce(this.props.onReset, 500)}>
             <img src={resetSvg} alt="reset" />
           </WrapperButton>
         </div>
-        <WrapperButton type="primary" onClick={debounce(this.handleMoveUp, delay)} >
+        <WrapperButton
+          type="primary"
+          onClick={debounce(this.handleMoveUp, delay)}
+        >
           <img src={arrowSvg} className={styles.up} alt="arrow up" />
         </WrapperButton>
-        <div className={styles.arrows} >
-          <WrapperButton type="primary" onClick={debounce(this.handleMoveLeft, delay)} >
+        <div className={styles.arrows}>
+          <WrapperButton
+            type="primary"
+            onClick={debounce(this.handleMoveLeft, delay)}
+          >
             <img src={arrowSvg} className={styles.left} alt="arrow left" />
           </WrapperButton>
-          <WrapperButton type="primary" onClick={debounce(this.handleMoveDown, delay)} >
+          <WrapperButton
+            type="primary"
+            onClick={debounce(this.handleMoveDown, delay)}
+          >
             <img src={arrowSvg} className={styles.down} alt="arrow down" />
           </WrapperButton>
-          <WrapperButton type="primary" onClick={debounce(this.handleMoveRight, delay)} >
+          <WrapperButton
+            type="primary"
+            onClick={debounce(this.handleMoveRight, delay)}
+          >
             <img src={arrowSvg} className={styles.right} alt="arrow right" />
           </WrapperButton>
         </div>
@@ -190,7 +209,7 @@ class ControlPanel extends Component {
 
 const mapStateToProps = state => ({
   isMoved: state.present.board.present.isMoved,
-  pastLen: state.past.length,
+  pastLen: state.past.length
 });
 const mapDispatchToProps = dispatch => ({
   onPlaceRandom() {
@@ -215,7 +234,7 @@ const mapDispatchToProps = dispatch => ({
     // Undo move and generated cell
     dispatch(ActionCreators.undo());
     dispatch(ActionCreators.undo());
-  },
+  }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ControlPanel);
