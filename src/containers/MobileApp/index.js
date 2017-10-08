@@ -141,9 +141,9 @@ class MobileApp extends Component {
           <Board matrix={matrix} />
         </div>
         <Footer
-          name={"devrsi0n"}
-          profileUrl={"https://github.com/devrsi0n"}
-          repoUrl={"https://github.com/devrsi0n/React-2048-game"}
+          name="devrsi0n"
+          profileUrl="https://github.com/devrsi0n"
+          repoUrl="https://github.com/devrsi0n/React-2048-game"
         />
         <GameOver />
       </div>
