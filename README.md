@@ -76,6 +76,17 @@
       alt="screenshot">
 </a>
 
+### PWA
+
+在支持 [PWA](https://zhuanlan.zhihu.com/p/25167289) 技术的浏览器上（比如较新的 chrome）打开页面会自动询问你添加到屏幕，添加过程就像原生应用的安装一样。应用添加之后就可以像原生应用一样离线操作，也可以卸载应用。
+
+<a href="https://devrsi0n.github.io/React-2048-game/">
+    <img
+      src="http://wx1.sinaimg.cn/large/8ef543b5gy1fkc6aoang1g20k00zkb2b.gif"
+      width="25%"
+      alt="screenshot">
+</a>
+
 ## 技术栈
 
 * [react](https://github.com/facebook/react)，组件式构建 UI
