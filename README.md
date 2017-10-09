@@ -65,6 +65,17 @@
       alt="screenshot">
 </a>
 
+### 评论系统
+
+借助 github issue api，使用 github 账号登录之后以回复 issue 的方式留言。留言支持 markdown 格式，和 github issue 体验类似。
+
+<a href="https://devrsi0n.github.io/React-2048-game/">
+    <img
+      src="http://wx3.sinaimg.cn/large/8ef543b5gy1fkc46le2z6g20u30i10vc.gif"
+      width="80%"
+      alt="screenshot">
+</a>
+
 ## 技术栈
 
 * [react](https://github.com/facebook/react)，组件式构建 UI

@@ -28,7 +28,7 @@ const keyS = 83;
 const keyA = 65;
 const keyD = 68;
 const keyN = 78;
-const keySpace = 32;
+// const keySpace = 32;
 
 class ControlPanel extends Component {
   static propTypes = {
@@ -71,7 +71,7 @@ class ControlPanel extends Component {
         case keyDown:
         case keyLeft:
         case keyRight:
-        case keySpace:
+          // case keySpace:
           e.preventDefault();
           break;
         default:
