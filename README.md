@@ -15,13 +15,21 @@
 ### 桌面端
 
 <a href="https://devrsi0n.github.io/React-2048-game/">
-  <img src="https://github.com/devrsi0n/React-2048-game/blob/master/screenshot.png" width="80%" alt="screenshot">
+  <img
+    src="https://github.com/devrsi0n/React-2048-game/blob/master/screenshot.png"
+    onerror='this.onerror = null; this.src="http://wx1.sinaimg.cn/large/8ef543b5gy1fkbxcpxtytj21kw0wyqct.jpg"'
+    width="80%"
+    alt="screenshot">
 </a>
 
 ### 移动端
 
 <a href="https://devrsi0n.github.io/React-2048-game/">
-    <img src="https://github.com/devrsi0n/React-2048-game/blob/master/screenshot-iPhone.png" width="25%" alt="screenshot">
+    <img
+      src="https://github.com/devrsi0n/React-2048-game/blob/master/screenshot-iPhone.png"
+      onerror='this.onerror = null; this.src="http://wx2.sinaimg.cn/large/8ef543b5gy1fkbxcozh9cj20fl0woju7.jpg"'
+      width="25%"
+      alt="screenshot">
 </a>
 
 ## 运行 & 测试 & 打包
