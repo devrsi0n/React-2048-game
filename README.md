@@ -34,14 +34,16 @@
 
 ## 技术栈
 
-* es2017+， 最新的 JavaScript 语法
-* react， 组件式构建 UI
-* redux， 管理应用状态
-* webpack， 代码热加载，scss 样式文件处理，组件打包编译等等
-* scss， 成熟的 css 预处理器（之所以没有用 CssInJS 的方案是因为这些方案普遍不完美，也考虑到要遵循样式和结构分离的原则）
-* eslint， 使用流行的 airbnb 的代码规范严格约束代码风格
-* stylelint， scss 代码风格检查
-* jest， fb 出品的代码测试框架，snapshot 功能对测试 react 组件 UI 十分方便
+* [react](https://github.com/facebook/react)，组件式构建 UI
+* [redux](https://github.com/reactjs/redux)，管理应用状态
+* [babel](https://github.com/babel/babel)，把 es2017+ 语法转成 es5 兼容语法
+* [webpack](https://github.com/webpack/webpack)，代码热加载，scss 样式文件处理，组件打包编译等等
+* [scss](https://github.com/sass/sass)，成熟的 css 预处理器（之所以没有用 CssInJS 的方案是因为这些方案普遍不完美，也考虑到要遵循样式和结构分离的原则）
+* [eslint](https://github.com/eslint/eslint)，使用流行的 airbnb 的代码规范严格约束代码风格
+* [stylelint](https://github.com/stylelint/stylelint)，scss 代码风格检查
+* [jest](https://github.com/facebook/jest)，fb 出品的代码测试框架，snapshot 功能对测试 react 组件 UI 十分方便
+* [Prettier](https://github.com/prettier/prettier),js 和 scss 代码格式美化工具
+* [PWA](https://zhuanlan.zhihu.com/p/25167289)(Progressive Web Apps),借助浏览器 service worker 能力，使 web 应用在移动平台有接近原生应用的能力，可离线使用，接收通知消息等等
 
 ## 运行 & 测试 & 打包
 
@@ -58,8 +60,7 @@
 
 ## 踩坑记录
 
-* 在调烟花动画的时候发现没效果，仔细对比了下 webpack 编译后的 css 文件发现所有的 @keyframes
-的名字都加了 hash 值（也就是当成普通的局部 css 类名），解决办法就是在 @keyframes 的名字前面和整个 scss 文件添加伪类 :global，可以参考烟花的 scss 文件，这不是完美的解决办法(css 类名不再有局部特性)，后续再深挖一下。
+* 在调烟花动画的时候发现没效果，仔细对比了下 webpack 编译后的 css 文件发现所有的 @keyframes 的名字都加了 hash 值（也就是当成普通的局部 css 类名），解决办法就是在 @keyframes 的名字前面和整个 scss 文件添加伪类 :global，可以参考烟花的 scss 文件，这不是完美的解决办法(css 类名不再有局部特性)，后续再深挖一下。
 
 ## License
 
