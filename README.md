@@ -108,14 +108,15 @@
 * [eslint](https://github.com/eslint/eslint)，使用流行的 airbnb 的代码规范严格约束代码风格
 * [stylelint](https://github.com/stylelint/stylelint)，scss 代码风格检查
 * [jest](https://github.com/facebook/jest)，fb 出品的代码测试框架，snapshot 功能对测试 react 组件 UI 十分方便
-* [Prettier](https://github.com/prettier/prettier),js 和 scss 代码格式美化工具
-* [PWA](https://zhuanlan.zhihu.com/p/25167289)(Progressive Web Apps),借助浏览器 service worker 能力，使 web 应用在移动平台有接近原生应用的能力，可离线使用，接收通知消息等等
+* [Prettier](https://github.com/prettier/prettier)，js 和 scss 代码格式美化工具
+* [PWA](https://zhuanlan.zhihu.com/p/25167289)(Progressive Web Apps)，借助浏览器 service worker 能力，使 web 应用在移动平台有接近原生应用的能力，可离线使用，接收通知消息等等
 
 ## 运行 & 测试 & 打包
 
-建议使用 yarn 来管理依赖包。
+因为配置文件用了 es6+ 语法所以要求 node 的版本大于 6.10，同时建议使用 yarn 来管理依赖包。
 
 ```bash
+  npm i -g yarn # 安装 yarn
   git clone git@github.com:devrsi0n/React-2048-game.git
   cd React-2048-game
   yarn # 安装依赖包
