@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
 import styles from "./cell.scss";
+import { isObjEqual } from "../../utils/helpers";
 
 export default class Cell extends React.Component {
   static propTypes = {
@@ -13,7 +14,9 @@ export default class Cell extends React.Component {
   // }
 
   shouldComponentUpdate(nextProps, nextState) {
-    return JSON.stringify(nextProps) !== JSON.stringify(nextState);
+    return (
+      !isObjEqual(nextProps, this.props) || !isObjEqual(nextState, this.state)
+    );
   }
 
   render() {

@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Cell from "../Cell";
+import { isObjEqual } from "../../utils/helpers";
 
 export default class Row extends React.Component {
   static propTypes = {
@@ -12,7 +13,9 @@ export default class Row extends React.Component {
   // }
 
   shouldComponentUpdate(nextProps, nextState) {
-    return JSON.stringify(nextProps) !== JSON.stringify(nextState);
+    return (
+      !isObjEqual(nextProps, this.props) || !isObjEqual(nextState, this.state)
+    );
   }
 
   render() {

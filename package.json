@@ -36,10 +36,16 @@
     "collectCoverage": true,
     "collectCoverageFrom": ["src/**/*.{js,jsx}"],
     "coverageDirectory": "./coverage/",
+    "setupTestFrameworkScriptFile": "./node_modules/jest-enzyme/lib/index.js",
     "setupFiles": ["<rootDir>/config/polyfills.js", "jest-localstorage-mock"],
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.js?(x)",
       "<rootDir>/src/**/?(*.)(spec|test).js?(x)"
+    ],
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/src/index.js",
+      "<rootDir>/src/utils/registerServiceWorker.js",
+      "<rootDir>/src/utils/mobileEvents.js"
     ],
     "testEnvironment": "jsdom",
     "testURL": "http://localhost",
@@ -137,6 +143,8 @@
     "compression-webpack-plugin": "^1.0.1",
     "css-loader": "0.28.7",
     "dotenv": "^4.0.0",
+    "enzyme": "^3.1.0",
+    "enzyme-adapter-react-16": "^1.0.1",
     "eslint": "^4.8.0",
     "eslint-config-airbnb": "^16.0.0",
     "eslint-config-prettier": "^2.6.0",
@@ -154,6 +162,7 @@
     "husky": "^0.14.3",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^21.2.1",
+    "jest-enzyme": "^4.0.1",
     "jest-localstorage-mock": "^2.0.1",
     "lint-staged": "^4.2.3",
     "node-sass": "^4.5.3",

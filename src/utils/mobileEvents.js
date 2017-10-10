@@ -11,7 +11,7 @@
  * @param {DOMElement} el
  * @param {function} callback
  */
-export default function swipeDetect(el, callback) {
+export default function swipeDetect(el, callback = () => {}) {
   let swipeDir;
   let startX;
   let startY;
@@ -25,7 +25,6 @@ export default function swipeDetect(el, callback) {
   const allowedTime = 300;
   let elapsedTime;
   let startTime;
-  const handleSwipe = callback || (() => {});
 
   el.addEventListener(
     "touchstart",
@@ -75,7 +74,7 @@ export default function swipeDetect(el, callback) {
           swipeDir = distY < 0 ? "up" : "down";
         }
       }
-      handleSwipe(swipeDir);
+      callback(swipeDir);
       e.preventDefault();
     },
     false

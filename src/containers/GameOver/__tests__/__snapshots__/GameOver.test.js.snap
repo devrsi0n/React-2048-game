@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GameOver /> component render 1`] = `
+<div>
+  <div
+    className="hidden"
+  >
+    <div
+      className="overlay"
+    />
+    <div
+      className="modal center"
+    >
+      <div>
+        <div
+          className="gameover"
+        >
+          <div
+            className="text"
+          >
+             
+            SCORE
+             
+          </div>
+          <div
+            className="banner"
+          >
+            <p>
+              0
+            </p>
+          </div>
+        </div>
+        <div
+          className="buttonWrapper"
+        >
+          <button
+            className="button"
+            onClick={[Function]}
+          >
+            <img
+              alt="reset"
+              src="reset.svg"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<GameOver /> component render 2`] = `
+<div>
+  <div
+    className="hidden"
+  >
+    <div
+      className="overlay"
+    />
+    <div
+      className="modal center"
+    >
+      <div
+        className="firework"
+      >
+        <div
+          className="before"
+        />
+        <div
+          className="after"
+        />
+      </div>
+      <div>
+        <div
+          className="gameover"
+        >
+          <div
+            className="text"
+          >
+             
+            SCORE
+             
+          </div>
+          <div
+            className="banner"
+          >
+            <p>
+              9999
+            </p>
+          </div>
+        </div>
+        <div
+          className="buttonWrapper"
+        >
+          <button
+            className="button"
+            onClick={[Function]}
+          >
+            <img
+              alt="reset"
+              src="reset.svg"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
