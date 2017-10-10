@@ -323,7 +323,7 @@ exports[`<App /> component render 1`] = `
     <p
       className="content"
     >
-      User keyboard arrow keys (or \`WASD\` if you like) control blocks;Click undo button to revert to last step status if you regrets
+      Use keyboard arrow keys (or \`WASD\` if you like) control blocks;Click undo button to revert to last step status if you regrets
     </p>
   </div>
   <div
@@ -333,7 +333,7 @@ exports[`<App /> component render 1`] = `
       className="commentsTitle"
       dangerouslySetInnerHTML={
         Object {
-          "__html": "Welcome comments",
+          "__html": "Welcome to leave comments",
         }
       }
     />

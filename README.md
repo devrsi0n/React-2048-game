@@ -87,6 +87,17 @@
       alt="screenshot">
 </a>
 
+### i18n
+
+应用支持多语言，且自动适配浏览器语言设置。目前检测到中文优先使用中文，否则默认使用英文显示。需要更多语言支持，编辑`src/utils/i18n.js`的 `data`对象，添加对应语言文字即可。
+
+<a href="https://devrsi0n.github.io/React-2048-game/">
+    <img
+      src="http://wx1.sinaimg.cn/large/8ef543b5gy1fkd6q1uwvij21kw113tft.jpg"
+      width="80%"
+      alt="screenshot">
+</a>
+
 ## 技术栈
 
 * [react](https://github.com/facebook/react)，组件式构建 UI

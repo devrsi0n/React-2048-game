@@ -21,11 +21,11 @@ const data = {
     tipContent: {
       cn: "使用键盘箭头键（或 WASD ）控制方块;反悔了？点回退按钮回退到上一步的状态。",
       en:
-        "User keyboard arrow keys (or `WASD` if you like) control blocks;Click undo button to revert to last step status if you regrets"
+        "Use keyboard arrow keys (or `WASD` if you like) control blocks;Click undo button to revert to last step status if you regrets"
     },
     commentTitle: {
       cn: "欢迎留 <span>tu</span> 言 <span>cao</span>",
-      en: "Welcome comments"
+      en: "Welcome to leave comments"
     }
   }
 };
