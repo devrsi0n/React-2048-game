@@ -24,8 +24,11 @@ describe("<ControlPanel />", () => {
     const panel = mount(
       <Provider store={store}>
         <ControlPanel delay={1} audioMove={audio} audioPopup={audio} />
-      </Provider>
+      </Provider>,
+      { attachTo: document.body }
     );
-    panel.find(".up").simulate("click");
+    panel.find('[alt="arrow up"]').simulate("click");
+    document.body.dispatchEvent(new Event("focus"));
+    document.body.dispatchEvent(new KeyboardEvent("keypress", { key: "w" }));
   });
 });

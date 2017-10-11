@@ -113,11 +113,11 @@
 
 ## 运行 & 测试 & 打包
 
-因为配置文件用了 es6+ 语法所以要求 node 的版本大于 6.10，同时建议使用 yarn 来管理依赖包。
+因为配置文件用了 es6+ 语法所以要求 node 的版本大于 6.10，同时建议使用 [yarn](https://yarnpkg.com/zh-Hans) 来管理依赖包。fork 项目之后可以按如下命令操作。
 
 ```bash
   npm i -g yarn # 安装 yarn
-  git clone git@github.com:devrsi0n/React-2048-game.git
+  git clone git@github.com:<你的名字>/React-2048-game.git
   cd React-2048-game
   yarn # 安装依赖包
   yarn start # 开启调试模式

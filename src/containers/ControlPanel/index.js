@@ -81,15 +81,15 @@ class ControlPanel extends Component {
   }
 
   componentWillMount() {
-    window.addEventListener("keyup", this.keyUpHandler, false);
+    document.addEventListener("keyup", this.keyUpHandler, false);
 
     // Disable arrow keys scroll page
-    window.addEventListener("keydown", this.keyDownHandler, false);
+    document.addEventListener("keydown", this.keyDownHandler, false);
   }
 
   componentWillUnmount() {
-    window.removeEventListener("keyup", this.keyUpHandler, false);
-    window.removeEventListener("keydown", this.keyDownHandler, false);
+    document.removeEventListener("keyup", this.keyUpHandler, false);
+    document.removeEventListener("keydown", this.keyDownHandler, false);
   }
 
   handleKeyUp(e) {
