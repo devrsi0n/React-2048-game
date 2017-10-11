@@ -53,7 +53,7 @@ class ControlPanel extends Component {
     this.handleMoveDown = this.handleMoveDown.bind(this);
     this.handleMoveLeft = this.handleMoveLeft.bind(this);
     this.handleMoveRight = this.handleMoveRight.bind(this);
-    this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.handleKeyUp = this.handleKeyUp.bind(this);
     this.handleSpeakerClick = this.handleSpeakerClick.bind(this);
     this.handleUndo = this.handleUndo.bind(this);
 
@@ -62,7 +62,7 @@ class ControlPanel extends Component {
     };
 
     const { delay } = this.props;
-    this.keyUpHandler = debounce(this.handleKeyDown, delay, {
+    this.keyUpHandler = debounce(this.handleKeyUp, delay, {
       leading: true
     });
     this.keyDownHandler = e => {
@@ -83,7 +83,7 @@ class ControlPanel extends Component {
   componentWillMount() {
     window.addEventListener("keyup", this.keyUpHandler, false);
 
-    // Disable arrow and space keys scroll page
+    // Disable arrow keys scroll page
     window.addEventListener("keydown", this.keyDownHandler, false);
   }
 
@@ -92,7 +92,7 @@ class ControlPanel extends Component {
     window.removeEventListener("keydown", this.keyDownHandler, false);
   }
 
-  handleKeyDown(e) {
+  handleKeyUp(e) {
     switch (e.keyCode) {
       case keyW:
       case keyUp:
