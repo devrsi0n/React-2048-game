@@ -6,7 +6,7 @@
 [![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
-[react](https://github.com/facebook/react) 毫无疑问是目前最热门的前端视图库，[redux](https://github.com/reactjs/redux) 是 React 社区基于函数式编程思想也是最热门的应用状态管理容器；本项目构建的 2048 游戏通过践行社区的[最佳实践](https://www.codementor.io/faizanhaider/react-components-best-practices-9xcbq5uwe)来学习这套前端编程思想。
+[react](https://github.com/facebook/react) 毫无疑问是目前最热门的前端视图库，[redux](https://github.com/reactjs/redux) 是 react 社区基于函数式编程思想也是最热门的应用状态管理容器；本项目构建的 2048 游戏通过践行社区的[最佳实践](https://www.codementor.io/faizanhaider/react-components-best-practices-9xcbq5uwe)来学习这套前端编程思想。
 
 👉 [开始游戏](https://devrsi0n.github.io/React-2048-game/)
 
@@ -128,6 +128,7 @@
 ## 踩坑记录
 
 * 在调烟花动画的时候发现没效果，仔细对比了下 webpack 编译后的 css 文件发现所有的 @keyframes 的名字都加了 hash 值（也就是当成普通的局部 css 类名），解决办法就是在 @keyframes 的名字前面和整个 scss 文件添加伪类 :global，可以参考烟花的 scss 文件，这不是完美的解决办法(css 类名不再有局部特性)，后续再深挖一下。
+* css module 用到的 :global 这个不是标准的伪类，所以 stylelint 需要添加配置以忽略这个错误。参见 `package.json` 的 `stylelint.rules`。
 
 ## License
 
