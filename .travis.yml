@@ -15,4 +15,11 @@ script:
   - yarn run ci
 after_script:
   - yarn run codecov
-  - yarn run deploy
+  - yarn build # build project for deploy
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: build
+  on:
+    branch: master
