@@ -8,6 +8,7 @@ import i18n from "../../utils/i18n";
 import resetSvg from "../../assets/svg/reset.svg";
 import { reset } from "../../reducers/board";
 
+// Game over card
 function GameOver({ gameOver, score, onReset }) {
   return (
     <div>

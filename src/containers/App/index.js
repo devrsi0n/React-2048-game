@@ -7,6 +7,7 @@ import MobileApp from "../MobileApp";
 import moveAudio from "../../assets/audio/move.mp3";
 import popupAudio from "../../assets/audio/popup.mp3";
 
+// Application entry
 class App extends Component {
   static propTypes = {
     matrix: PropTypes.arrayOf(PropTypes.array).isRequired,
@@ -19,6 +20,7 @@ class App extends Component {
     this.state = {
       isMobile: window.innerWidth <= 768
     };
+    // Control game audio
     this.audioMove = new Audio(moveAudio);
     this.audioPopup = new Audio(popupAudio);
 
@@ -31,6 +33,8 @@ class App extends Component {
   }
 
   componentWillUnmount() {
+    // Never forget remove event after component unmounted,
+    // avoid memory leak
     window.removeEventListener("resize", this.mobileDetect, false);
   }
 
@@ -50,6 +54,7 @@ class App extends Component {
         }
       }
     }
+    // Init empty matrix(add 2 random number to matrix)
     if (isEmpty) {
       this.props.onInit();
     }

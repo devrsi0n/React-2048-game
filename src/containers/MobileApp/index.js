@@ -21,6 +21,7 @@ import Footer from "../../components/Footer";
 import resetSvg from "../../assets/svg/reset.svg";
 import undoSvg from "../../assets/svg/undo.svg";
 
+// Mobile application entry
 class MobileApp extends Component {
   static propTypes = {
     matrix: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)).isRequired,
@@ -50,7 +51,6 @@ class MobileApp extends Component {
   componentDidMount() {
     const el = document.getElementById("gameBoard");
     const directionCallback = direction => {
-      // console.log('direction', direction);
       switch (direction) {
         case "up":
           this.handleMoveUp();

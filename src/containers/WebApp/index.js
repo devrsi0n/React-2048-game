@@ -13,6 +13,7 @@ import comments from "../../utils/gitComments";
 
 document.title = i18n.title;
 
+// Desktop application entry
 class WebApp extends Component {
   static propTypes = {
     matrix: PropTypes.arrayOf(PropTypes.array).isRequired,

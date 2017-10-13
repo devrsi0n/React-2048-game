@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import classnames from "classnames";
 import styles from "./modal.scss";
 
+// Modal, parent componet for popup elements
 export default function Modal({ display, children }) {
   return (
     <div className={classnames({ [styles.hidden]: !display })}>

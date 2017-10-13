@@ -1,6 +1,7 @@
 import Gitment from "gitment";
 import "../assets/styles/comments.scss";
 
+// Github comments lib init
 const gitment = new Gitment({
   // id: 'Your page ID', // optional, default location.href
   owner: "devrsi0n",

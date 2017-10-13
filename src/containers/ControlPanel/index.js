@@ -30,6 +30,7 @@ const keyD = 68;
 const keyN = 78;
 // const keySpace = 32;
 
+// Button and keyboard control panel
 class ControlPanel extends Component {
   static propTypes = {
     delay: PropTypes.number.isRequired,
@@ -88,6 +89,8 @@ class ControlPanel extends Component {
   }
 
   componentWillUnmount() {
+    // Never forget remove event after component unmounted,
+    // avoid memory leak
     document.removeEventListener("keyup", this.keyUpHandler, false);
     document.removeEventListener("keydown", this.keyDownHandler, false);
   }
@@ -131,6 +134,7 @@ class ControlPanel extends Component {
     if (speakerOn && isMoved) {
       this.props.audioMove.play();
     }
+    // Popup new number after delay a short time
     setTimeout(() => {
       this.props.onPlaceRandom();
       if (speakerOn && isMoved) {

@@ -4,14 +4,12 @@ import classnames from "classnames";
 import styles from "./cell.scss";
 import { isObjEqual } from "../../utils/helpers";
 
+// Game board cell, minimum component in game board,
+// one component stand for a number.
 export default class Cell extends React.Component {
   static propTypes = {
     value: PropTypes.number.isRequired
   };
-
-  // constructor(props) {
-  //   super(props);
-  // }
 
   shouldComponentUpdate(nextProps, nextState) {
     return (

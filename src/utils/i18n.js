@@ -1,3 +1,4 @@
+// i18n text
 const data = {
   lang: ["cn", "en"],
   default: "cn",

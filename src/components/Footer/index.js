@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import styles from "./footer.scss";
 import github from "../../assets/images/github.png";
 
+// Footer, link to github repo and developer profile
 export default class Footer extends React.Component {
   static propTypes = {
     name: PropTypes.string.isRequired,

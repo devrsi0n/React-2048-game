@@ -7,7 +7,7 @@ const MOVE_LEFT = "MOVE_LEFT";
 const MOVE_RIGHT = "MOVE_RIGHT";
 const RESET = "RESET";
 
-// Game board state
+// Game board initial state
 const initState = {
   matrix: [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]],
   score: 0,
@@ -258,6 +258,7 @@ class Matrix {
   }
 }
 
+// Reducer entry
 export default function(state = initState, action) {
   let mat = new Matrix(state);
   switch (action.type) {

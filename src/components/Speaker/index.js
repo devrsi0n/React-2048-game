@@ -4,6 +4,7 @@ import Button from "../Button";
 import speakerOn from "../../assets/svg/speaker-on.svg";
 import speakerOff from "../../assets/svg/speaker-off.svg";
 
+// Speaker, keep self state for switch button icon
 export default class Speaker extends Component {
   static propTypes = {
     onClick: PropTypes.func.isRequired

@@ -3,14 +3,11 @@ import PropTypes from "prop-types";
 import Cell from "../Cell";
 import { isObjEqual } from "../../utils/helpers";
 
+// Game board row, contain 4 cell
 export default class Row extends React.Component {
   static propTypes = {
     row: PropTypes.arrayOf(PropTypes.number).isRequired
   };
-
-  // constructor(props) {
-  //   super(props);
-  // }
 
   shouldComponentUpdate(nextProps, nextState) {
     return (

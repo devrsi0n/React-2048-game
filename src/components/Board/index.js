@@ -4,14 +4,11 @@ import Row from "../Row";
 import styles from "./board.scss";
 import { isObjEqual } from "../../utils/helpers";
 
+// Game board
 export default class Board extends React.Component {
   static propTypes = {
     matrix: PropTypes.arrayOf(PropTypes.array).isRequired
   };
-
-  // constructor(...props) {
-  //   super(...props);
-  // }
 
   shouldComponentUpdate(nextProps, nextState) {
     return (
