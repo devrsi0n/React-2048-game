@@ -21,11 +21,12 @@ describe("<ControlPanel />", () => {
   });
 
   it("click events", () => {
+    const div = document.createElement("div");
     const panel = mount(
       <Provider store={store}>
         <ControlPanel delay={1} audioMove={audio} audioPopup={audio} />
       </Provider>,
-      { attachTo: document.body }
+      { attachTo: div }
     );
     panel.find('[alt="arrow up"]').simulate("click");
     document.body.dispatchEvent(new Event("focus"));

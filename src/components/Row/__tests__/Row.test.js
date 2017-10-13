@@ -17,7 +17,10 @@ describe("<Board />", () => {
 
   it("shouldComponentUpdate", () => {
     const data = [2, 0, 0, 0];
-    const cell = mount(<Row row={data} />);
+    const tbody = document.createElement("tbody");
+    const cell = mount(<Row row={data} />, {
+      attachTo: tbody
+    });
     expect(cell.props().row).toEqual(data);
     let shouldUpdate = cell.instance().shouldComponentUpdate(
       {

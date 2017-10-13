@@ -16,7 +16,10 @@ describe("<Board />", () => {
   });
 
   it("shouldComponentUpdate", () => {
-    const cell = mount(<Cell value={32} />);
+    const tr = document.createElement("tr");
+    const cell = mount(<Cell value={32} />, {
+      attachTo: tr
+    });
     expect(cell.props().value).toEqual(32);
     let shouldUpdate = cell.instance().shouldComponentUpdate(
       {
