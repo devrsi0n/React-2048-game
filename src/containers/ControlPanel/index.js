@@ -161,7 +161,7 @@ class ControlPanel extends Component {
 
   handleUndo() {
     if (this.props.pastLen > 3) {
-      this.props.onUndo();
+      this.props.onUndo(-2);
     }
   }
 
@@ -215,30 +215,14 @@ const mapStateToProps = state => ({
   isMoved: state.present.board.present.isMoved,
   pastLen: state.past.length
 });
-const mapDispatchToProps = dispatch => ({
-  onPlaceRandom() {
-    dispatch(placeRandom());
-  },
-  onMoveUp() {
-    dispatch(moveUp());
-  },
-  onMoveDown() {
-    dispatch(moveDown());
-  },
-  onMoveLeft() {
-    dispatch(moveLeft());
-  },
-  onMoveRight() {
-    dispatch(moveRight());
-  },
-  onReset() {
-    dispatch(reset());
-  },
-  onUndo() {
-    // Undo move and generated cell
-    dispatch(ActionCreators.undo());
-    dispatch(ActionCreators.undo());
-  }
-});
+const mapDispatchToProps = {
+  onPlaceRandom: placeRandom,
+  onMoveUp: moveUp,
+  onMoveDown: moveDown,
+  onMoveLeft: moveLeft,
+  onMoveRight: moveRight,
+  onReset: reset,
+  onUndo: ActionCreators.jump // Undo move and generated cell
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(ControlPanel);

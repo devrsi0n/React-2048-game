@@ -79,10 +79,8 @@ const mapStateToProps = state => ({
   matrix: state.present.board.present.matrix
 });
 
-const mapDispatchToProps = dispatch => ({
-  onInit(board) {
-    dispatch(initMatrix(board));
-  }
-});
+const mapDispatchToProps = {
+  onInit: initMatrix
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

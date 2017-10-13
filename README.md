@@ -200,7 +200,7 @@ constructor(...args) {
     };
 ```
 
-* 使用 [HOR(Higher-Order Components)](http://huziketang.com/books/react/lesson28) 代替 mixin。mixin 官方已经不推荐使用了，redux 的 connect 方法就是 HOR 的应用。
+* 使用 [HOC(Higher-Order Components)](http://huziketang.com/books/react/lesson28) 代替 mixin。mixin 官方已经不推荐使用了，redux 的 connect 方法就是 HOC 的应用。
 
 * 为了提高应用性能，避免不必要的视图重绘，在需要的组件使用 `shouldComponentUpdate` 方法；以组件 [Row](https://github.com/devrsi0n/React-2048-game/blob/e6812e8b89bb38109387e7f6495fcd5d70c11f26/src/components/Row/index.js) 示例：
 
