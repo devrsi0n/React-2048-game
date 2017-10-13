@@ -4,9 +4,12 @@ node_js:
 cache:
   directories:
     - "node_modules"
+before_install:
+  # CI server install taobao npm packages too slow.
+  - rm -rf ./yarn.lock
 install:
-  - yarn
   - npm install -g codecov
+  - yarn
 script:
   - yarn run ci
 after_script:
