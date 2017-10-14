@@ -15,9 +15,9 @@ describe("<Speaker />", () => {
   it("click event", () => {
     const spy = jest.fn();
     const speaker = mount(<Speaker onClick={spy} />);
-    speaker.find('[alt="speaker controller"]').simulate("click");
+    speaker.find('[alt="speaker"]').simulate("click");
     expect(spy.mock.calls.length).toBe(1);
-    speaker.find('[alt="speaker controller"]').simulate("click");
+    speaker.find('[alt="speaker"]').simulate("click");
     expect(spy.mock.calls.length).toBe(2);
   });
 });

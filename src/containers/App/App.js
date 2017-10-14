@@ -4,6 +4,7 @@ import WebApp from "../WebApp";
 import MobileApp from "../MobileApp";
 import moveAudio from "../../assets/audio/move.mp3";
 import popupAudio from "../../assets/audio/popup.mp3";
+import i18n from "../../utils/i18n";
 
 // Application entry
 export default class App extends Component {
@@ -28,6 +29,10 @@ export default class App extends Component {
   componentWillMount() {
     window.addEventListener("resize", this.mobileDetect, false);
     this.boardInit();
+  }
+
+  componentDidMount() {
+    document.title = i18n.title;
   }
 
   componentWillUnmount() {

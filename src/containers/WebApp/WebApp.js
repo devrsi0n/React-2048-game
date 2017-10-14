@@ -10,8 +10,6 @@ import Scores from "../Scores";
 import i18n from "../../utils/i18n";
 import comments from "../../utils/gitComments";
 
-document.title = i18n.title;
-
 // Desktop application entry
 export default class WebApp extends Component {
   static propTypes = {

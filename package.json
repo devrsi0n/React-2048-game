@@ -47,6 +47,7 @@
       "<rootDir>/src/utils/registerServiceWorker.js",
       "<rootDir>/src/utils/mobileEvents.js"
     ],
+    "timers": "fake",
     "testEnvironment": "jsdom",
     "testURL": "http://localhost",
     "transform": {

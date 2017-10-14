@@ -161,12 +161,12 @@ export default class ControlPanel extends Component {
       <div className={styles.panel}>
         <div className={styles.rowBtn}>
           <div className={styles.btn}>
-            <Speaker onClick={debounce(this.handleSpeakerClick, 500)} />
+            <Speaker onClick={debounce(this.handleSpeakerClick, delay)} />
           </div>
-          <WrapperButton onClick={debounce(this.handleUndo, 500)}>
+          <WrapperButton onClick={debounce(this.handleUndo, delay)}>
             <img src={undoSvg} alt="undo" />
           </WrapperButton>
-          <WrapperButton onClick={debounce(this.props.onReset, 500)}>
+          <WrapperButton onClick={debounce(this.props.onReset, delay)}>
             <img src={resetSvg} alt="reset" />
           </WrapperButton>
         </div>

@@ -48,7 +48,7 @@ exports[`<MobileApp /> component render 1`] = `
             onClick={[Function]}
           >
             <img
-              alt="speaker controller"
+              alt="speaker"
               src="speaker-on.svg"
             />
           </button>

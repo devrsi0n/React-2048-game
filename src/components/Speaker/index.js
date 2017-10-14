@@ -32,7 +32,7 @@ export default class Speaker extends Component {
     const { speaker } = this.state;
     return (
       <Button onClick={this.handleClick}>
-        <img src={speaker} alt="speaker controller" />
+        <img src={speaker} alt="speaker" />
       </Button>
     );
   }
