@@ -16,17 +16,16 @@ export default class Speaker extends Component {
     this.state = {
       speaker: speakerOn
     };
-    this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick() {
+  handleClick = () => {
     const { speaker } = this.state;
     const prevStatus = speaker === speakerOn;
     this.setState({
       speaker: prevStatus ? speakerOff : speakerOn
     });
     this.props.onClick(!prevStatus);
-  }
+  };
 
   render() {
     const { speaker } = this.state;

@@ -40,14 +40,6 @@ export default class ControlPanel extends Component {
   constructor(...args) {
     super(...args);
 
-    this.handleMoveUp = this.handleMoveUp.bind(this);
-    this.handleMoveDown = this.handleMoveDown.bind(this);
-    this.handleMoveLeft = this.handleMoveLeft.bind(this);
-    this.handleMoveRight = this.handleMoveRight.bind(this);
-    this.handleKeyUp = this.handleKeyUp.bind(this);
-    this.handleSpeakerClick = this.handleSpeakerClick.bind(this);
-    this.handleUndo = this.handleUndo.bind(this);
-
     this.state = {
       speakerOn: true
     };
@@ -56,19 +48,6 @@ export default class ControlPanel extends Component {
     this.keyUpHandler = debounce(this.handleKeyUp, delay, {
       leading: true
     });
-    this.keyDownHandler = e => {
-      switch (e.keyCode) {
-        case keyUp:
-        case keyDown:
-        case keyLeft:
-        case keyRight:
-          // case keySpace:
-          e.preventDefault();
-          break;
-        default:
-          break;
-      }
-    };
   }
 
   componentWillMount() {
@@ -85,7 +64,21 @@ export default class ControlPanel extends Component {
     document.removeEventListener("keydown", this.keyDownHandler, false);
   }
 
-  handleKeyUp(e) {
+  keyDownHandler = e => {
+    switch (e.keyCode) {
+      case keyUp:
+      case keyDown:
+      case keyLeft:
+      case keyRight:
+        // case keySpace:
+        e.preventDefault();
+        break;
+      default:
+        break;
+    }
+  };
+
+  handleKeyUp = e => {
     switch (e.keyCode) {
       case keyW:
       case keyUp:
@@ -109,15 +102,15 @@ export default class ControlPanel extends Component {
       default:
         break;
     }
-  }
+  };
 
-  handleSpeakerClick(speakerOn) {
+  handleSpeakerClick = speakerOn => {
     this.setState({
       speakerOn
     });
-  }
+  };
 
-  generalMove(func) {
+  generalMove = func => {
     func();
     const { isMoved } = this.props;
     const { speakerOn } = this.state;
@@ -131,29 +124,29 @@ export default class ControlPanel extends Component {
         this.props.audioPopup.play();
       }
     }, 300);
-  }
+  };
 
-  handleMoveUp() {
+  handleMoveUp = () => {
     this.generalMove(this.props.onMoveUp);
-  }
+  };
 
-  handleMoveDown() {
+  handleMoveDown = () => {
     this.generalMove(this.props.onMoveDown);
-  }
+  };
 
-  handleMoveLeft() {
+  handleMoveLeft = () => {
     this.generalMove(this.props.onMoveLeft);
-  }
+  };
 
-  handleMoveRight() {
+  handleMoveRight = () => {
     this.generalMove(this.props.onMoveRight);
-  }
+  };
 
-  handleUndo() {
+  handleUndo = () => {
     if (this.props.pastLen > 3) {
       this.props.onUndo(-2);
     }
-  }
+  };
 
   render() {
     const { delay } = this.props;

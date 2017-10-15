@@ -25,7 +25,7 @@ class Matrix {
     this.isMoved = isMoved;
   }
 
-  getEmptyCoordinates() {
+  getEmptyCoordinates = () => {
     const { matrix } = this;
     const coordinates = [];
     for (let row = 0; row < matrix.length; row++) {
@@ -37,17 +37,14 @@ class Matrix {
       }
     }
     return coordinates;
-  }
+  };
 
-  getRandom(arr) {
-    return arr[Math.round(Math.random() * (arr.length - 1))];
-  }
+  getRandom = arr => arr[Math.round(Math.random() * (arr.length - 1))];
 
-  isBoardMoved(preMatrix, newMatrix) {
-    return JSON.stringify(preMatrix) !== JSON.stringify(newMatrix);
-  }
+  isBoardMoved = (preMatrix, newMatrix) =>
+    JSON.stringify(preMatrix) !== JSON.stringify(newMatrix);
 
-  checkGameOver(matrix) {
+  checkGameOver = matrix => {
     const copy = JSON.parse(JSON.stringify(matrix));
     const check = func => {
       const isMoved = this.isBoardMoved(copy, func(copy).matrix);
@@ -55,16 +52,16 @@ class Matrix {
       return isMoved;
     };
     const moves = [
-      check(this.moveUp.bind(this)),
-      check(this.moveDown.bind(this)),
-      check(this.moveLeft.bind(this)),
-      check(this.moveRight.bind(this))
+      check(this.moveUp),
+      check(this.moveDown),
+      check(this.moveLeft),
+      check(this.moveRight)
     ];
 
     return !moves.includes(true);
-  }
+  };
 
-  addRandomNumToMatrix() {
+  addRandomNumToMatrix = () => {
     const { matrix } = this;
     const newMatrix = JSON.parse(JSON.stringify(matrix));
     if (this.gameOver) {
@@ -95,9 +92,9 @@ class Matrix {
     this.matrix = newMatrix;
 
     return { matrix: newMatrix };
-  }
+  };
 
-  rotateRight() {
+  rotateRight = () => {
     const { matrix } = this;
     const newMat = [];
     const len = matrix.length;
@@ -111,9 +108,9 @@ class Matrix {
 
     this.matrix = newMat;
     return newMat;
-  }
+  };
 
-  rotateLeft() {
+  rotateLeft = () => {
     const { matrix } = this;
     const newMat = [];
     const len = matrix.length;
@@ -128,9 +125,9 @@ class Matrix {
 
     this.matrix = newMat;
     return newMat;
-  }
+  };
 
-  shiftRight() {
+  shiftRight = () => {
     const { matrix } = this;
     const newMat = [];
     const len = matrix.length;
@@ -147,9 +144,9 @@ class Matrix {
     }
     this.matrix = newMat;
     return newMat;
-  }
+  };
 
-  shiftLeft() {
+  shiftLeft = () => {
     const { matrix } = this;
     const newMat = [];
     const len = matrix.length;
@@ -164,9 +161,9 @@ class Matrix {
     }
     this.matrix = newMat;
     return newMat;
-  }
+  };
 
-  combineNumToLeft() {
+  combineNumToLeft = () => {
     const { matrix } = this;
     const len = matrix.length;
 
@@ -184,9 +181,9 @@ class Matrix {
     }
     this.matrix = matrix;
     return matrix;
-  }
+  };
 
-  combineNumToRight() {
+  combineNumToRight = () => {
     const { matrix } = this;
     const len = matrix.length;
     // Combine numbers and shift to right
@@ -204,9 +201,9 @@ class Matrix {
     }
     this.matrix = matrix;
     return matrix;
-  }
+  };
 
-  move(callback) {
+  move = callback => {
     const prevMatrix = JSON.parse(JSON.stringify(this.matrix));
     callback();
 
@@ -222,40 +219,36 @@ class Matrix {
       rsp.prevMatrix = prevMatrix;
     }
     return rsp;
-  }
+  };
 
-  moveUp() {
-    return this.move(() => {
+  moveUp = () =>
+    this.move(() => {
       this.rotateRight();
       this.shiftRight();
       this.combineNumToRight();
       // Rotate board back upright
       this.rotateLeft();
     });
-  }
 
-  moveDown() {
-    return this.move(() => {
+  moveDown = () =>
+    this.move(() => {
       this.rotateRight();
       this.shiftLeft();
       this.combineNumToLeft();
       this.rotateLeft();
     });
-  }
 
-  moveLeft() {
-    return this.move(() => {
+  moveLeft = () =>
+    this.move(() => {
       this.shiftLeft();
       this.combineNumToLeft();
     });
-  }
 
-  moveRight() {
-    return this.move(() => {
+  moveRight = () =>
+    this.move(() => {
       this.shiftRight();
       this.combineNumToRight();
     });
-  }
 }
 
 // Reducer entry

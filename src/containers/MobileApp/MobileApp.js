@@ -34,8 +34,6 @@ export default class MobileApp extends Component {
     this.state = {
       speakerOn: true
     };
-    this.handleUndo = this.handleUndo.bind(this);
-    this.handleSpeakerClick = this.handleSpeakerClick.bind(this);
   }
 
   componentDidMount() {
@@ -63,7 +61,7 @@ export default class MobileApp extends Component {
     }
   }
 
-  generalMove(func) {
+  generalMove = func => {
     func();
     const { isMoved } = this.props;
     const { speakerOn } = this.state;
@@ -76,35 +74,35 @@ export default class MobileApp extends Component {
         this.props.audioPopup.play();
       }
     }, 100);
-  }
+  };
 
-  handleMoveUp() {
+  handleMoveUp = () => {
     this.generalMove(this.props.onMoveUp);
-  }
+  };
 
-  handleMoveDown() {
+  handleMoveDown = () => {
     this.generalMove(this.props.onMoveDown);
-  }
+  };
 
-  handleMoveLeft() {
+  handleMoveLeft = () => {
     this.generalMove(this.props.onMoveLeft);
-  }
+  };
 
-  handleMoveRight() {
+  handleMoveRight = () => {
     this.generalMove(this.props.onMoveRight);
-  }
+  };
 
-  handleUndo() {
+  handleUndo = () => {
     if (this.props.pastLen > 3) {
       this.props.onUndo(-2);
     }
-  }
+  };
 
-  handleSpeakerClick(speakerOn) {
+  handleSpeakerClick = speakerOn => {
     this.setState({
       speakerOn
     });
-  }
+  };
 
   render() {
     const { matrix } = this.props;

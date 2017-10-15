@@ -22,8 +22,6 @@ export default class App extends Component {
     // Control game audio
     this.audioMove = new Audio(moveAudio);
     this.audioPopup = new Audio(popupAudio);
-
-    this.mobileDetect = this.mobileDetect.bind(this);
   }
 
   componentWillMount() {
@@ -41,11 +39,11 @@ export default class App extends Component {
     window.removeEventListener("resize", this.mobileDetect, false);
   }
 
-  mobileDetect() {
+  mobileDetect = () => {
     this.setState({
       isMobile: window.innerWidth <= 768
     });
-  }
+  };
 
   boardInit() {
     let isEmpty = true;
