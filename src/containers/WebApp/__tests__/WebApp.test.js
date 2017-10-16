@@ -1,3 +1,9 @@
+localStorage.setItem(
+  "state",
+  '{"past":[{"board":{"past":[],"present":{"matrix":[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]],"score":0,"bestScore":0,"gameOver":false,"isMoved":true},"future":[],"group":null,"_latestUnfiltered":{"matrix":[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]],"score":0,"bestScore":0,"gameOver":false,"isMoved":true},"index":0,"limit":1}}],"present":{"board":{"past":[{"matrix":[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]],"score":0,"bestScore":0,"gameOver":false,"isMoved":true}],"present":{"matrix":[[0,4,0,0],[0,2,0,0],[0,0,0,0],[0,0,0,0]],"score":0,"bestScore":0,"gameOver":false,"isMoved":true},"future":[],"group":null,"_latestUnfiltered":{"matrix":[[0,4,0,0],[0,2,0,0],[0,0,0,0],[0,0,0,0]],"score":0,"bestScore":0,"gameOver":false,"isMoved":true},"index":1,"limit":2}},"future":[],"group":null,"_latestUnfiltered":{"board":{"past":[{"matrix":[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]],"score":0,"bestScore":0,"gameOver":false,"isMoved":true}],"present":{"matrix":[[0,4,0,0],[0,2,0,0],[0,0,0,0],[0,0,0,0]],"score":0,"bestScore":0,"gameOver":false,"isMoved":true},"future":[],"group":null,"_latestUnfiltered":{"matrix":[[0,4,0,0],[0,2,0,0],[0,0,0,0],[0,0,0,0]],"score":0,"bestScore":0,"gameOver":false,"isMoved":true},"index":1,"limit":2}},"index":1,"limit":2}'
+);
+
+/* eslint-disable import/first */
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";

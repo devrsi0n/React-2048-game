@@ -15,8 +15,7 @@ const getClientEnvironment = require("./env");
 const StyleLintPlugin = require("stylelint-webpack-plugin");
 const pkg = require(paths.appPackageJson);
 const CompressionPlugin = require("compression-webpack-plugin");
-const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
-  .BundleAnalyzerPlugin;
+const WebpackMonitor = require("webpack-monitor");
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
@@ -351,7 +350,12 @@ const prodConfig = {
 };
 
 if (process.env.ANALYZE) {
-  prodConfig.plugins.push(new BundleAnalyzerPlugin());
+  prodConfig.plugins.push(
+    new WebpackMonitor({
+      capture: true,
+      launch: true
+    })
+  );
 }
 
 module.exports = prodConfig;

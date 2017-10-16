@@ -5,7 +5,6 @@ import renderer from "react-test-renderer";
 import ControlPanel from "../ControlPanel";
 
 Enzyme.configure({ adapter: new Adapter() });
-
 const audio = new Audio();
 
 describe("<ControlPanel />", () => {

@@ -37,7 +37,6 @@ export default class MobileApp extends Component {
   }
 
   componentDidMount() {
-    const el = document.getElementById("gameBoard");
     const directionCallback = direction => {
       switch (direction) {
         case "up":
@@ -56,8 +55,8 @@ export default class MobileApp extends Component {
           break;
       }
     };
-    if (el) {
-      swipeDetect(el, directionCallback);
+    if (this.gameBoard) {
+      swipeDetect(this.gameBoard, directionCallback);
     }
   }
 
@@ -125,7 +124,13 @@ export default class MobileApp extends Component {
             </div>
           </div>
         </div>
-        <div id="gameBoard" className={styles.board}>
+        <div
+          id="gameBoard"
+          ref={div => {
+            this.gameBoard = div;
+          }}
+          className={styles.board}
+        >
           <Board matrix={matrix} />
         </div>
         <Footer
