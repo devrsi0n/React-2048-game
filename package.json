@@ -25,7 +25,7 @@
     "analyze": "ANALYZE=true node scripts/build.js",
     "test": "node scripts/test.js",
     "ci": "CI=true node scripts/test.js",
-    "codecov": "CI=true node scripts/test.js --coverage && codecov",
+    "codecov": "codecov",
     "predeploy": "node scripts/build.js",
     "deploy": "gh-pages -d build"
   },
