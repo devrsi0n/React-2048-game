@@ -3,19 +3,12 @@ import renderer from "react-test-renderer";
 import { Provider } from "react-redux";
 import Enzyme, { mount } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
-import { createMockStore } from "redux-test-utils";
 import store from "../../../store";
 import Container from "..";
+import MobileApp from "../MobileApp";
 
 Enzyme.configure({ adapter: new Adapter() });
 const audio = new Audio();
-
-const mountWithStore = (Component, reduxStore) => {
-  const context = {
-    store: reduxStore
-  };
-  return mount(Component, { context });
-};
 
 describe("<MobileApp />", () => {
   it("component render", () => {
@@ -30,116 +23,69 @@ describe("<MobileApp />", () => {
   });
 
   it("component instance", () => {
-    const reduxStore = createMockStore({
-      past: [
-        {
-          board: {
-            past: [],
-            present: {
-              matrix: [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]],
-              score: 0,
-              bestScore: 0,
-              gameOver: false,
-              isMoved: true
-            },
-            future: [],
-            group: null,
-            _latestUnfiltered: {
-              matrix: [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]],
-              score: 0,
-              bestScore: 0,
-              gameOver: false,
-              isMoved: true
-            },
-            index: 0,
-            limit: 1
-          }
-        }
-      ],
-      present: {
-        board: {
-          past: [
-            {
-              matrix: [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]],
-              score: 0,
-              bestScore: 0,
-              gameOver: false,
-              isMoved: true
-            }
-          ],
-          present: {
-            matrix: [[0, 4, 0, 0], [0, 2, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]],
-            score: 0,
-            bestScore: 0,
-            gameOver: false,
-            isMoved: true
-          },
-          future: [],
-          group: null,
-          _latestUnfiltered: {
-            matrix: [[0, 4, 0, 0], [0, 2, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]],
-            score: 0,
-            bestScore: 0,
-            gameOver: false,
-            isMoved: true
-          },
-          index: 1,
-          limit: 2
-        }
-      },
-      future: [],
-      group: null,
-      _latestUnfiltered: {
-        board: {
-          past: [
-            {
-              matrix: [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]],
-              score: 0,
-              bestScore: 0,
-              gameOver: false,
-              isMoved: true
-            }
-          ],
-          present: {
-            matrix: [[0, 4, 0, 0], [0, 2, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]],
-            score: 0,
-            bestScore: 0,
-            gameOver: false,
-            isMoved: true
-          },
-          future: [],
-          group: null,
-          _latestUnfiltered: {
-            matrix: [[0, 4, 0, 0], [0, 2, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]],
-            score: 0,
-            bestScore: 0,
-            gameOver: false,
-            isMoved: true
-          },
-          index: 1,
-          limit: 2
-        }
-      },
-      index: 1,
-      limit: 2
-    });
-    const mobileApp = mountWithStore(
-      <Container audioMove={audio} audioPopup={audio} />,
-      reduxStore
+    const matrix = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]];
+    const moveUp = jest.fn();
+    const moveDown = jest.fn();
+    const moveLeft = jest.fn();
+    const moveRight = jest.fn();
+    const placeRandom = jest.fn();
+    const reset = jest.fn();
+    const undo = jest.fn();
+    const mobileApp = mount(
+      <MobileApp
+        matrix={matrix}
+        audioMove={audio}
+        audioPopup={audio}
+        onMoveUp={moveUp}
+        onMoveDown={moveDown}
+        onMoveLeft={moveLeft}
+        onMoveRight={moveRight}
+        onPlaceRandom={placeRandom}
+        onReset={reset}
+        onUndo={undo}
+        isMoved
+        pastLen={4}
+      />
     );
-    // console.log(mobileApp.debug());
-    const div = mobileApp.find("#gameBoard");
+    const ins = mobileApp.instance();
+    ins.directionCallback();
+    ins.directionCallback("up");
     jest.runAllTimers();
-    div.simulate("touchstart", {
-      changedTouches: [{ pageX: 100, pageY: 100 }],
-      preventDefault() {}
+    expect(moveUp.mock.calls.length).toBe(1);
+    expect(placeRandom.mock.calls.length).toBe(1);
+
+    ins.directionCallback("down");
+    jest.runAllTimers();
+    expect(moveDown.mock.calls.length).toBe(1);
+    expect(placeRandom.mock.calls.length).toBe(2);
+
+    ins.directionCallback("left");
+    jest.runAllTimers();
+    expect(moveLeft.mock.calls.length).toBe(1);
+    expect(placeRandom.mock.calls.length).toBe(3);
+
+    ins.directionCallback("right");
+    jest.runAllTimers();
+    expect(moveRight.mock.calls.length).toBe(1);
+    expect(placeRandom.mock.calls.length).toBe(4);
+
+    ins.handleUndo();
+    jest.runAllTimers();
+    expect(undo.mock.calls.length).toBe(1);
+
+    ins.handleSpeakerClick(false);
+    expect(mobileApp.state("speakerOn")).toBe(false);
+
+    ins.directionCallback("right");
+    jest.runAllTimers();
+    expect(moveRight.mock.calls.length).toBe(2);
+    expect(placeRandom.mock.calls.length).toBe(5);
+
+    mobileApp.setProps({
+      pastLen: 2
     });
-    div.simulate("touchmove", {
-      preventDefault() {}
-    });
-    div.simulate("touchend", {
-      changedTouches: [{ pageX: 0, pageY: 100 }],
-      preventDefault() {}
-    });
+    ins.handleUndo();
+    jest.runAllTimers();
+    expect(undo.mock.calls.length).toBe(1);
   });
 });

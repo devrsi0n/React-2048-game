@@ -26,7 +26,7 @@ exports[`<GameOver /> component render 1`] = `
             className="banner"
           >
             <p>
-              0
+              123
             </p>
           </div>
         </div>
@@ -52,7 +52,7 @@ exports[`<GameOver /> component render 1`] = `
 exports[`<GameOver /> component render 2`] = `
 <div>
   <div
-    className="hidden"
+    className=""
   >
     <div
       className="overlay"

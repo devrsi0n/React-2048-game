@@ -5,8 +5,8 @@ import Board from "../../components/Board";
 import Tips from "../../components/Tips";
 import Footer from "../../components/Footer";
 import ControlPanel from "../ControlPanel";
-import GameOver from "../GameOver";
-import Scores from "../Scores";
+import GameOver from "../../components/GameOver";
+import Scores from "../../components/Scores";
 import i18n from "../../utils/i18n";
 import comments from "../../utils/gitComments";
 
@@ -15,7 +15,18 @@ export default class WebApp extends Component {
   static propTypes = {
     matrix: PropTypes.arrayOf(PropTypes.array).isRequired,
     audioMove: PropTypes.instanceOf(Audio).isRequired,
-    audioPopup: PropTypes.instanceOf(Audio).isRequired
+    audioPopup: PropTypes.instanceOf(Audio).isRequired,
+    score: PropTypes.number,
+    bestScore: PropTypes.number,
+    gameOver: PropTypes.bool,
+    onReset: PropTypes.func
+  };
+
+  static defaultProps = {
+    score: 0,
+    bestScore: 0,
+    gameOver: false,
+    onReset() {}
   };
 
   constructor(...args) {
@@ -33,7 +44,15 @@ export default class WebApp extends Component {
 
   render() {
     const { delay } = this;
-    const { matrix, audioMove, audioPopup } = this.props;
+    const {
+      matrix,
+      audioMove,
+      audioPopup,
+      bestScore,
+      score,
+      gameOver,
+      onReset
+    } = this.props;
 
     return (
       <div className={styles.app}>
@@ -44,7 +63,7 @@ export default class WebApp extends Component {
           </div>
           <div className={styles.panel}>
             <div>
-              <Scores />
+              <Scores bestScore={bestScore} score={score} />
             </div>
             <ControlPanel
               delay={delay}
@@ -69,7 +88,7 @@ export default class WebApp extends Component {
           profileUrl="https://github.com/devrsi0n"
           repoUrl="https://github.com/devrsi0n/React-2048-game"
         />
-        <GameOver />
+        <GameOver gameOver={gameOver} score={score} onReset={onReset} />
       </div>
     );
   }

@@ -13,7 +13,10 @@ import MobileApp from "./MobileApp";
 const mapStateToProps = state => ({
   matrix: state.present.board.present.matrix,
   isMoved: state.present.board.present.isMoved,
-  pastLen: state.past.length
+  pastLen: state.past.length,
+  score: state.present.board.present.score,
+  bestScore: state.present.board.present.bestScore,
+  gameOver: state.present.board.present.gameOver
 });
 
 const mapDispatchToProps = {

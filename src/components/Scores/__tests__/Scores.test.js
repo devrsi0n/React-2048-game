@@ -1,17 +1,11 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import { Provider } from "react-redux";
-import store from "../../../store";
 import Scores from "..";
 
 describe("<Scores />", () => {
   it("component render", () => {
     const scores = renderer
-      .create(
-        <Provider store={store}>
-          <Scores />
-        </Provider>
-      )
+      .create(<Scores score={123} bestScore={456} />)
       .toJSON();
     expect(scores).toMatchSnapshot();
   });

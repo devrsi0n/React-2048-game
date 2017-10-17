@@ -2497,17 +2497,17 @@ escope@^3.6.0:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
-eslint-config-airbnb-base@^12.0.2:
-  version "12.0.2"
-  resolved "https://registry.yarnpkg.com/eslint-config-airbnb-base/-/eslint-config-airbnb-base-12.0.2.tgz#45fea317d71b8f1da323c730f3a8471988757793"
+eslint-config-airbnb-base@^12.1.0:
+  version "12.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-airbnb-base/-/eslint-config-airbnb-base-12.1.0.tgz#386441e54a12ccd957b0a92564a4bafebd747944"
   dependencies:
     eslint-restricted-globals "^0.1.1"
 
-eslint-config-airbnb@^16.0.0:
-  version "16.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-airbnb/-/eslint-config-airbnb-16.0.0.tgz#21e81476ab7f5f27c1a900ff415cac9e1e12f3ed"
+eslint-config-airbnb@^16.1.0:
+  version "16.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-airbnb/-/eslint-config-airbnb-16.1.0.tgz#2546bfb02cc9fe92284bf1723ccf2e87bc45ca46"
   dependencies:
-    eslint-config-airbnb-base "^12.0.2"
+    eslint-config-airbnb-base "^12.1.0"
 
 eslint-config-prettier@^2.6.0:
   version "2.6.0"
@@ -6359,10 +6359,6 @@ reduce-function-call@^1.0.1:
   dependencies:
     balanced-match "^0.4.2"
 
-redux-test-utils@^0.1.3:
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/redux-test-utils/-/redux-test-utils-0.1.3.tgz#0d89100f100f86c7c7214976eaece88e7e45bf74"
-
 redux-undo@^1.0.0-beta9-9-6:
   version "1.0.0-beta9-9-6"
   resolved "https://registry.yarnpkg.com/redux-undo/-/redux-undo-1.0.0-beta9-9-6.tgz#4bfd591b3e46b37c19eb7309766d7f020b2403e8"
@@ -7728,9 +7724,9 @@ webpack-dev-middleware@^1.11.0:
     range-parser "^1.0.3"
     time-stamp "^2.0.0"
 
-webpack-dev-server@^2.9.1:
-  version "2.9.1"
-  resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-2.9.1.tgz#7ac9320b61b00eb65b2109f15c82747fc5b93585"
+webpack-dev-server@^2.9.2:
+  version "2.9.2"
+  resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-2.9.2.tgz#0fbab915701d25a905a60e1e784df19727da800f"
   dependencies:
     ansi-html "0.0.7"
     array-includes "^3.0.3"
@@ -7764,9 +7760,9 @@ webpack-manifest-plugin@^1.2.1:
     fs-extra "^0.30.0"
     lodash ">=3.5 <5"
 
-webpack-monitor@^1.0.11:
-  version "1.0.11"
-  resolved "https://registry.yarnpkg.com/webpack-monitor/-/webpack-monitor-1.0.11.tgz#6e94190235d78587fe2802ea28d4528bc041e28d"
+webpack-monitor@^1.0.13:
+  version "1.0.13"
+  resolved "https://registry.yarnpkg.com/webpack-monitor/-/webpack-monitor-1.0.13.tgz#a3bb31db1420fb08a3dd6a06fd67d92470e08df4"
   dependencies:
     babel-core "^6.26.0"
     colors "^1.1.2"

@@ -47,7 +47,8 @@ class Matrix {
   checkGameOver = matrix => {
     const copy = JSON.parse(JSON.stringify(matrix));
     const check = func => {
-      const isMoved = this.isBoardMoved(copy, func(copy).matrix);
+      this.matrix = copy;
+      const isMoved = this.isBoardMoved(copy, func().matrix);
       this.matrix = copy; // Reset to origin matrix
       return isMoved;
     };
