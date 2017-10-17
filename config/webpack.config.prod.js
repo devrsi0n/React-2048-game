@@ -332,6 +332,23 @@ const prodConfig = {
       minRatio: 0.8
     }),
 
+    // Extract the node_module code into a vendor file
+    new webpack.optimize.CommonsChunkPlugin({
+      name: "vendor",
+      minChunks({ resource }) {
+        return (
+          resource &&
+          resource.indexOf("node_modules") >= 0 &&
+          resource.match(/\.js$/)
+        );
+      }
+    }),
+    // Extract the webpack bootstrap logic into manifest file
+    new webpack.optimize.CommonsChunkPlugin({
+      name: "manifest",
+      minChunks: Infinity
+    }),
+
     new StyleLintPlugin({
       context: "src",
       quiet: false,
