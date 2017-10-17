@@ -124,7 +124,7 @@
     };
 ```
 
-* 和上面相反，如果你需要组件生命周期方法优化组件性能（典型应用，重写 `shouldComponentUpdate` 方法），需要组件保存自己的状态，或者用 refs 操作 DOM，你就需要一个有状态组件，采用 es6 class 继承 React.Component 的写法。组件示例：
+* 和上面相反，如果你需要组件生命周期方法优化组件性能（典型应用，重写 `shouldComponentUpdate` 方法），需要组件保存自己的状态，或者用 refs 操作 DOM，你就需要一个有状态组件，采用 es6 class 继承 React.Component 的写法。以项目 Cell 组件示例：
 
 ```js
     import React from "react";
@@ -160,20 +160,30 @@
     }
 ```
 
-* 事件绑定 this 方法。在构造函数里面绑定一次 this 之后后面就可以正常使用。以 [ControlPanel](https://github.com/devrsi0n/React-2048-game/blob/e6812e8b89bb38109387e7f6495fcd5d70c11f26/src/containers/ControlPanel/index.js) 组件部分代码示例：
+* 事件绑定 this 方法。事件回调方法的 this 一直是一个比较麻烦事情，不管是在 jsx 的事件注册属性里面还是在构造函数里面绑定 this 都不够优雅，好在[`类的属性`](https://babeljs.io/docs/plugins/transform-class-properties/) 这个 es 提案的出现可以帮助减少模版代码。以 [ControlPanel](https://github.com/devrsi0n/React-2048-game/blob/e6812e8b89bb38109387e7f6495fcd5d70c11f26/src/containers/ControlPanel/index.js) 组件示例：
 
 ```js
 constructor(...args) {
-    super(...args);
+  super(...args);
 
-    this.handleMoveUp = this.handleMoveUp.bind(this);
-    this.handleMoveDown = this.handleMoveDown.bind(this);
-    this.handleMoveLeft = this.handleMoveLeft.bind(this);
-    this.handleMoveRight = this.handleMoveRight.bind(this);
-    this.handleKeyUp = this.handleKeyUp.bind(this);
-    this.handleSpeakerClick = this.handleSpeakerClick.bind(this);
-    this.handleUndo = this.handleUndo.bind(this);
+  this.state = {
+    speakerOn: true
+  };
+}
+
+// 使用 this.keyDownHandler 自动绑定当前的 this
+keyDownHandler = e => {
+  switch (e.keyCode) {
+    case keyUp:
+    case keyDown:
+    case keyLeft:
+    case keyRight:
+      e.preventDefault();
+      break;
+    default:
+      break;
   }
+};
 ```
 
 * 使用 [propTypes](https://reactjs.org/docs/typechecking-with-proptypes.html) 属性进行传入 prop 的校验。可以校验 prop 的类型和是否必需，非必需的 prop 还必需填写 defaultProps 默认值。以无状态组件 [Button](https://github.com/devrsi0n/React-2048-game/blob/e6812e8b89bb38109387e7f6495fcd5d70c11f26/src/components/Button/index.js) 的部分代码示例：
@@ -221,12 +231,12 @@ constructor(...args) {
 
 ### 调整如下
 
-* [webpack](https://github.com/webpack/webpack) 添加 [scss](http://sass-lang.com/guide) 支持。之所以没有用 [CssInJS](https://medium.com/@gajus/stop-using-css-in-javascript-for-web-development-fa32fb873dcc) 的方案是因为这些方案普遍不完美，也考虑到要遵循样式和结构分离的原则，scss 是目前比较成熟的 css 预处理器，社区轮子也比较多，开发起来很方便。推荐学习 scss/sass [教程](http://www.sassshop.com/#/1/2)。添加 `sass-loader` 到 scss 规则下面最下面即可。[配置代码](https://github.com/devrsi0n/React-2048-game/blob/149d75e117c048a44704315a6122e0e28c256a97/config/webpack.config.dev.js#L190)
+* [webpack](https://github.com/webpack/webpack) 添加 [scss](http://sass-lang.com/guide) 支持。之所以没有用 [CSS-in-JS](https://medium.com/@gajus/stop-using-css-in-javascript-for-web-development-fa32fb873dcc) 的方案是因为这些方案普遍不完美，也考虑到要遵循样式和结构分离的原则，scss 是目前比较成熟的 css 预处理器，社区轮子也比较多，开发起来很方便。推荐学习 scss/sass [教程](http://www.sassshop.com/#/1/2)。添加 `sass-loader` 到 scss 规则下面最下面即可。[配置代码](https://github.com/devrsi0n/React-2048-game/blob/149d75e117c048a44704315a6122e0e28c256a97/config/webpack.config.dev.js#L190)
 * 开启 [css module](https://github.com/css-modules/css-modules) 支持。在大型项目里面组件之间需要尽量解耦，但是 css 类名的全局特性很容易导致意料之外的错误。开启 css module 之后，所有的类名最终都会被一小段 hash 值填充，所以类名也就有一定的唯一性，不容易污染全局的代码。[配置代码](https://github.com/devrsi0n/React-2048-game/blob/149d75e117c048a44704315a6122e0e28c256a97/config/webpack.config.dev.js#L170)
 * 添加 [stylelint](https://github.com/stylelint/stylelint) 支持。js 代码已经有 [eslint](https://github.com/eslint/eslint) (但采用了更流行，校验更严格的 [airbnb](https://github.com/airbnb/javascript/) 规则) 来检查代码，但是样式代码也需要保持代码风格统一，同时校验规则一般有社区的最佳实践。[配置代码](https://github.com/devrsi0n/React-2048-game/blob/149d75e117c048a44704315a6122e0e28c256a97/config/webpack.config.dev.js#L251)
 * 添加静态资源 cdn 支持。由于项目部署在 [github page](https://pages.github.com/) 在国内访问速度不是很理想，所以在可能的情况下尽量减小 js 包的大小对页面加载速度至关重要。像 ReactDOM 这类较大的 npm 包从打包文件剥离出去采用 CDN 来加载，可显著减小打包文件的大小。（PS：之所以 CDN 加载比较快，是因为 CDN 提供商在全国各地都建立了缓存服务器，资源就近获取比自己从 github 获取快得多，而且一般 CDN 的带宽也比较充裕）把 React 和 ReactDOM 剥离出去只需要在 html 文件添加 CDN 的 [script 标签]()，同时在 webpack 添加 [externals](https://github.com/devrsi0n/React-2048-game/blob/e6812e8b89bb38109387e7f6495fcd5d70c11f26/config/webpack.config.prod.js#L77) 属性，该属性指定代码 `import` 该包时直接从全局变量获取。剥离后打包的 js 文件大小从 278kb 减小到 164 kb。
-* 添加 webpack [代码压缩](https://github.com/webpack-contrib/compression-webpack-plugin)插件。默认的 webpack 配置直接输出原始的 js，css 代码，但添加压缩过后，文件显著减小（js 文件从 164kb 到 49kb），对于移动浏览器来说打开速度得到明显提升。[配置代码](https://github.com/devrsi0n/React-2048-game/blob/25099b82afe7b32d060b0957862e4d1d397fc539/config/webpack.config.prod.js#L329)
-* 添加 [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) 插件，通过各模块包所占打包文件后的比重来分析项目代码，借此优化代码。比如，React 和 ReactDOM 的剥离就是因为分析后发现这两个包所占比重较大。
+* 添加 webpack [代码压缩](https://github.com/webpack-contrib/compression-webpack-plugin) 插件。默认的 webpack 配置直接输出原始的 js，css 代码，但添加压缩过后，文件显著减小（js 文件从 164kb 到 49kb），对于移动浏览器来说打开速度得到明显提升。[配置代码](https://github.com/devrsi0n/React-2048-game/blob/25099b82afe7b32d060b0957862e4d1d397fc539/config/webpack.config.prod.js#L329)
+* 添加 [webpackmonitor](https://github.com/webpackmonitor/webpackmonitor) 插件，通过各模块包所占打包文件后的比重来分析项目代码，借此优化代码。举个 🌰，React 和 ReactDOM 的剥离就是因为分析后发现这两个包所占比重较大。
 
 ### 文件结构
 
