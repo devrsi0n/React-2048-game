@@ -257,7 +257,7 @@ keyDownHandler = e => {
 * .eslintignore，需要 eslint 忽略的文件或者目录，规则类似 .gitignore
 * .travis.yml, 持续集成脚本，每次提交代码到 github 之后，测试服务器都会自动运行该脚本执行测试用例，并输出代码覆盖率，最后自动部署到 [github page](https://pages.github.com/)。所有状态都在项目中 README 的徽章中可见。
 * package.json，项目基本信息和部分配置都存在这里。常见的内容包括项目的各类依赖包，各种启动脚本，项目 homepage 等等；为了减少根项目的文件数目，jest，babel，eslint，stylelint 的配置也写在这里。值得注意的是，项目中引入 [husky](https://github.com/typicode/husky)，在每次代码 commit 之前都会执行 [lint-staged](https://github.com/okonet/lint-staged)，以自动执行 [prettier](https://github.com/prettier/prettier) 来美化代码格式。每次代码推送 到 github 之前也会执行所有单元测试用例，全部通过才可以继续推送。
-* yarn.locl，[yarn]([yarn](https://yarnpkg.com/zh-Hans) 首次安装依赖包之后生成的 lock 文件。通过 yarn 来安装依赖包时，yarn 自动把项目的依赖包（包括依赖包依赖的父级包）固定在指定的版本（包括依赖包安装的 url 和 hash 值），这样所有开发环境都使用 yarn 来管理项目，不同的机器不同的系统安装出来包都是一样的，这样就避免了之前 npm 的缺陷（版本要求太松或者父级包版本更新等等导致每次安装出来的依赖版本不一样）。
+* yarn.local，[yarn]([yarn](https://yarnpkg.com/zh-Hans) 首次安装依赖包之后生成的 lock 文件。通过 yarn 来安装依赖包时，yarn 自动把项目的依赖包（包括依赖包依赖的父级包）固定在指定的版本（包括依赖包安装的 url 和 hash 值），这样所有开发环境都使用 yarn 来管理项目，不同的机器不同的系统安装出来包都是一样的，这样就避免了之前 npm 的缺陷（版本要求太松或者父级包版本更新等等导致每次安装出来的依赖版本不一样）。
 
 ## 技术栈
 
