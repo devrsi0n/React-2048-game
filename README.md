@@ -1,3 +1,5 @@
+## For English introduction please view [README_EN.md](https://github.com/devrsi0n/React-2048-game/raw/master/README_EN.md)
+
 # React-2048-game
 
 [![codebeat](https://codebeat.co/badges/9b33ea0e-5cf5-44b3-9a52-438667fb2673)](https://codebeat.co/projects/github-com-devrsi0n-React-2048-game-master)
