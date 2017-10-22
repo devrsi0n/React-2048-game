@@ -1,9 +1,9 @@
 language: node_js
 node_js:
   - "6"
-before_install:
+# before_install:
   # CI server install taobao npm packages too slow.
-  - rm -rf ./yarn.lock
+  # - rm -rf ./yarn.lock
 install:
   - yarn global add codecov
   - yarn
