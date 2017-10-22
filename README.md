@@ -1,4 +1,4 @@
-## For English introduction please view [README_EN.md](https://github.com/devrsi0n/React-2048-game/raw/master/README_EN.md)
+## For English introduction please view [README_EN.md](https://github.com/devrsi0n/React-2048-game/blob/master/README_EN.md)
 
 # React-2048-game
 
