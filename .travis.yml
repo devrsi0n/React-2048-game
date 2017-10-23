@@ -5,13 +5,13 @@ node_js:
   # CI server install taobao npm packages too slow.
   # - rm -rf ./yarn.lock
 install:
-  - npm install -g codecov
-  - npm install
+  - yarn add global codecov
+  - yarn
 script:
-  - npm run ci
-  - npm run build # build project for deploy
+  - yarn run ci
+  - yarn run build # build project for deploy
 after_script:
-  - npm run codecov
+  - yarn run codecov
 deploy:
   provider: pages
   skip_cleanup: true
