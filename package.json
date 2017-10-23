@@ -20,12 +20,12 @@
   },
   "scripts": {
     "precommit": "lint-staged",
-    "prepush": "PRE_PUSH=true node scripts/test.js",
+    "prepush": "cross-env PRE_PUSH=true node scripts/test.js",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "analyze": "ANALYZE=true node scripts/build.js",
+    "analyze": "cross-env ANALYZE=true node scripts/build.js",
     "test": "node scripts/test.js",
-    "ci": "CI=true node scripts/test.js",
+    "ci": "cross-env CI=true node scripts/test.js",
     "codecov": "codecov",
     "predeploy": "node scripts/build.js",
     "deploy": "gh-pages -d build"
@@ -143,6 +143,7 @@
     "case-sensitive-paths-webpack-plugin": "^2.1.1",
     "chalk": "^2.2.0",
     "compression-webpack-plugin": "^1.0.1",
+    "cross-env": "^5.1.0",
     "css-loader": "0.28.7",
     "dotenv": "^4.0.0",
     "enzyme": "^3.1.0",
