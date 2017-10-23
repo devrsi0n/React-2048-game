@@ -9,3 +9,21 @@
 A fancy 2048 game build with react, redux best practices.
 
 👉 [Start the game](https://devrsi0n.github.io/React-2048-game/)
+
+## Quick start
+
+Require nodejs version > 6.10 as config scripts was wrote in es6+, also recommend to use [yarn](https://yarnpkg.com) to manage project dependencies instead of npm. After fork the project follow below commands to start.
+
+```bash
+  npm i -g yarn # Install yarn
+  git clone git@github.com:<your name>/React-2048-game.git
+  cd React-2048-game
+  yarn # Install dependencies
+  yarn start # Start local developing mode
+  yarn test # Run test code
+  yarn build # Build the project from source
+```
+
+## License
+
+[MIT](http://opensource.org/licenses/MIT)
