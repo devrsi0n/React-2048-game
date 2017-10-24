@@ -66,11 +66,13 @@ export default class WebApp extends Component {
           </div>
         </div>
         <Tips title={i18n.tipTitle} content={i18n.tipContent} />
-        <Footer
-          name="devrsi0n"
-          profileUrl="https://github.com/devrsi0n"
-          repoUrl="https://github.com/devrsi0n/React-2048-game"
-        />
+        <div className={styles.footer}>
+          <Footer
+            name="devrsi0n"
+            profileUrl="https://github.com/devrsi0n"
+            repoUrl="https://github.com/devrsi0n/React-2048-game"
+          />
+        </div>
         <GameOver gameOver={gameOver} score={score} onReset={onReset} />
       </div>
     );

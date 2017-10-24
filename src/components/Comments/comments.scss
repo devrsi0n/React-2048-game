@@ -1,7 +1,9 @@
 @import '../../assets/styles/vars';
 
 .main {
+  margin: auto;
   text-align: center;
+  width: 60vw;
 }
 
 .comments {
@@ -9,7 +11,6 @@
   border-radius: 5px;
   margin: 3.85vw auto 0;
   padding: 1.54vw;
-  width: 60vw;
 
   .comments-title {
     border-bottom: 1px solid $border-color;
@@ -25,4 +26,3 @@
     }
   }
 }
-

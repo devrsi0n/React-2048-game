@@ -327,52 +327,35 @@ exports[`<App /> component render 1`] = `
     </p>
   </div>
   <div
-    className="comments"
-  >
-    <p
-      className="commentsTitle"
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "Welcome to leave comments",
-        }
-      }
-    />
-    <div
-      id="gitmentHeader"
-    />
-    <div
-      id="gitmentComments"
-    />
-    <div
-      id="gitmentEditor"
-    />
-  </div>
-  <div
     className="footer"
   >
-    <a
-      className="icon"
-      href="https://github.com/devrsi0n/React-2048-game"
+    <div
+      className="footer"
     >
-      <img
-        alt="github repo"
-        className="github"
-        src="github.png"
-      />
-    </a>
-    Build with
-    <span
-      className="heart"
-    >
-      ♥
-    </span>
-    by
-    <a
-      className="link"
-      href="https://github.com/devrsi0n"
-    >
-      devrsi0n
-    </a>
+      <a
+        className="icon"
+        href="https://github.com/devrsi0n/React-2048-game"
+      >
+        <img
+          alt="github repo"
+          className="github"
+          src="github.png"
+        />
+      </a>
+      Build with
+      <span
+        className="heart"
+      >
+        ♥
+      </span>
+      by
+      <a
+        className="link"
+        href="https://github.com/devrsi0n"
+      >
+        devrsi0n
+      </a>
+    </div>
   </div>
   <div>
     <div
