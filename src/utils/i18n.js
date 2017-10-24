@@ -3,22 +3,18 @@ const data = {
   lang: ["cn", "en"],
   default: "cn",
   text: {
-    title: {
-      cn: "2048",
-      en: "2048"
+    title: { cn: "2048", en: "2048" },
+    home: {
+      cn: "首页",
+      en: "Home"
     },
-    score: {
-      cn: "得分",
-      en: "SCORE"
+    comments: {
+      cn: "留言",
+      en: "Comments"
     },
-    best: {
-      cn: "最佳",
-      en: "BEST"
-    },
-    tipTitle: {
-      cn: "提示",
-      en: "Tips"
-    },
+    score: { cn: "得分", en: "SCORE" },
+    best: { cn: "最佳", en: "BEST" },
+    tipTitle: { cn: "提示", en: "Tips" },
     tipContent: {
       cn: "使用键盘箭头键（或 WASD ）控制方块;反悔了？点回退按钮回退到上一步的状态。",
       en:
