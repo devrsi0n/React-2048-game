@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styles from "./header.scss";
 import github from "../../assets/images/github-white.png";
 import i18n from "../../utils/i18n";
@@ -33,12 +33,16 @@ export default class Header extends React.Component {
           <ul className={styles.row}>
             <li className={styles.title}>
               {/* eslint-disable jsx-a11y/anchor-is-valid */}
-              <Link to="/">{i18n.home}</Link>
+              <NavLink exact to="/" activeClassName={styles.active}>
+                {i18n.home}
+              </NavLink>
             </li>
             {/* TODO: Move isMobile state to redux */}
             {isMobile ? null : (
               <li className={styles.link}>
-                <Link to="/comments">{i18n.comments}</Link>
+                <NavLink to="/comments" activeClassName={styles.active}>
+                  {i18n.comments}
+                </NavLink>
               </li>
             )}
             <li className={styles.spacer} />

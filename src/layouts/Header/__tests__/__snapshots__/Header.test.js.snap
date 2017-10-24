@@ -12,8 +12,11 @@ exports[`<Header /> component render 1`] = `
         className="title"
       >
         <a
+          aria-current="true"
+          className="active"
           href="/"
           onClick={[Function]}
+          style={Object {}}
         >
           Home
         </a>
@@ -22,8 +25,11 @@ exports[`<Header /> component render 1`] = `
         className="link"
       >
         <a
+          aria-current={false}
+          className={undefined}
           href="/comments"
           onClick={[Function]}
+          style={undefined}
         >
           Comments
         </a>
