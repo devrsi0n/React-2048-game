@@ -37,6 +37,13 @@ export default class Header extends React.Component {
                 {i18n.home}
               </NavLink>
             </li>
+            {isMobile ? null : (
+              <li className={styles.link}>
+                <NavLink to="/ranking" activeClassName={styles.active}>
+                  {i18n.ranking}
+                </NavLink>
+              </li>
+            )}
             {/* TODO: Move isMobile state to redux */}
             {isMobile ? null : (
               <li className={styles.link}>

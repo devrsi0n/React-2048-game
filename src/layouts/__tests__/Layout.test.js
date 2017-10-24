@@ -2,8 +2,8 @@ import React from "react";
 import renderer from "react-test-renderer";
 import { MemoryRouter } from "react-router";
 import { Provider } from "react-redux";
-import store from "../store";
-import Layout from "./index";
+import store from "../../store";
+import Layout from "..";
 
 // Make random always return 0.5, so snapshot always same.
 const mockMath = Object.create(global.Math);

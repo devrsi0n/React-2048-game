@@ -12,6 +12,10 @@ const data = {
       cn: "留言",
       en: "Comments"
     },
+    ranking: {
+      cn: "排行榜",
+      en: "Ranking"
+    },
     score: { cn: "得分", en: "SCORE" },
     best: { cn: "最佳", en: "BEST" },
     tipTitle: { cn: "提示", en: "Tips" },
