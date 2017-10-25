@@ -1,11 +1,11 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import { Ranking } from "../index";
+import { Rank } from "../index";
 
 describe("<Ranking />", () => {
   it("component render", () => {
     const ranking = renderer
-      .create(<Ranking onGetRankingList={() => {}} />)
+      .create(<Rank onGetRankingList={() => {}} />)
       .toJSON();
     expect(ranking).toMatchSnapshot();
   });
