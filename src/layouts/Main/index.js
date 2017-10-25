@@ -10,6 +10,8 @@ const Main = () => (
       <Route exact path="/" component={App} />
       <Route exact path="/comments" component={Comments} />
       <Route exact path="/ranking" component={Ranking} />
+      {/* 404 Page */}
+      <Route component={App} />
     </Switch>
   </main>
 );

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
-class Ranking extends Component {
+export class Ranking extends Component {
   static propTypes = {
     onGetRankingList: PropTypes.func.isRequired
   };
@@ -12,7 +12,7 @@ class Ranking extends Component {
   }
 
   render() {
-    return <div>排行榜</div>;
+    return <div>Working on it.</div>;
   }
 }
 

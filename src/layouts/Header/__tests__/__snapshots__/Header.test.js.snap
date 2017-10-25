@@ -27,6 +27,19 @@ exports[`<Header /> component render 1`] = `
         <a
           aria-current={false}
           className={undefined}
+          href="/ranking"
+          onClick={[Function]}
+          style={undefined}
+        >
+          Ranking
+        </a>
+      </li>
+      <li
+        className="link"
+      >
+        <a
+          aria-current={false}
+          className={undefined}
           href="/comments"
           onClick={[Function]}
           style={undefined}

@@ -12,16 +12,23 @@ const args = [
   undoable(rootReducer, {
     limit: 11, // set a limit for the history
     ignoreInitialState: true
-  }),
-  compose(
-    applyMiddleware(sagaMiddleware),
-    // Redux devtools necessary code
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  )
+  })
 ];
-// Insert localStorage data if available
+// Load localStorage data if available
 if (initHistory) {
-  args.splice(1, 0, initHistory);
+  args.push(initHistory);
+}
+
+if (window.__REDUX_DEVTOOLS_EXTENSION__) {
+  args.push(
+    compose(
+      applyMiddleware(sagaMiddleware),
+      // Redux devtools necessary code
+      window.__REDUX_DEVTOOLS_EXTENSION__()
+    )
+  );
+} else {
+  args.push(applyMiddleware(sagaMiddleware));
 }
 
 const store = createStore(...args);

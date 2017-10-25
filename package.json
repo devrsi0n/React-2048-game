@@ -41,7 +41,11 @@
     "collectCoverageFrom": ["src/**/*.{js,jsx}"],
     "coverageDirectory": "./coverage/",
     "setupTestFrameworkScriptFile": "./node_modules/jest-enzyme/lib/index.js",
-    "setupFiles": ["<rootDir>/config/polyfills.js", "jest-localstorage-mock"],
+    "setupFiles": [
+      "<rootDir>/config/polyfills.js",
+      "jest-localstorage-mock",
+      "babel-polyfill"
+    ],
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.js?(x)",
       "<rootDir>/src/**/?(*.)(spec|test).js?(x)"
@@ -67,24 +71,6 @@
       "\\.scss$": "identity-obj-proxy"
     },
     "moduleFileExtensions": ["web.js", "js", "json", "web.jsx", "jsx", "node"]
-  },
-  "babel": {
-    "presets": [
-      [
-        "env",
-        {
-          "modules": false
-        }
-      ],
-      "react",
-      "stage-2"
-    ],
-    "env": {
-      "test": {
-        "presets": ["env", "stage-2"],
-        "sourceMaps": "inline"
-      }
-    }
   },
   "engines": {
     "node": ">= 6.10.0",
@@ -139,6 +125,7 @@
     "babel-eslint": "^8.0.1",
     "babel-jest": "^21.0.2",
     "babel-loader": "^7.1.1",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",

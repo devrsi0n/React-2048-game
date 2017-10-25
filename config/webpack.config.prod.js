@@ -49,6 +49,24 @@ const extractTextPluginOptions = shouldUseRelativeAssetPaths
     { publicPath: Array(cssFilename.split("/").length).join("../") }
   : {};
 
+const htmlConfig = {
+  inject: true,
+  cache: true,
+  template: paths.appHtml,
+  minify: {
+    removeComments: true,
+    collapseWhitespace: true,
+    removeRedundantAttributes: true,
+    useShortDoctype: true,
+    removeEmptyAttributes: true,
+    removeStyleLinkTypeAttributes: true,
+    keepClosingSlash: true,
+    minifyJS: true,
+    minifyCSS: true,
+    minifyURLs: true
+  }
+};
+
 // This is the production configuration.
 // It compiles slowly and is focused on producing a fast and minimal bundle.
 const prodConfig = {
@@ -238,22 +256,14 @@ const prodConfig = {
     // in `package.json`, in which case it will be the pathname of that URL.
     new InterpolateHtmlPlugin(env.raw),
     // Generates an `index.html` file with the <script> injected.
-    new HtmlWebpackPlugin({
-      inject: true,
-      template: paths.appHtml,
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true,
-        removeRedundantAttributes: true,
-        useShortDoctype: true,
-        removeEmptyAttributes: true,
-        removeStyleLinkTypeAttributes: true,
-        keepClosingSlash: true,
-        minifyJS: true,
-        minifyCSS: true,
-        minifyURLs: true
-      }
-    }),
+    new HtmlWebpackPlugin(htmlConfig),
+    // Make github page 404 redirect to index
+    new HtmlWebpackPlugin(
+      Object.assign({}, htmlConfig, {
+        filename: "404.html"
+      })
+    ),
+
     // Makes some environment variables available to the JS code, for example:
     // if (process.env.NODE_ENV === 'production') { ... }. See `./env.js`.
     // It is absolutely essential that NODE_ENV was set to production here.
