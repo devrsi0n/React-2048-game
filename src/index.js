@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import "./assets/styles/normalize.scss";
 import "./assets/styles/index.scss";
 import Layouts from "./layouts";
@@ -13,9 +13,9 @@ const basename =
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter basename={basename}>
+    <HashRouter basename={basename}>
       <Layouts />
-    </BrowserRouter>
+    </HashRouter>
   </Provider>,
   document.getElementById("root")
 );
