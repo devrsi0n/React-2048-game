@@ -40,7 +40,7 @@
       "prettier --single-quote --write",
       "git add"
     ],
-    "*.json": ["prettier --single-quote --write", "git add"],
+    "*.json": ["prettier --write", "git add"],
     "src/**/*.scss": [
       "stylelint --syntax=scss --fix",
       "prettier --single-quote --write",
