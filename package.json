@@ -35,11 +35,15 @@
     "deploy": "gh-pages -d build"
   },
   "lint-staged": {
-    "src/**/*.js": ["eslint --fix", "prettier --write", "git add"],
-    "*.json": ["prettier --write", "git add"],
+    "src/**/*.js": [
+      "eslint --fix",
+      "prettier --single-quote --write",
+      "git add"
+    ],
+    "*.json": ["prettier --single-quote --write", "git add"],
     "src/**/*.scss": [
       "stylelint --syntax=scss --fix",
-      "prettier --write",
+      "prettier --single-quote --write",
       "git add"
     ]
   },
