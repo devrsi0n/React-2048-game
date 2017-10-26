@@ -94,7 +94,10 @@ const prodConfig = {
   externals: {
     // Use CDN
     react: "React",
-    "react-dom": "ReactDOM"
+    "react-dom": "ReactDOM",
+    "react-router": "ReactRouter",
+    "react-router-dom": "ReactRouterDOM",
+    gitalk: "Gitalk",
   },
   resolve: {
     // This allows you to set a fallback for where Webpack should look for modules.
