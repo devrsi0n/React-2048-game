@@ -1,6 +1,6 @@
-import { connect } from "react-redux";
-import { reset } from "../../reducers/board";
-import WebApp from "./WebApp";
+import { connect } from 'react-redux';
+import { reset } from '../../reducers/board';
+import WebApp from './WebApp';
 
 const mapStateToProps = state => ({
   matrix: state.present.board.present.matrix,

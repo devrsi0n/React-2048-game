@@ -12,11 +12,8 @@ const gitalk = new Gitalk({
   admin: ['devrsi0n'],
   // facebook-like distraction free mode
   distractionFreeMode: false,
-  createIssueManually: true,
-  // id: "devrsi0n.github.io/React-2048-game",
-  labels: ['gitment', 'https://devrsi0n.github.io/React-2048-game/'],
-  title: '2048',
-  body: 'devrsi0n.github.io/React-2048-game'
+  title: 'site comments',
+  body: 'User login with github and comments here'
 });
 
 export default class Comments extends Component {

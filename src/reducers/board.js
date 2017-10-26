@@ -1,11 +1,11 @@
 // Actions
-const INIT = "INIT";
-const PLACE_RANDOM = "PLACE_RANDOM";
-const MOVE_UP = "MOVE_UP";
-const MOVE_DOWN = "MOVE_DOWN";
-const MOVE_LEFT = "MOVE_LEFT";
-const MOVE_RIGHT = "MOVE_RIGHT";
-const RESET = "RESET";
+const INIT = 'INIT';
+const PLACE_RANDOM = 'PLACE_RANDOM';
+const MOVE_UP = 'MOVE_UP';
+const MOVE_DOWN = 'MOVE_DOWN';
+const MOVE_LEFT = 'MOVE_LEFT';
+const MOVE_RIGHT = 'MOVE_RIGHT';
+const RESET = 'RESET';
 
 // Game board initial state
 const initState = {

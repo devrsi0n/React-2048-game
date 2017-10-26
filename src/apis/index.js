@@ -1,10 +1,10 @@
 function* get(url) {
   return yield fetch(`https://api.github.com${url}`, {
-    method: "GET",
+    method: 'GET',
     headers: {
-      Accept: "application/vnd.github.v3+json"
+      Accept: 'application/vnd.github.v3+json'
     },
-    credentials: "same-origin"
+    credentials: 'same-origin'
   });
 }
 
@@ -21,6 +21,6 @@ function* get(url) {
 // }
 
 export default function* getIssueInfo() {
-  const rsp = yield get("/users/octocat");
+  const rsp = yield get('/users/octocat');
   return yield rsp.json();
 }

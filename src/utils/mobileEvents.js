@@ -27,10 +27,10 @@ export default function swipeDetect(el, callback = () => {}) {
   let startTime;
 
   el.addEventListener(
-    "touchstart",
+    'touchstart',
     e => {
       const touchobj = e.changedTouches[0];
-      swipeDir = "none";
+      swipeDir = 'none';
       startX = touchobj.pageX;
       startY = touchobj.pageY;
       // record time when finger makes first touch with surface
@@ -41,7 +41,7 @@ export default function swipeDetect(el, callback = () => {}) {
   );
 
   el.addEventListener(
-    "touchmove",
+    'touchmove',
     e => {
       // prevent scrolling when inside DIV
       e.preventDefault();
@@ -50,7 +50,7 @@ export default function swipeDetect(el, callback = () => {}) {
   );
 
   el.addEventListener(
-    "touchend",
+    'touchend',
     e => {
       const touchobj = e.changedTouches[0];
       // get horizontal dist traveled by finger while in contact with surface
@@ -64,14 +64,14 @@ export default function swipeDetect(el, callback = () => {}) {
         // 2nd condition for horizontal swipe met
         if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint) {
           // if dist traveled is negative, it indicates left swipe
-          swipeDir = distX < 0 ? "left" : "right";
+          swipeDir = distX < 0 ? 'left' : 'right';
           // 2nd condition for vertical swipe met
         } else if (
           Math.abs(distY) >= threshold &&
           Math.abs(distX) <= restraint
         ) {
           // if dist traveled is negative, it indicates up swipe
-          swipeDir = distY < 0 ? "up" : "down";
+          swipeDir = distY < 0 ? 'up' : 'down';
         }
       }
       callback(swipeDir);

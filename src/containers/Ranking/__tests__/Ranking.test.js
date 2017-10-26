@@ -1,9 +1,9 @@
-import React from "react";
-import renderer from "react-test-renderer";
-import { Rank } from "../index";
+import React from 'react';
+import renderer from 'react-test-renderer';
+import { Rank } from '../index';
 
-describe("<Ranking />", () => {
-  it("component render", () => {
+describe('<Ranking />', () => {
+  it('component render', () => {
     const ranking = renderer
       .create(<Rank onGetRankingList={() => {}} />)
       .toJSON();

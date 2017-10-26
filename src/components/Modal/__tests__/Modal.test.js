@@ -1,9 +1,9 @@
-import React from "react";
-import renderer from "react-test-renderer";
-import Modal from "..";
+import React from 'react';
+import renderer from 'react-test-renderer';
+import Modal from '..';
 
-describe("<Modal />", () => {
-  it("component render", () => {
+describe('<Modal />', () => {
+  it('component render', () => {
     const modal = renderer
       .create(
         <Modal display>

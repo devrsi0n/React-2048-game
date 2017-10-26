@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 // import PropTypes from 'prop-types';
-import "./firework.scss";
+import './firework.scss';
 
 // Display firework animation when game over
 export default class Firework extends React.Component {

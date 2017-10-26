@@ -1,10 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Modal from "../Modal";
-import Firework from "../Firework";
-import styles from "./gameOver.scss";
-import i18n from "../../utils/i18n";
-import resetSvg from "../../assets/svg/reset.svg";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Modal from '../Modal';
+import Firework from '../Firework';
+import styles from './gameOver.scss';
+import i18n from '../../utils/i18n';
+import resetSvg from '../../assets/svg/reset.svg';
 
 // Game over card
 export default function GameOver({ gameOver, score, onReset }) {

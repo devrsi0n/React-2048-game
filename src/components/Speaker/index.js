@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import Button from "../Button";
-import speakerOn from "../../assets/svg/speaker-on.svg";
-import speakerOff from "../../assets/svg/speaker-off.svg";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import Button from '../Button';
+import speakerOn from '../../assets/svg/speaker-on.svg';
+import speakerOff from '../../assets/svg/speaker-off.svg';
 
 // Speaker, keep self state for switch button icon
 export default class Speaker extends Component {

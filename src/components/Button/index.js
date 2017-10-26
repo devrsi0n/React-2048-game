@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import "./button.scss";
+import React from 'react';
+import PropTypes from 'prop-types';
+import './button.scss';
 
 export default function Button({ children, onClick, type, size }) {
   const sizeCls = `btn-${size}`;
@@ -15,20 +15,20 @@ export default function Button({ children, onClick, type, size }) {
 Button.propTypes = {
   children: PropTypes.oneOfType([PropTypes.node]),
   onClick: PropTypes.func,
-  size: PropTypes.oneOf(["lg", "md", "sm", "xs"]),
+  size: PropTypes.oneOf(['lg', 'md', 'sm', 'xs']),
   type: PropTypes.oneOf([
-    "default",
-    "primary",
-    "warn",
-    "danger",
-    "success",
-    "royal"
+    'default',
+    'primary',
+    'warn',
+    'danger',
+    'success',
+    'royal'
   ])
 };
 
 Button.defaultProps = {
-  children: "",
+  children: '',
   onClick() {},
-  size: "md",
-  type: "default"
+  size: 'md',
+  type: 'default'
 };

@@ -1,13 +1,13 @@
-import React from "react";
-import renderer from "react-test-renderer";
-import Enzyme, { shallow } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
-import Footer from "..";
+import React from 'react';
+import renderer from 'react-test-renderer';
+import Enzyme, { shallow } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+import Footer from '..';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe("<Footer />", () => {
-  it("component render", () => {
+describe('<Footer />', () => {
+  it('component render', () => {
     const footer = renderer
       .create(
         <Footer
@@ -20,7 +20,7 @@ describe("<Footer />", () => {
     expect(footer).toMatchSnapshot();
   });
 
-  it("shouldComponentUpdate", () => {
+  it('shouldComponentUpdate', () => {
     const footer = shallow(
       <Footer
         name="test"

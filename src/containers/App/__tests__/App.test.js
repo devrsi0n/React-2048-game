@@ -1,10 +1,10 @@
-import React from "react";
-import renderer from "react-test-renderer";
-import { Provider } from "react-redux";
-import Enzyme, { mount } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
-import store from "../../../store";
-import App from "..";
+import React from 'react';
+import renderer from 'react-test-renderer';
+import { Provider } from 'react-redux';
+import Enzyme, { mount } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+import store from '../../../store';
+import App from '..';
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -16,8 +16,8 @@ global.Math = mockMath;
 // Ignore gitment error message
 console.error = () => {};
 
-describe("<MobileApp />", () => {
-  it("component render", () => {
+describe('<MobileApp />', () => {
+  it('component render', () => {
     const app = renderer
       .create(
         <Provider store={store}>
@@ -28,15 +28,15 @@ describe("<MobileApp />", () => {
     expect(app).toMatchSnapshot();
   });
 
-  it("unmount", () => {
+  it('unmount', () => {
     const app = mount(
       <Provider store={store}>
         <App />
       </Provider>
     );
-    window.dispatchEvent(new Event("resize"));
+    window.dispatchEvent(new Event('resize'));
     window.innerWidth = 300;
-    window.dispatchEvent(new Event("resize"));
+    window.dispatchEvent(new Event('resize'));
     app.unmount();
   });
 });

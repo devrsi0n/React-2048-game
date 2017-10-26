@@ -1,41 +1,41 @@
 // i18n text
 const data = {
-  lang: ["cn", "en"],
-  default: "cn",
+  lang: ['cn', 'en'],
+  default: 'cn',
   text: {
-    title: { cn: "2048", en: "2048" },
+    title: { cn: '2048', en: '2048' },
     home: {
-      cn: "首页",
-      en: "Home"
+      cn: '首页',
+      en: 'Home'
     },
     comments: {
-      cn: "留言",
-      en: "Comments"
+      cn: '留言',
+      en: 'Comments'
     },
     ranking: {
-      cn: "排行榜",
-      en: "Ranking"
+      cn: '排行榜',
+      en: 'Ranking'
     },
-    score: { cn: "得分", en: "SCORE" },
-    best: { cn: "最佳", en: "BEST" },
-    tipTitle: { cn: "提示", en: "Tips" },
+    score: { cn: '得分', en: 'SCORE' },
+    best: { cn: '最佳', en: 'BEST' },
+    tipTitle: { cn: '提示', en: 'Tips' },
     tipContent: {
-      cn: "使用键盘箭头键（或 WASD ）控制方块;反悔了？点回退按钮回退到上一步的状态。",
+      cn: '使用键盘箭头键（或 WASD ）控制方块;反悔了？点回退按钮回退到上一步的状态。',
       en:
-        "Use keyboard arrow keys (or `WASD` if you like) control blocks;Click undo button to revert to last step status if you regrets"
+        'Use keyboard arrow keys (or `WASD` if you like) control blocks;Click undo button to revert to last step status if you regrets'
     },
     commentTitle: {
-      cn: "欢迎留 <span>tu</span> 言 <span>cao</span>",
-      en: "Welcome to leave comments"
+      cn: '欢迎留 <span>tu</span> 言 <span>cao</span>',
+      en: 'Welcome to leave comments'
     }
   }
 };
 
 const lang = (() => {
   let lan = navigator.language || navigator.userLanguage;
-  lan = lan === "zh-CN" ? "cn" : lan;
-  lan = lan === "en-US" ? "en" : lan;
-  lan = ["cn", "en"].includes(lan) ? lan : data.default; // Set default language
+  lan = lan === 'zh-CN' ? 'cn' : lan;
+  lan = lan === 'en-US' ? 'en' : lan;
+  lan = ['cn', 'en'].includes(lan) ? lan : data.default; // Set default language
   return lan;
 })();
 

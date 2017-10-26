@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 export class Rank extends Component {
   static propTypes = {
@@ -17,7 +17,7 @@ export class Rank extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  onGetRankingList: () => dispatch({ type: "GET_RANKLING_LIST" })
+  onGetRankingList: () => dispatch({ type: 'GET_RANKLING_LIST' })
 });
 
 export default connect(null, mapDispatchToProps)(Rank);

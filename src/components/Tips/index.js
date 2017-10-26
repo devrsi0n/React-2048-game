@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styles from "./tips.scss";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styles from './tips.scss';
 
 // Game tips, render once enough
 export default class Tips extends React.Component {

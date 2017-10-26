@@ -1,8 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Row from "../Row";
-import styles from "./board.scss";
-import { isObjEqual } from "../../utils/helpers";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Row from '../Row';
+import styles from './board.scss';
+import { isObjEqual } from '../../utils/helpers';
 
 // Game board
 export default class Board extends React.Component {

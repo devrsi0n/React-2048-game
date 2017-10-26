@@ -1,10 +1,10 @@
-import React from "react";
-import renderer from "react-test-renderer";
-import { MemoryRouter } from "react-router";
-import Header from "..";
+import React from 'react';
+import renderer from 'react-test-renderer';
+import { MemoryRouter } from 'react-router';
+import Header from '..';
 
-describe("<Header />", () => {
-  it("component render", () => {
+describe('<Header />', () => {
+  it('component render', () => {
     const header = renderer
       .create(
         <MemoryRouter>

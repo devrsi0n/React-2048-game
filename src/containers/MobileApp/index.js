@@ -1,5 +1,5 @@
-import { connect } from "react-redux";
-import { ActionCreators } from "redux-undo";
+import { connect } from 'react-redux';
+import { ActionCreators } from 'redux-undo';
 import {
   moveUp,
   moveDown,
@@ -7,8 +7,8 @@ import {
   moveRight,
   placeRandom,
   reset
-} from "../../reducers/board";
-import MobileApp from "./MobileApp";
+} from '../../reducers/board';
+import MobileApp from './MobileApp';
 
 const mapStateToProps = state => ({
   matrix: state.present.board.present.matrix,

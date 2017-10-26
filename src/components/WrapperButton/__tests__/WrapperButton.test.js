@@ -1,9 +1,9 @@
-import React from "react";
-import renderer from "react-test-renderer";
-import WrapperButton from "..";
+import React from 'react';
+import renderer from 'react-test-renderer';
+import WrapperButton from '..';
 
-describe("<WrapperButton />", () => {
-  it("component render", () => {
+describe('<WrapperButton />', () => {
+  it('component render', () => {
     const btn = renderer
       .create(
         <WrapperButton>

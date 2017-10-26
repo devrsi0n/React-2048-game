@@ -6,12 +6,12 @@ import reducer, {
   moveLeft,
   moveRight,
   reset
-} from "../board";
+} from '../board';
 
-describe("reducer board", () => {
+describe('reducer board', () => {
   let state;
 
-  it("actions", () => {
+  it('actions', () => {
     const initMat = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]];
     const testMat = [[2, 0, 0, 2], [4, 0, 4, 2], [0, 0, 0, 0], [8, 0, 0, 16]];
     state = reducer(
@@ -23,7 +23,7 @@ describe("reducer board", () => {
         isMoved: true
       },
       {
-        type: ""
+        type: ''
       }
     );
     expect(state.matrix).toEqual(initMat);

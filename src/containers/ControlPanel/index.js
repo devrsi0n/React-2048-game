@@ -1,5 +1,5 @@
-import { connect } from "react-redux";
-import { ActionCreators } from "redux-undo";
+import { connect } from 'react-redux';
+import { ActionCreators } from 'redux-undo';
 import {
   moveUp,
   moveDown,
@@ -7,8 +7,8 @@ import {
   moveRight,
   placeRandom,
   reset
-} from "../../reducers/board";
-import ControlPanel from "./ControlPanel";
+} from '../../reducers/board';
+import ControlPanel from './ControlPanel';
 
 const mapStateToProps = state => ({
   isMoved: state.present.board.present.isMoved,

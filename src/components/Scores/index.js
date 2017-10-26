@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styles from "./scores.scss";
-import i18n from "../../utils/i18n";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styles from './scores.scss';
+import i18n from '../../utils/i18n';
 
 export default function Scores({ score, bestScore }) {
   const { index, text, best } = styles;

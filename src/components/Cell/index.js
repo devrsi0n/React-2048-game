@@ -1,8 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
-import classnames from "classnames";
-import styles from "./cell.scss";
-import { isObjEqual } from "../../utils/helpers";
+import React from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
+import styles from './cell.scss';
+import { isObjEqual } from '../../utils/helpers';
 
 // Game board cell, minimum component in game board,
 // one component stand for a number.

@@ -1,8 +1,8 @@
-import React from "react";
-import { Switch, Route } from "react-router-dom";
-import App from "../../containers/App";
-import Comments from "../../components/Comments";
-import Ranking from "../../containers/Ranking";
+import React from 'react';
+import { Switch, Route } from 'react-router-dom';
+import App from '../../containers/App';
+import Comments from '../../components/Comments';
+import Ranking from '../../containers/Ranking';
 
 const Main = () => (
   <main>

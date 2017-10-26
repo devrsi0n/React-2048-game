@@ -1,13 +1,13 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import styles from "./webApp.scss";
-import Board from "../../components/Board";
-import Tips from "../../components/Tips";
-import Footer from "../../components/Footer";
-import ControlPanel from "../ControlPanel";
-import GameOver from "../../components/GameOver";
-import Scores from "../../components/Scores";
-import i18n from "../../utils/i18n";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import styles from './webApp.scss';
+import Board from '../../components/Board';
+import Tips from '../../components/Tips';
+import Footer from '../../components/Footer';
+import ControlPanel from '../ControlPanel';
+import GameOver from '../../components/GameOver';
+import Scores from '../../components/Scores';
+import i18n from '../../utils/i18n';
 
 // Desktop application entry
 export default class WebApp extends Component {
@@ -32,7 +32,7 @@ export default class WebApp extends Component {
     super(...args);
 
     // debounce delay in ms
-    this.delay = process.env.NODE_ENV === "production" ? 300 : 1;
+    this.delay = process.env.NODE_ENV === 'production' ? 300 : 1;
   }
 
   render() {

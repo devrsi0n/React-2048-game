@@ -1,14 +1,14 @@
-import React from "react";
-import Enzyme, { mount } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
-import renderer from "react-test-renderer";
-import ControlPanel from "../ControlPanel";
+import React from 'react';
+import Enzyme, { mount } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+import renderer from 'react-test-renderer';
+import ControlPanel from '../ControlPanel';
 
 Enzyme.configure({ adapter: new Adapter() });
 const audio = new Audio();
 
-describe("<ControlPanel />", () => {
-  it("component render", () => {
+describe('<ControlPanel />', () => {
+  it('component render', () => {
     const fn = () => {};
     const panel = renderer.create(
       <ControlPanel
@@ -29,7 +29,7 @@ describe("<ControlPanel />", () => {
     expect(panel.toJSON()).toMatchSnapshot();
   });
 
-  it("click and keyboard events", () => {
+  it('click and keyboard events', () => {
     const moveUp = jest.fn();
     const moveDown = jest.fn();
     const moveLeft = jest.fn();
@@ -37,7 +37,7 @@ describe("<ControlPanel />", () => {
     const placeRandom = jest.fn();
     const reset = jest.fn();
     const undo = jest.fn();
-    const div = document.createElement("div");
+    const div = document.createElement('div');
     const panel = mount(
       <ControlPanel
         delay={0}
@@ -55,38 +55,38 @@ describe("<ControlPanel />", () => {
       />,
       { attachTo: div }
     );
-    div.dispatchEvent(new Event("focus"));
+    div.dispatchEvent(new Event('focus'));
     // div.dispatchEvent(new KeyboardEvent("keypress", { key: "ArrowUp" }));
-    panel.find('[alt="arrow up"]').simulate("click");
+    panel.find('[alt="arrow up"]').simulate('click');
     // Fast-forward until all timers have been executed
     jest.runAllTimers();
     expect(moveUp.mock.calls.length).toBe(1);
     expect(placeRandom.mock.calls.length).toBe(1);
 
-    panel.find('[alt="arrow down"]').simulate("click");
+    panel.find('[alt="arrow down"]').simulate('click');
     jest.runAllTimers();
     expect(moveDown.mock.calls.length).toBe(1);
     expect(placeRandom.mock.calls.length).toBe(2);
 
-    panel.find('[alt="arrow left"]').simulate("click");
+    panel.find('[alt="arrow left"]').simulate('click');
     jest.runAllTimers();
     expect(moveLeft.mock.calls.length).toBe(1);
     expect(placeRandom.mock.calls.length).toBe(3);
 
-    panel.find('[alt="arrow right"]').simulate("click");
+    panel.find('[alt="arrow right"]').simulate('click');
     jest.runAllTimers();
     expect(moveRight.mock.calls.length).toBe(1);
     expect(placeRandom.mock.calls.length).toBe(4);
 
     const ins = panel.instance();
 
-    panel.find('[alt="undo"]').simulate("click");
+    panel.find('[alt="undo"]').simulate('click');
     jest.runAllTimers();
     expect(undo.mock.calls.length).toBe(1);
     // Expect first call first argument to be -2
     expect(undo.mock.calls[0][0]).toBe(-2);
     panel.setProps({ pastLen: 1 });
-    panel.find('[alt="undo"]').simulate("click");
+    panel.find('[alt="undo"]').simulate('click');
     expect(undo.mock.calls.length).toBe(1);
 
     ins.handleSpeakerClick(false);
@@ -98,7 +98,7 @@ describe("<ControlPanel />", () => {
     ins.keyDownHandler({ keyCode: 38, preventDefault });
     expect(preventDefault.mock.calls.length).toBe(1);
 
-    panel.find('[alt="reset"]').simulate("click");
+    panel.find('[alt="reset"]').simulate('click');
     jest.runAllTimers();
     expect(reset.mock.calls.length).toBe(1);
 

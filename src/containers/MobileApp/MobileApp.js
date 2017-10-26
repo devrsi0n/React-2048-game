@@ -1,15 +1,15 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import Board from "../../components/Board";
-import swipeDetect from "../../utils/mobileEvents";
-import styles from "./mobileApp.scss";
-import Scores from "../../components/Scores";
-import GameOver from "../../components/GameOver";
-import Speaker from "../../components/Speaker";
-import WrapperButton from "../../components/WrapperButton";
-import Footer from "../../components/Footer";
-import resetSvg from "../../assets/svg/reset.svg";
-import undoSvg from "../../assets/svg/undo.svg";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import Board from '../../components/Board';
+import swipeDetect from '../../utils/mobileEvents';
+import styles from './mobileApp.scss';
+import Scores from '../../components/Scores';
+import GameOver from '../../components/GameOver';
+import Speaker from '../../components/Speaker';
+import WrapperButton from '../../components/WrapperButton';
+import Footer from '../../components/Footer';
+import resetSvg from '../../assets/svg/reset.svg';
+import undoSvg from '../../assets/svg/undo.svg';
 
 // Mobile application entry
 export default class MobileApp extends Component {
@@ -53,16 +53,16 @@ export default class MobileApp extends Component {
 
   directionCallback = direction => {
     switch (direction) {
-      case "up":
+      case 'up':
         this.handleMoveUp();
         break;
-      case "down":
+      case 'down':
         this.handleMoveDown();
         break;
-      case "left":
+      case 'left':
         this.handleMoveLeft();
         break;
-      case "right":
+      case 'right':
         this.handleMoveRight();
         break;
       default:

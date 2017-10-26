@@ -1,8 +1,8 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import styles from "./header.scss";
-import github from "../../assets/images/github-white.png";
-import i18n from "../../utils/i18n";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import styles from './header.scss';
+import github from '../../assets/images/github-white.png';
+import i18n from '../../utils/i18n';
 
 // The Header creates links that used to navigate
 // between routes.
@@ -16,7 +16,7 @@ export default class Header extends React.Component {
   }
 
   componentDidMount() {
-    window.addEventListener("resize", this.mobileDetect, false);
+    window.addEventListener('resize', this.mobileDetect, false);
   }
 
   mobileDetect = () => {

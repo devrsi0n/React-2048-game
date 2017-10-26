@@ -1,13 +1,13 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import debounce from "lodash.debounce";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import debounce from 'lodash.debounce';
 
-import WrapperButton from "../../components/WrapperButton";
-import Speaker from "../../components/Speaker";
-import styles from "./controlPanel.scss";
-import resetSvg from "../../assets/svg/reset.svg";
-import undoSvg from "../../assets/svg/undo.svg";
-import arrowSvg from "../../assets/svg/arrow.svg";
+import WrapperButton from '../../components/WrapperButton';
+import Speaker from '../../components/Speaker';
+import styles from './controlPanel.scss';
+import resetSvg from '../../assets/svg/reset.svg';
+import undoSvg from '../../assets/svg/undo.svg';
+import arrowSvg from '../../assets/svg/arrow.svg';
 
 const keyUp = 38;
 const keyRight = 39;
@@ -51,17 +51,17 @@ export default class ControlPanel extends Component {
   }
 
   componentWillMount() {
-    document.addEventListener("keyup", this.keyUpHandler, false);
+    document.addEventListener('keyup', this.keyUpHandler, false);
 
     // Disable arrow keys scroll page
-    document.addEventListener("keydown", this.keyDownHandler, false);
+    document.addEventListener('keydown', this.keyDownHandler, false);
   }
 
   componentWillUnmount() {
     // Never forget remove event after component unmounted,
     // avoid memory leak
-    document.removeEventListener("keyup", this.keyUpHandler, false);
-    document.removeEventListener("keydown", this.keyDownHandler, false);
+    document.removeEventListener('keyup', this.keyUpHandler, false);
+    document.removeEventListener('keydown', this.keyDownHandler, false);
   }
 
   keyDownHandler = e => {

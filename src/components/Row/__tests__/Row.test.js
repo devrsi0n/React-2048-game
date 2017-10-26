@@ -1,13 +1,13 @@
-import React from "react";
-import renderer from "react-test-renderer";
-import Enzyme, { mount } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
-import Row from "..";
+import React from 'react';
+import renderer from 'react-test-renderer';
+import Enzyme, { mount } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+import Row from '..';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe("<Board />", () => {
-  it("component render", () => {
+describe('<Board />', () => {
+  it('component render', () => {
     const MATRIX = [[2, 0, 0, 0], [0, 0, 0, 0], [0, 0, 4, 0], [0, 0, 0, 0]];
     MATRIX.forEach(r => {
       const row = renderer.create(<Row row={r} />).toJSON();
@@ -15,9 +15,9 @@ describe("<Board />", () => {
     });
   });
 
-  it("shouldComponentUpdate", () => {
+  it('shouldComponentUpdate', () => {
     const data = [2, 0, 0, 0];
-    const tbody = document.createElement("tbody");
+    const tbody = document.createElement('tbody');
     const cell = mount(<Row row={data} />, {
       attachTo: tbody
     });

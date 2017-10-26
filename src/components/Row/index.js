@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Cell from "../Cell";
-import { isObjEqual } from "../../utils/helpers";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Cell from '../Cell';
+import { isObjEqual } from '../../utils/helpers';
 
 // Game board row, contain 4 cell
 export default class Row extends React.Component {

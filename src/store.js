@@ -1,10 +1,10 @@
-import { createStore, applyMiddleware, compose } from "redux";
-import createSagaMiddleware from "redux-saga";
-import undoable from "redux-undo";
-import rootReducer from "./reducers";
-import { watchGetRankingList } from "./sagas";
+import { createStore, applyMiddleware, compose } from 'redux';
+import createSagaMiddleware from 'redux-saga';
+import undoable from 'redux-undo';
+import rootReducer from './reducers';
+import { watchGetRankingList } from './sagas';
 
-const initHistory = JSON.parse(localStorage.getItem("state") || "null");
+const initHistory = JSON.parse(localStorage.getItem('state') || 'null');
 
 const sagaMiddleware = createSagaMiddleware();
 /* eslint-disable no-underscore-dangle */
@@ -38,7 +38,7 @@ sagaMiddleware.run(watchGetRankingList);
 // this callback save redux state to localStorage
 store.subscribe(() => {
   const state = store.getState();
-  localStorage.setItem("state", JSON.stringify(state));
+  localStorage.setItem('state', JSON.stringify(state));
 });
 
 export default store;
