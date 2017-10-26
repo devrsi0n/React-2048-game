@@ -6,6 +6,7 @@
   "license": "MIT",
   "dependencies": {
     "classnames": "^2.2.5",
+    "gitalk": "^1.1.4",
     "gitment": "^0.0.3",
     "lodash.debounce": "^4.0.8",
     "object-assign": "4.1.1",
