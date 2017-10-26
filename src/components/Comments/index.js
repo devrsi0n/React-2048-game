@@ -11,7 +11,7 @@ const gitalk = new Gitalk({
   admin: ['devrsi0n'],
   // facebook-like distraction free mode
   distractionFreeMode: false,
-  label: ['gitment', 'https://devrsi0n.github.io/React-2048-game/']
+  labels: ['gitment', 'https://devrsi0n.github.io/React-2048-game/']
 });
 
 export default class Comments extends Component {
