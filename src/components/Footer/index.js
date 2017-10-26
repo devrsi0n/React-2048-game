@@ -21,15 +21,19 @@ export default class Footer extends React.Component {
 
     return (
       <div className={styles.footer}>
-        <a href={repoUrl} className={styles.icon}>
-          <img src={github} className={styles.github} alt="github repo" />
-        </a>
-        Build with
-        <span className={styles.heart}>♥</span>
-        by
-        <a href={profileUrl} className={styles.link}>
-          {name}
-        </a>
+        <div className={styles.container}>
+          <div>
+            <a href={repoUrl} className={styles.icon}>
+              <img src={github} className={styles.github} alt="github repo" />
+            </a>
+          </div>
+          Build with
+          <span className={styles.heart}>♥</span>
+          by
+          <a href={profileUrl} className={styles.link}>
+            {name}
+          </a>
+        </div>
       </div>
     );
   }

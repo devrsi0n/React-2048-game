@@ -2,7 +2,6 @@
 
 .main {
   margin: auto;
-  text-align: center;
   width: 60vw;
 }
 
@@ -24,6 +23,10 @@
       color: $light-black;
       text-decoration: line-through;
     }
+  }
+
+  .container {
+    text-align: left;
   }
 }
 

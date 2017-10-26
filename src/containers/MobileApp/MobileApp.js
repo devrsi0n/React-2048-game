@@ -7,7 +7,6 @@ import Scores from '../../components/Scores';
 import GameOver from '../../components/GameOver';
 import Speaker from '../../components/Speaker';
 import WrapperButton from '../../components/WrapperButton';
-import Footer from '../../components/Footer';
 import resetSvg from '../../assets/svg/reset.svg';
 import undoSvg from '../../assets/svg/undo.svg';
 
@@ -143,11 +142,6 @@ export default class MobileApp extends Component {
         >
           <Board matrix={matrix} />
         </div>
-        <Footer
-          name="devrsi0n"
-          profileUrl="https://github.com/devrsi0n"
-          repoUrl="https://github.com/devrsi0n/React-2048-game"
-        />
         <GameOver gameOver={gameOver} score={score} onReset={onReset} />
       </div>
     );

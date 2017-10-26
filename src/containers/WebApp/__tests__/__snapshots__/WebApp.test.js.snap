@@ -326,37 +326,6 @@ exports[`<App /> component render 1`] = `
       Use keyboard arrow keys (or \`WASD\` if you like) control blocks;Click undo button to revert to last step status if you regrets
     </p>
   </div>
-  <div
-    className="footer"
-  >
-    <div
-      className="footer"
-    >
-      <a
-        className="icon"
-        href="https://github.com/devrsi0n/React-2048-game"
-      >
-        <img
-          alt="github repo"
-          className="github"
-          src="github.png"
-        />
-      </a>
-      Build with
-      <span
-        className="heart"
-      >
-        ♥
-      </span>
-      by
-      <a
-        className="link"
-        href="https://github.com/devrsi0n"
-      >
-        devrsi0n
-      </a>
-    </div>
-  </div>
   <div>
     <div
       className="hidden"

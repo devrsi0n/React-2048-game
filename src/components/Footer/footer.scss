@@ -3,18 +3,22 @@
 .footer {
   border-top: 1px $border-color solid !important;
   color: $black;
-  display: inline-block;
   font-size: 1.25rem;
   margin-top: 3.08vw;
-  padding: 3.08vw 0 1.54vw;
   width: 100%;
+
+  .container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 3.08vw 0 2vw;
+  }
 
   .icon {
     margin-right: 10px;
   }
 
   .github {
-    margin-bottom: -6px;
     width: 32px;
   }
 

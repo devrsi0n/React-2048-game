@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Gitalk from 'gitalk';
 import styles from './comments.scss';
 import i18n from '../../utils/i18n';
-import Footer from '../Footer';
 
 const gitalk = new Gitalk({
   clientID: '3bff581d9182d38a4598',
@@ -32,13 +31,8 @@ export default class Comments extends Component {
             className={styles.commentsTitle}
             dangerouslySetInnerHTML={{ __html: i18n.commentTitle }}
           />
-          <div id="gitalk-container" />
+          <div id="gitalk-container" className={styles.container} />
         </div>
-        <Footer
-          name="devrsi0n"
-          profileUrl="https://github.com/devrsi0n"
-          repoUrl="https://github.com/devrsi0n/React-2048-game"
-        />
       </div>
     );
   }

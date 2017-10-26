@@ -4,28 +4,34 @@ exports[`<Footer /> component render 1`] = `
 <div
   className="footer"
 >
-  <a
-    className="icon"
-    href="http://test.com"
+  <div
+    className="container"
   >
-    <img
-      alt="github repo"
-      className="github"
-      src="github.png"
-    />
-  </a>
-  Build with
-  <span
-    className="heart"
-  >
-    ♥
-  </span>
-  by
-  <a
-    className="link"
-    href="http://profile.test"
-  >
-    test
-  </a>
+    <div>
+      <a
+        className="icon"
+        href="http://test.com"
+      >
+        <img
+          alt="github repo"
+          className="github"
+          src="github.png"
+        />
+      </a>
+    </div>
+    Build with
+    <span
+      className="heart"
+    >
+      ♥
+    </span>
+    by
+    <a
+      className="link"
+      href="http://profile.test"
+    >
+      test
+    </a>
+  </div>
 </div>
 `;

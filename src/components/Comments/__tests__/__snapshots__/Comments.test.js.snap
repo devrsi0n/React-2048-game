@@ -16,35 +16,9 @@ exports[`<Comments /> component render 1`] = `
       }
     />
     <div
+      className="container"
       id="gitalk-container"
     />
-  </div>
-  <div
-    className="footer"
-  >
-    <a
-      className="icon"
-      href="https://github.com/devrsi0n/React-2048-game"
-    >
-      <img
-        alt="github repo"
-        className="github"
-        src="github.png"
-      />
-    </a>
-    Build with
-    <span
-      className="heart"
-    >
-      ♥
-    </span>
-    by
-    <a
-      className="link"
-      href="https://github.com/devrsi0n"
-    >
-      devrsi0n
-    </a>
   </div>
 </div>
 `;
