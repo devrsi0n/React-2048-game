@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import "gitalk/dist/gitalk.css";
 import Gitalk from "gitalk";
-// import comments from "../../utils/gitComments";
 import styles from "./comments.scss";
 import i18n from "../../utils/i18n";
 import Footer from "../Footer";
@@ -23,7 +21,9 @@ const gitalk = new Gitalk({
 
 export default class Comments extends Component {
   componentDidMount() {
-    gitalk.render("gitalk-container");
+    if (process.env.NODE_ENV !== "test") {
+      gitalk.render("gitalk-container");
+    }
   }
 
   render() {

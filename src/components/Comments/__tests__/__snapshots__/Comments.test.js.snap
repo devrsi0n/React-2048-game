@@ -16,13 +16,7 @@ exports[`<Comments /> component render 1`] = `
       }
     />
     <div
-      id="gitmentHeader"
-    />
-    <div
-      id="gitmentComments"
-    />
-    <div
-      id="gitmentEditor"
+      id="gitalk-container"
     />
   </div>
   <div

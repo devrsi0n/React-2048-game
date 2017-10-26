@@ -12,7 +12,7 @@ export class Rank extends Component {
   }
 
   render() {
-    return <div>Working on it.</div>;
+    return <h1>Working on it.</h1>;
   }
 }
 
