@@ -34,7 +34,8 @@
     "deploy": "gh-pages -d build"
   },
   "lint-staged": {
-    "*.{js,json}": ["prettier --write", "git add"]
+    "*.js": ["eslint --fix src/", "prettier --write", "git add"],
+    "*.json": ["prettier --write", "git add"]
   },
   "jest": {
     "collectCoverage": true,
