@@ -11,7 +11,8 @@ const gitalk = new Gitalk({
   admin: ['devrsi0n'],
   // facebook-like distraction free mode
   distractionFreeMode: false,
-  labels: ['gitment', 'https://devrsi0n.github.io/React-2048-game/']
+  labels: ['gitment', 'https://devrsi0n.github.io/React-2048-game/'],
+  proxy: 'https://gh-oauth.imsun.net/'
 });
 
 export default class Comments extends Component {
