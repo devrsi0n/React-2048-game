@@ -35,15 +35,11 @@
     "deploy": "gh-pages -d build"
   },
   "lint-staged": {
-    "src/**/*.js": [
-      "eslint --fix",
-      "prettier --single-quote --write",
-      "git add"
-    ],
+    "src/**/*.js": ["eslint --fix", "prettier --write", "git add"],
     "*.json": ["prettier --write", "git add"],
     "src/**/*.scss": [
       "stylelint --syntax=scss --fix",
-      "prettier --single-quote --write",
+      "prettier --write",
       "git add"
     ]
   },
@@ -110,6 +106,9 @@
       "class-methods-use-this": 0,
       "no-restricted-syntax": 0
     }
+  },
+  "prettier": {
+    "singleQuote": true
   },
   "stylelint": {
     "extends": "stylelint-config-sass-guidelines",
