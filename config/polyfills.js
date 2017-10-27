@@ -11,11 +11,11 @@ if (typeof Promise === "undefined") {
 // fetch() polyfill for making API calls.
 require("whatwg-fetch");
 
-// Object.assign() is commonly used with React.
-// It will use the native implementation if it's present and isn't buggy.
-Object.assign = require("object-assign");
-
 // For jest env
-global.requestAnimationFrame = function(callback) {
-  setTimeout(callback, 0);
-};
+if (typeof requestAnimationFrame === 'undefined') {
+  global.requestAnimationFrame = function(callback) {
+    setTimeout(callback, 0);
+  };
+}
+
+require('babel-polyfill');
