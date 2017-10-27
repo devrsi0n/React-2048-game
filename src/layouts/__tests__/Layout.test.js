@@ -10,9 +10,6 @@ const mockMath = Object.create(global.Math);
 mockMath.random = () => 0.5;
 global.Math = mockMath;
 
-// Ignore gitment error message
-console.error = () => {};
-
 describe('<Layout />', () => {
   it('component render', () => {
     const layout = renderer

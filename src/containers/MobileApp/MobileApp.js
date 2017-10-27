@@ -4,7 +4,7 @@ import Board from '../../components/Board';
 import swipeDetect from '../../utils/mobileEvents';
 import styles from './mobileApp.scss';
 import Scores from '../../components/Scores';
-import GameOver from '../../components/GameOver';
+import GameOverCard from '../GameOver';
 import Speaker from '../../components/Speaker';
 import WrapperButton from '../../components/WrapperButton';
 import resetSvg from '../../assets/svg/reset.svg';
@@ -142,7 +142,7 @@ export default class MobileApp extends Component {
         >
           <Board matrix={matrix} />
         </div>
-        <GameOver gameOver={gameOver} score={score} onReset={onReset} />
+        <GameOverCard gameOver={gameOver} score={score} onReset={onReset} />
       </div>
     );
   }

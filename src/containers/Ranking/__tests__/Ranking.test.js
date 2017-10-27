@@ -5,7 +5,7 @@ import { Rank } from '../index';
 describe('<Ranking />', () => {
   it('component render', () => {
     const ranking = renderer
-      .create(<Rank onGetRankingList={() => {}} />)
+      .create(<Rank onGetRankingList={() => {}} list={[]} />)
       .toJSON();
     expect(ranking).toMatchSnapshot();
   });

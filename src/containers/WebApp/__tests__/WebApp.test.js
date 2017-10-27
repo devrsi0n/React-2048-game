@@ -17,9 +17,6 @@ const mockMath = Object.create(global.Math);
 mockMath.random = () => 0.5;
 global.Math = mockMath;
 
-// Ignore gitment error message
-console.error = () => {};
-
 const audio = new Audio();
 describe('<App />', () => {
   it('renders without crashing', () => {

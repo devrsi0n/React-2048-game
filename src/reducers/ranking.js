@@ -10,3 +10,7 @@ export default function reducer(state = initState, action) {
       return state;
   }
 }
+
+export const GAMEOVER = 'GAMEOVER';
+
+export const gameOver = () => ({ type: GAMEOVER });

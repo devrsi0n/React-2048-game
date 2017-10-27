@@ -329,7 +329,7 @@ exports[`<Main /> component render 1`] = `
         <p
           className="content"
         >
-          Use keyboard arrow keys (or \`WASD\` if you like) control blocks;Click undo button to revert to last step status if you regrets
+          Use keyboard arrow keys (or \`WASD\` if you like) control blocks;Click undo button to revert to last step status if you regrets。You score will upload to ranking list after you login at \`Comments\` panel
         </p>
       </div>
       <div>

@@ -13,9 +13,6 @@ const mockMath = Object.create(global.Math);
 mockMath.random = () => 0.5;
 global.Math = mockMath;
 
-// Ignore gitment error message
-console.error = () => {};
-
 describe('<MobileApp />', () => {
   it('component render', () => {
     const app = renderer

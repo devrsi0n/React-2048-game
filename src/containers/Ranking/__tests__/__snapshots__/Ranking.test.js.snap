@@ -1,7 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Ranking /> component render 1`] = `
-<h1>
-  Working on it.
-</h1>
+<div
+  className="main"
+>
+  <div
+    className="echarts"
+    id="echarts"
+  />
+</div>
 `;

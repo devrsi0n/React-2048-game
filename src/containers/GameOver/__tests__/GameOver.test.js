@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import Enzyme, { mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import GameOver from '..';
+import { GameOver } from '..';
 
 Enzyme.configure({ adapter: new Adapter() });
 

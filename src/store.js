@@ -2,7 +2,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import undoable from 'redux-undo';
 import rootReducer from './reducers';
-import { watchGetRankingList } from './sagas';
+import rootSaga from './sagas';
 
 const initHistory = JSON.parse(localStorage.getItem('state') || 'null');
 
@@ -32,7 +32,7 @@ if (window.__REDUX_DEVTOOLS_EXTENSION__) {
 }
 
 const store = createStore(...args);
-sagaMiddleware.run(watchGetRankingList);
+sagaMiddleware.run(rootSaga);
 
 // Call this function while redux state changed,
 // this callback save redux state to localStorage

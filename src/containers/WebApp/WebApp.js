@@ -4,7 +4,7 @@ import styles from './webApp.scss';
 import Board from '../../components/Board';
 import Tips from '../../components/Tips';
 import ControlPanel from '../ControlPanel';
-import GameOver from '../../components/GameOver';
+import GameOverCard from '../GameOver';
 import Scores from '../../components/Scores';
 import i18n from '../../utils/i18n';
 
@@ -65,7 +65,7 @@ export default class WebApp extends Component {
           </div>
         </div>
         <Tips title={i18n.tipTitle} content={i18n.tipContent} />
-        <GameOver gameOver={gameOver} score={score} onReset={onReset} />
+        <GameOverCard gameOver={gameOver} score={score} onReset={onReset} />
       </div>
     );
   }

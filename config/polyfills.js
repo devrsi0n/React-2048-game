@@ -18,4 +18,7 @@ if (typeof requestAnimationFrame === 'undefined') {
   };
 }
 
-require('babel-polyfill');
+// For development and jest env
+if (process.env.NODE_ENV !== 'production') {
+  require('babel-polyfill');
+}

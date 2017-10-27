@@ -1,0 +1,14 @@
+.main {
+  align-items: center;
+  display: flex;
+  height: 75vh;
+  justify-content: center;
+  margin-top: 1vw;
+  width: 90vw;
+
+  .echarts {
+    height: 100%;
+    padding-left: 5vw;
+    width: 100%;
+  }
+}
