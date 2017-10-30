@@ -1,4 +1,4 @@
-function* get(url, token = '7fd7be81c4974681d4523bda00206e6ec68cb389') {
+function* githubGet(url, token) {
   return yield fetch(`https://api.github.com${url}`, {
     method: 'GET',
     headers: {
@@ -9,30 +9,29 @@ function* get(url, token = '7fd7be81c4974681d4523bda00206e6ec68cb389') {
   });
 }
 
-function* patch(url, data, token = '7fd7be81c4974681d4523bda00206e6ec68cb389') {
-  return yield fetch(`https://api.github.com${url}`, {
-    method: 'PATCH',
+function* eggGet(url) {
+  return yield fetch(`http://45.78.57.236:8080${url}`, {
+    method: 'GET',
+    credentials: 'same-origin'
+  });
+}
+
+function* eggPut(url, data) {
+  return yield fetch(`http://45.78.57.236:8080${url}`, {
+    method: 'PUT',
     body: JSON.stringify(data),
     headers: {
-      Authorization: `token ${token}`,
-      'Content-Type': 'application/json',
-      Accept: 'application/vnd.github.v3+json'
+      'Content-Type': 'application/json'
     },
     credentials: 'same-origin'
   });
 }
 
-const ISSUE_URL = '/repos/qianmofeiyu/game-ranking-list/issues/1';
-
-// Ranking list data saved in this issue.
-export function* getIssue() {
-  const rsp = yield get(ISSUE_URL);
-  return yield rsp.json();
-}
-
+// Ranking list data saved in egg server.
 export function* getRankingList() {
-  const rsp = yield getIssue();
-  return JSON.parse(rsp.body).list;
+  let rsp = yield eggGet('/');
+  rsp = yield rsp.json();
+  return rsp.list;
 }
 
 export function* getUserInfo() {
@@ -42,15 +41,17 @@ export function* getUserInfo() {
   }
 
   // Reuse gitalk access token
-  let token = localStorage.getItem('GT_ACCESS_TOKEN');
+  let token;
   if (process.env.NODE_ENV === 'development') {
     token = '9ad77dd83ce067e05690f2f24d13b3a7ebf4999a';
+  } else {
+    token = localStorage.getItem('GT_ACCESS_TOKEN');
   }
   if (!token) {
     console.log('Must login to upload score');
     return null;
   }
-  let rsp = yield get('/user', token);
+  let rsp = yield githubGet('/user', token);
   rsp = yield rsp.json();
   console.log(rsp);
   if (rsp && rsp.name) {
@@ -61,11 +62,11 @@ export function* getUserInfo() {
 
 export function* updateRankingList(list) {
   console.log('list', list);
-  let rsp = yield patch(ISSUE_URL, {
+  let rsp = yield eggPut('/', {
     body: JSON.stringify({
       list
     })
   });
   rsp = yield rsp.json();
-  return JSON.parse(rsp.body).list;
+  return JSON.parse(rsp).list;
 }
