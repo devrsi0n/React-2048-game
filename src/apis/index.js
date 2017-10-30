@@ -1,4 +1,4 @@
-function* get(url, token = '6a8890663960322d781366a319cdc52676bb7651') {
+function* get(url, token = '7fd7be81c4974681d4523bda00206e6ec68cb389') {
   return yield fetch(`https://api.github.com${url}`, {
     method: 'GET',
     headers: {
@@ -9,7 +9,7 @@ function* get(url, token = '6a8890663960322d781366a319cdc52676bb7651') {
   });
 }
 
-function* patch(url, data, token = '6a8890663960322d781366a319cdc52676bb7651') {
+function* patch(url, data, token = '7fd7be81c4974681d4523bda00206e6ec68cb389') {
   return yield fetch(`https://api.github.com${url}`, {
     method: 'PATCH',
     body: JSON.stringify(data),
