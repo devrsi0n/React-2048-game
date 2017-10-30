@@ -9,7 +9,7 @@
 
 A fancy 2048 game build with react, redux best practices.
 
-👉 [Start the game](https://devrsi0n.github.io/React-2048-game/)
+👉 [Start the game](https://re2048.herokuapp.com/)
 
 ## Quick start
 

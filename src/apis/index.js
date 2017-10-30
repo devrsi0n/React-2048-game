@@ -9,15 +9,17 @@ function* githubGet(url, token) {
   });
 }
 
-function* eggGet(url) {
-  return yield fetch(`http://45.78.57.236:8080${url}`, {
+const host = 'https://re2048.herokuapp.com';
+
+function* serverGet(url) {
+  return yield fetch(`${host}${url}`, {
     method: 'GET',
     credentials: 'same-origin'
   });
 }
 
-function* eggPut(url, data) {
-  return yield fetch(`http://45.78.57.236:8080${url}`, {
+function* serverPut(url, data) {
+  return yield fetch(`${host}${url}`, {
     method: 'PUT',
     body: JSON.stringify(data),
     headers: {
@@ -27,9 +29,11 @@ function* eggPut(url, data) {
   });
 }
 
+const url = '/ranking';
+
 // Ranking list data saved in egg server.
 export function* getRankingList() {
-  let rsp = yield eggGet('/');
+  let rsp = yield serverGet(url);
   rsp = yield rsp.json();
   return rsp.list;
 }
@@ -62,7 +66,7 @@ export function* getUserInfo() {
 
 export function* updateRankingList(list) {
   console.log('list', list);
-  let rsp = yield eggPut('/', {
+  let rsp = yield serverPut(url, {
     body: JSON.stringify({
       list
     })

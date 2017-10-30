@@ -12,10 +12,10 @@ script:
   - yarn run build # build project for deploy
 after_script:
   - yarn run codecov
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  local_dir: build
-  on:
-    branch: master
+# deploy:
+#   provider: pages
+#   skip_cleanup: true
+#   github_token: $GITHUB_TOKEN
+#   local_dir: build
+#   on:
+#     branch: master

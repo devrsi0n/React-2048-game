@@ -11,13 +11,13 @@
 
 [react](https://github.com/facebook/react) 是目前最热门的前端视图库，[redux](https://github.com/reactjs/redux) 是 react 社区基于函数式编程思想也是最热门的应用状态管理容器；本项目是基于 [react](https://github.com/facebook/react), [redux](https://github.com/reactjs/redux) 最佳实践构建的 2048，此外也使用了近年来优秀的开源工具来提高代码质量，包括 [eslint](https://github.com/eslint/eslint)，[stylelint](https://github.com/stylelint/stylelint)，[prettier](https://github.com/prettier/prettier) 等等，以及 [travis](https://travis-ci.org)，[codecov](https://codecov.io) 等持续集成，持续部署等服务来保障代码质量和提高开发效率。喜欢的话点个 star 收藏下吧。😘
 
-👉 [开始游戏](https://devrsi0n.github.io/React-2048-game/)
+👉 [开始游戏](https://re2048.herokuapp.com/)
 
 ## 预览
 
 ### 桌面端
 
-<a href="https://devrsi0n.github.io/React-2048-game/">
+<a href="https://re2048.herokuapp.com/">
   <img
     src="http://wx1.sinaimg.cn/large/8ef543b5gy1fkbxcpxtytj21kw0wyqct.jpg"
     width="80%"
@@ -26,7 +26,7 @@
 
 ### 移动端
 
-<a href="https://devrsi0n.github.io/React-2048-game/">
+<a href="https://re2048.herokuapp.com/">
     <img
       src="http://wx2.sinaimg.cn/large/8ef543b5gy1fkbxcozh9cj20fl0woju7.jpg"
       width="25%"
@@ -39,7 +39,7 @@
 
 自适应桌面和移动平台不同分辨率和尺寸，支持移动平台浏览器触控操作。实现方式主要是把 css 单位从 px 换成了 [vw 和 rem](https://github.com/simaQ/cssfun/issues/1) ，各元素的尺寸是按照分辨率来进行缩放的。css 媒体查询到移动浏览器的话，调整部分组件的位置，隐藏部分不重要的组件，使页面更加紧凑。下面的动图模拟了不同分辨率下的显示效果。
 
-<a href="https://devrsi0n.github.io/React-2048-game/">
+<a href="https://re2048.herokuapp.com/">
     <img
       src="http://wx2.sinaimg.cn/large/8ef543b5gy1fkc2fmcz2pg211r0hwkjl.gif"
       width="80%"
@@ -50,7 +50,7 @@
 
 网页应用最怕断电和离线，第一个问题通过 `store.subscribe` 订阅 redux 状态更新，把状态序列化到 `localStorage` 储存，即使刷新，断电，程序奔溃再次打开仍然是最新的状态，第二个问题借助 chrome 的 [PWA](https://zhuanlan.zhihu.com/p/25167289) 技术，即使断开网络仍然可以访问缓存的资源文件。
 
-<a href="https://devrsi0n.github.io/React-2048-game/">
+<a href="https://re2048.herokuapp.com/">
     <img
       src="http://wx4.sinaimg.cn/large/8ef543b5gy1fkc2yttd75g20q20he45j.gif"
       width="80%"
@@ -61,7 +61,7 @@
 
 [redux](https://github.com/reactjs/redux) 是一个可预测的 JS 状态管理容器，结合 [Redux DevTools extension](https://github.com/zalmoxisus/redux-devtools-extension) 扩展可以很方便的进行应用状态穿梭，对辅助开发和debug大有裨益。不仅可以查看 redux 保存的状态，还可以随时回到到过去某个时刻的状态就像时间穿梭机一样，也看得到 redux 每次 action 的触发，以及每次触发造成的状态改动。
 
-<a href="https://devrsi0n.github.io/React-2048-game/">
+<a href="https://re2048.herokuapp.com/">
     <img
       src="http://wx1.sinaimg.cn/large/8ef543b5gy1fkc2yuvm6eg211i0he460.gif"
       width="80%"
@@ -72,7 +72,7 @@
 
 借助 github issue api，使用 github 账号登录之后以回复 issue 的方式留言。留言支持 markdown 格式，和 github issue 体验类似。
 
-<a href="https://devrsi0n.github.io/React-2048-game/">
+<a href="https://re2048.herokuapp.com/">
     <img
       src="http://wx3.sinaimg.cn/large/8ef543b5gy1fkc46le2z6g20u30i10vc.gif"
       width="80%"
@@ -83,7 +83,7 @@
 
 在支持 [PWA](https://zhuanlan.zhihu.com/p/25167289) 技术的浏览器上（比如较新的 chrome）打开页面会自动询问你添加到屏幕，添加过程就像原生应用的安装一样。应用添加之后就可以像原生应用一样离线操作，也可以卸载应用。下图演示了 PWA 在 chrome 上面的添加过程，添加完成之后桌面会出现添加的应用，即便关闭所有网络仍然可以像原生应用一样正常操作。
 
-<a href="https://devrsi0n.github.io/React-2048-game/">
+<a href="https://re2048.herokuapp.com/">
     <img
       src="http://wx1.sinaimg.cn/large/8ef543b5gy1fkc6aoang1g20k00zkb2b.gif"
       width="25%"
@@ -94,7 +94,7 @@
 
 应用支持多语言，且自动适配浏览器语言设置。目前检测到中文优先使用中文，否则默认使用英文显示。需要更多语言支持，编辑`src/utils/i18n.js`的 `data`对象，添加对应语言文字即可。
 
-<a href="https://devrsi0n.github.io/React-2048-game/">
+<a href="https://re2048.herokuapp.com/">
     <img
       src="http://wx1.sinaimg.cn/large/8ef543b5gy1fkd6q1uwvij21kw113tft.jpg"
       width="80%"

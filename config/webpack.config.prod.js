@@ -98,6 +98,7 @@ const prodConfig = {
     "react-router": "ReactRouter",
     "react-router-dom": "ReactRouterDOM",
     gitalk: "Gitalk",
+    echarts: "echarts"
   },
   resolve: {
     // This allows you to set a fallback for where Webpack should look for modules.

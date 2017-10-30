@@ -8,12 +8,9 @@ import Layouts from './layouts';
 import store from './store';
 import registerServiceWorker from './utils/registerServiceWorker';
 
-const basename =
-  process.env.NODE_ENV === 'production' ? '/React-2048-game' : '/';
-
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter basename={basename}>
+    <BrowserRouter>
       <Layouts />
     </BrowserRouter>
   </Provider>,

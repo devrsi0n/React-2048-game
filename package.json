@@ -1,7 +1,7 @@
 {
   "name": "react-2048-game",
   "version": "0.1.0",
-  "homepage": "https://devrsi0n.github.io/React-2048-game/",
+  "homepage": "https://re2048.herokuapp.com/",
   "repository": "https://github.com/devrsi0n/React-2048-game",
   "license": "MIT",
   "dependencies": {
@@ -34,15 +34,8 @@
     "deploy": "gh-pages -d build"
   },
   "lint-staged": {
-    "src/**/*.js": [
-      "eslint --fix",
-      "prettier --write",
-      "git add"
-    ],
-    "*.json": [
-      "prettier --write",
-      "git add"
-    ],
+    "src/**/*.js": ["eslint --fix", "prettier --write", "git add"],
+    "*.json": ["prettier --write", "git add"],
     "src/**/*.scss": [
       "stylelint --syntax=scss --fix",
       "prettier --write",
@@ -51,9 +44,7 @@
   },
   "jest": {
     "collectCoverage": true,
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx}"
-    ],
+    "collectCoverageFrom": ["src/**/*.{js,jsx}"],
     "coverageDirectory": "./coverage/",
     "setupTestFrameworkScriptFile": "./node_modules/jest-enzyme/lib/index.js",
     "setupFiles": [
@@ -77,43 +68,25 @@
       "^.+\\.(js|jsx)$": "<rootDir>/node_modules/babel-jest",
       "^.+\\.scss$": "<rootDir>/config/jest/cssTransform.js",
       "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js",
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/config/jest/fileTransform.js"
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
+        "<rootDir>/config/jest/fileTransform.js"
     },
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
-    ],
+    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
     "moduleNameMapper": {
       "^react-native$": "react-native-web",
       "\\.scss$": "identity-obj-proxy"
     },
-    "moduleFileExtensions": [
-      "web.js",
-      "js",
-      "json",
-      "web.jsx",
-      "jsx",
-      "node"
-    ]
+    "moduleFileExtensions": ["web.js", "js", "json", "web.jsx", "jsx", "node"]
   },
   "engines": {
     "node": ">= 6.10.0",
     "npm": ">= 4.5.0"
   },
-  "browserslist": [
-    ">1%",
-    "last 2 versions",
-    "ie > 9"
-  ],
+  "browserslist": [">1%", "last 2 versions", "ie > 9"],
   "eslintConfig": {
     "parser": "babel-eslint",
-    "extends": [
-      "airbnb",
-      "prettier"
-    ],
-    "plugins": [
-      "react",
-      "prettier"
-    ],
+    "extends": ["airbnb", "prettier"],
+    "plugins": ["react", "prettier"],
     "env": {
       "browser": true,
       "node": true,
@@ -124,10 +97,7 @@
       "react/jsx-filename-extension": [
         "error",
         {
-          "extensions": [
-            ".js",
-            ".jsx"
-          ]
+          "extensions": [".js", ".jsx"]
         }
       ],
       "no-plusplus": 0,
@@ -145,24 +115,18 @@
       "selector-pseudo-class-no-unknown": [
         true,
         {
-          "ignorePseudoClasses": [
-            "global"
-          ]
+          "ignorePseudoClasses": ["global"]
         }
       ],
       "selector-pseudo-element-no-unknown": [
         true,
         {
-          "ignorePseudoElements": [
-            "global"
-          ]
+          "ignorePseudoElements": ["global"]
         }
       ],
       "max-nesting-depth": 2
     },
-    "ignoreFiles": [
-      "build/**/*.css"
-    ]
+    "ignoreFiles": ["build/**/*.css"]
   },
   "devDependencies": {
     "autoprefixer": "7.1.5",
