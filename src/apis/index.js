@@ -45,12 +45,7 @@ export function* getUserInfo() {
   }
 
   // Reuse gitalk access token
-  let token;
-  if (process.env.NODE_ENV === 'development') {
-    token = '9ad77dd83ce067e05690f2f24d13b3a7ebf4999a';
-  } else {
-    token = localStorage.getItem('GT_ACCESS_TOKEN');
-  }
+  const token = localStorage.getItem('GT_ACCESS_TOKEN');
   if (!token) {
     console.log('Must login to upload score');
     return null;
