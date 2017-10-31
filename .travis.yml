@@ -2,7 +2,7 @@ language: node_js
 node_js:
 - '6'
 install:
-- yarn add global codecov
+- npm i -g codecov
 - yarn
 script:
 - yarn run ci
