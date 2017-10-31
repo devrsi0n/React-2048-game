@@ -23,15 +23,14 @@
   },
   "scripts": {
     "precommit": "lint-staged",
-    "prepush": "cross-env PRE_PUSH=true node scripts/test.js",
+    "prepush": "cross-env PRE_PUSH=true yarn run test && yarn run deploy",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "analyze": "cross-env ANALYZE=true node scripts/build.js",
+    "analyze": "cross-env ANALYZE=true yarn run build",
     "test": "node scripts/test.js",
-    "ci": "cross-env CI=true node scripts/test.js",
+    "ci": "cross-env CI=true yarn run test",
     "codecov": "codecov",
-    "predeploy": "node scripts/build.js",
-    "deploy": "gh-pages -d build"
+    "deploy": "sh ./scripts/deploy.sh"
   },
   "lint-staged": {
     "src/**/*.js": [
@@ -195,7 +194,6 @@
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "1.1.5",
     "fs-extra": "4.0.2",
-    "gh-pages": "^1.0.0",
     "html-webpack-plugin": "^2.29.0",
     "husky": "^0.14.3",
     "identity-obj-proxy": "^3.0.0",

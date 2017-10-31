@@ -261,12 +261,6 @@ const prodConfig = {
     new InterpolateHtmlPlugin(env.raw),
     // Generates an `index.html` file with the <script> injected.
     new HtmlWebpackPlugin(htmlConfig),
-    // Make github page 404 redirect to index
-    new HtmlWebpackPlugin(
-      Object.assign({}, htmlConfig, {
-        filename: "404.html"
-      })
-    ),
 
     // Treeshaking
     new webpack.optimize.ModuleConcatenationPlugin(),
