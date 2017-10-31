@@ -16,7 +16,7 @@
 [![Jest](/internals/img/jest-padded-90.png)](https://facebook.github.io/jest/)
 [![Yarn](/internals/img/yarn-padded-90.png)](https://yarnpkg.com/)
 
-A fancy 2048 game build with react, redux best practices. This project also uses many great open source tools to improve code styles, includes eslint, stylelint, prettier, and Travis, codecov continuous integration services to be guaranteed for code quality and deploy application automatically. Show ❤️ love by 🌟.
+A fancy 2048 game build with [react](https://github.com/facebook/react), [redux](https://github.com/reactjs/redux) best practices. This project also uses many great open source tools to improve code styles, includes [eslint](https://github.com/eslint/eslint), [stylelint](https://github.com/stylelint/stylelint), [prettier](https://github.com/prettier/prettier), and [Travis](https://travis-ci.org), [codecov](https://codecov.io) continuous integration services to be guaranteed for code quality and deploy application automatically. Show ❤️ love by 🌟.
 
 👉 [Start the game](https://re2048.herokuapp.com/)
 
