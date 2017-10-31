@@ -1,7 +1,8 @@
 #!/bin/sh
 
 echo $PWD
-npm build
+npm run build
 cd ../re2048
-git commit -am "update frontend"
+git add .
+git commit -m "update frontend"
 git push heroku master
