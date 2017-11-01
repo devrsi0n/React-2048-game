@@ -29,13 +29,14 @@ function* serverPut(url, data) {
   });
 }
 
-const url = '/ranking';
+const url = '/rank';
 
 // Ranking list data saved in egg server.
 export function* getRankingList() {
   let rsp = yield serverGet(url);
   rsp = yield rsp.json();
-  return rsp.list;
+  const { list } = rsp;
+  return list.sort((a, b) => b.score - a.score);
 }
 
 export function* getUserInfo() {
@@ -61,7 +62,7 @@ export function* getUserInfo() {
 
 export function* updateRankingList(list) {
   console.log('list', list);
-  let rsp = yield serverPut(url, list);
+  let rsp = yield serverPut(url, { list });
   rsp = yield rsp.json();
-  return JSON.parse(rsp).list;
+  return rsp.list.sort((a, b) => b.score - a.score);
 }

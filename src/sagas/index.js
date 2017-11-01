@@ -24,11 +24,14 @@ export function* updateRankingList() {
   if (score < bestScore) {
     return;
   }
+  const info = yield getUserInfo();
+  if (!info) {
+    return;
+  }
+  const { email, html_url, name, avatar_url } = info;
 
   // Get latest list
   const list = yield getRankingList();
-  list.sort((a, b) => a.score - b.score);
-  const { email, html_url, name, avatar_url } = yield getUserInfo();
   const newUser = {
     email,
     profile_url: html_url,
@@ -46,13 +49,13 @@ export function* updateRankingList() {
     list.push(newUser);
   } else {
     // Insert into array
-    const idx = list.findIndex(item => item.score < score);
+    const idx = list.findIndex(item => score > item.score);
     if (idx === -1) return; // Not break record
 
     list.splice(idx, 0, newUser);
   }
 
-  const rsp = yield update(list.slice(0, 10));
+  const rsp = yield update(list.slice(0, 10).sort((a, b) => b.score - a.score));
   yield put({ type: 'SET_RANKING_LIST', data: rsp });
 }
 
