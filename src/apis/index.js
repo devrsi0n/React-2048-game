@@ -61,11 +61,7 @@ export function* getUserInfo() {
 
 export function* updateRankingList(list) {
   console.log('list', list);
-  let rsp = yield serverPut(url, {
-    body: JSON.stringify({
-      list
-    })
-  });
+  let rsp = yield serverPut(url, list);
   rsp = yield rsp.json();
   return JSON.parse(rsp).list;
 }
