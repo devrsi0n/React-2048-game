@@ -9,7 +9,7 @@ function* githubGet(url, token) {
   });
 }
 
-const host = 'https://re2048.herokuapp.com';
+const host = window.location.origin;
 
 function* serverGet(url) {
   return yield fetch(`${host}${url}`, {
