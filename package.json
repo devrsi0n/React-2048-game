@@ -201,7 +201,7 @@
     "jest-enzyme": "^4.0.1",
     "jest-localstorage-mock": "^2.0.1",
     "lint-staged": "^5.0.0",
-    "node-sass": "^4.6.0",
+    "node-sass": "^4.6.1",
     "postcss-flexbugs-fixes": "^3.2.0",
     "postcss-loader": "^2.0.8",
     "prettier": "^1.8.2",
