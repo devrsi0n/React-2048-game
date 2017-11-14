@@ -2247,9 +2247,9 @@ ecc-jsbn@~0.1.1:
   dependencies:
     jsbn "~0.1.0"
 
-echarts@^3.8.2:
-  version "3.8.2"
-  resolved "https://registry.yarnpkg.com/echarts/-/echarts-3.8.2.tgz#277531877e2168c5bbf6a46661507d8fa947ca56"
+echarts@^3.8.3:
+  version "3.8.3"
+  resolved "https://registry.yarnpkg.com/echarts/-/echarts-3.8.3.tgz#0ecf0ceb870ee8cca2426f3a18a10e287532603c"
   dependencies:
     zrender "3.7.2"
 
