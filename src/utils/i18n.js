@@ -3,7 +3,7 @@ const data = {
   lang: ['cn', 'en'],
   default: 'cn',
   text: {
-    title: { cn: '2048', en: '2048' },
+    title: { cn: 'React 构建的 2048', en: 'React 2048 game' },
     home: {
       cn: '首页',
       en: 'Home'
