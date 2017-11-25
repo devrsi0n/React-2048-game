@@ -1,7 +1,6 @@
 # React-2048-game | [中文](/README_CN.md)
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/devrsi0n/React-2048-game.svg)](https://greenkeeper.io/)
-
 [![codebeat](https://codebeat.co/badges/9b33ea0e-5cf5-44b3-9a52-438667fb2673)](https://codebeat.co/projects/github-com-devrsi0n-React-2048-game-master)
 [![travis-ci](https://travis-ci.org/devrsi0n/React-2048-game.svg?branch=master)](https://travis-ci.org/devrsi0n/React-2048-game)
 [![codecov](https://codecov.io/gh/devrsi0n/React-2048-game/branch/master/graph/badge.svg)](https://codecov.io/gh/devrsi0n/React-2048-game)
