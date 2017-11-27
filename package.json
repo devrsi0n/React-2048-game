@@ -33,15 +33,8 @@
     "deploy": "sh ./scripts/deploy.sh"
   },
   "lint-staged": {
-    "src/**/*.js": [
-      "eslint --fix",
-      "prettier --write",
-      "git add"
-    ],
-    "*.json": [
-      "prettier --write",
-      "git add"
-    ],
+    "src/**/*.js": ["eslint --fix", "prettier --write", "git add"],
+    "*.json": ["prettier --write", "git add"],
     "src/**/*.scss": [
       "stylelint --syntax=scss --fix",
       "prettier --write",
@@ -50,9 +43,7 @@
   },
   "jest": {
     "collectCoverage": true,
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx}"
-    ],
+    "collectCoverageFrom": ["src/**/*.{js,jsx}"],
     "coverageDirectory": "./coverage/",
     "setupTestFrameworkScriptFile": "./node_modules/jest-enzyme/lib/index.js",
     "setupFiles": [
@@ -76,43 +67,25 @@
       "^.+\\.(js|jsx)$": "<rootDir>/node_modules/babel-jest",
       "^.+\\.scss$": "<rootDir>/config/jest/cssTransform.js",
       "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js",
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/config/jest/fileTransform.js"
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
+        "<rootDir>/config/jest/fileTransform.js"
     },
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
-    ],
+    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
     "moduleNameMapper": {
       "^react-native$": "react-native-web",
       "\\.scss$": "identity-obj-proxy"
     },
-    "moduleFileExtensions": [
-      "web.js",
-      "js",
-      "json",
-      "web.jsx",
-      "jsx",
-      "node"
-    ]
+    "moduleFileExtensions": ["web.js", "js", "json", "web.jsx", "jsx", "node"]
   },
   "engines": {
     "node": ">= 6.10.0",
     "npm": ">= 4.5.0"
   },
-  "browserslist": [
-    ">1%",
-    "last 2 versions",
-    "ie > 9"
-  ],
+  "browserslist": [">1%", "last 2 versions", "ie > 9"],
   "eslintConfig": {
     "parser": "babel-eslint",
-    "extends": [
-      "airbnb",
-      "prettier"
-    ],
-    "plugins": [
-      "react",
-      "prettier"
-    ],
+    "extends": ["airbnb", "prettier"],
+    "plugins": ["react", "prettier"],
     "env": {
       "browser": true,
       "node": true,
@@ -123,10 +96,7 @@
       "react/jsx-filename-extension": [
         "error",
         {
-          "extensions": [
-            ".js",
-            ".jsx"
-          ]
+          "extensions": [".js", ".jsx"]
         }
       ],
       "no-plusplus": 0,
@@ -144,24 +114,18 @@
       "selector-pseudo-class-no-unknown": [
         true,
         {
-          "ignorePseudoClasses": [
-            "global"
-          ]
+          "ignorePseudoClasses": ["global"]
         }
       ],
       "selector-pseudo-element-no-unknown": [
         true,
         {
-          "ignorePseudoElements": [
-            "global"
-          ]
+          "ignorePseudoElements": ["global"]
         }
       ],
       "max-nesting-depth": 2
     },
-    "ignoreFiles": [
-      "build/**/*.css"
-    ]
+    "ignoreFiles": ["build/**/*.css"]
   },
   "devDependencies": {
     "autoprefixer": "7.1.6",
@@ -209,8 +173,10 @@
     "react-test-renderer": "^16.1.1",
     "sass-loader": "^6.0.6",
     "style-loader": "0.19.0",
-    "stylelint": "^8.2.0",
-    "stylelint-config-sass-guidelines": "^3.1.0",
+    "stylelint": "^8.3.0",
+    "stylelint-config-sass-guidelines": "^4.0.1",
+    "stylelint-order": "^0.7.0",
+    "stylelint-scss": "^2.1.0",
     "stylelint-webpack-plugin": "^0.9.0",
     "sw-precache-webpack-plugin": "0.11.4",
     "url-loader": "0.6.2",
