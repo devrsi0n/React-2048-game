@@ -219,6 +219,6 @@
     "webpack": "^3.9.1",
     "webpack-dev-server": "^2.9.5",
     "webpack-manifest-plugin": "^1.2.1",
-    "webpack-monitor": "^1.0.13"
+    "webpack-monitor": "^1.0.14"
   }
 }

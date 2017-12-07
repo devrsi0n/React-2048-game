@@ -6256,7 +6256,7 @@ punycode@^1.2.4, punycode@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-1.4.1.tgz#c0d5a63b2718800ad8e1eb0fa5269c84dd41845e"
 
-purify-css@^1.2.5:
+purify-css@^1.2.6:
   version "1.2.6"
   resolved "https://registry.yarnpkg.com/purify-css/-/purify-css-1.2.6.tgz#56c2b58e4e1134247c6fdc20ba443b51b45e8b2f"
   dependencies:
@@ -8125,15 +8125,15 @@ webpack-manifest-plugin@^1.2.1:
     fs-extra "^0.30.0"
     lodash ">=3.5 <5"
 
-webpack-monitor@^1.0.13:
-  version "1.0.13"
-  resolved "https://registry.yarnpkg.com/webpack-monitor/-/webpack-monitor-1.0.13.tgz#a3bb31db1420fb08a3dd6a06fd67d92470e08df4"
+webpack-monitor@^1.0.14:
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/webpack-monitor/-/webpack-monitor-1.0.14.tgz#dc690810ffc17578097392b820e6b8cb35dcc3c9"
   dependencies:
     babel-core "^6.26.0"
     colors "^1.1.2"
     express "^4.15.5"
     opener "^1.4.3"
-    purify-css "^1.2.5"
+    purify-css "^1.2.6"
 
 webpack-sources@^1.0.1:
   version "1.0.1"
