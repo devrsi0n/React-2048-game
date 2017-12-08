@@ -2477,7 +2477,7 @@ es6-map@^0.1.3:
     es6-symbol "~3.1.1"
     event-emitter "~0.3.5"
 
-es6-promise@^4.0.5:
+es6-promise@4.1.1, es6-promise@^4.0.5:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-4.1.1.tgz#8811e90915d9a0dba36274f0b242dbda78f9c92a"
 
@@ -3231,13 +3231,14 @@ getpass@^0.1.1:
   dependencies:
     assert-plus "^1.0.0"
 
-gitalk@^1.1.4:
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/gitalk/-/gitalk-1.1.4.tgz#192da8aa47e7ab3daa2b475ece80abff817d1549"
+gitalk@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/gitalk/-/gitalk-1.2.0.tgz#edb810757cb778520fefe34cfd145e65a1844730"
   dependencies:
     autosize "3.0.21"
     axios "0.16.2"
     date-fns "1.28.5"
+    es6-promise "4.1.1"
     github-markdown-css "2.8.0"
     node-polyglot "2.2.2"
     preact "8.1.0"
