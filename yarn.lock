@@ -6949,9 +6949,9 @@ redux-saga@^0.16.0:
   version "0.16.0"
   resolved "https://registry.yarnpkg.com/redux-saga/-/redux-saga-0.16.0.tgz#0a231db0a1489301dd980f6f2f88d8ced418f724"
 
-redux-undo@^1.0.0-beta9-9-6:
-  version "1.0.0-beta9-9-6"
-  resolved "https://registry.yarnpkg.com/redux-undo/-/redux-undo-1.0.0-beta9-9-6.tgz#4bfd591b3e46b37c19eb7309766d7f020b2403e8"
+redux-undo@^1.0.0-beta9:
+  version "1.0.0-beta9-9-7"
+  resolved "https://registry.yarnpkg.com/redux-undo/-/redux-undo-1.0.0-beta9-9-7.tgz#fe3baa1b271423d7ddbbfc3a82c71b029a2db8ba"
 
 redux@^3.7.2:
   version "3.7.2"
