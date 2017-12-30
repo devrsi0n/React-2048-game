@@ -1570,6 +1570,10 @@ cipher-base@^1.0.0, cipher-base@^1.0.1, cipher-base@^1.0.3:
     inherits "^2.0.1"
     safe-buffer "^5.0.1"
 
+circular-json-es6@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/circular-json-es6/-/circular-json-es6-2.0.1.tgz#c9f4e37df74a655ced7245d31020bf5b5cd34ef6"
+
 circular-json@^0.3.1:
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/circular-json/-/circular-json-0.3.3.tgz#815c99ea84f6809529d2f45791bdf82711352d66"
@@ -2496,15 +2500,16 @@ enzyme-adapter-utils@^1.3.0:
     object.assign "^4.0.4"
     prop-types "^15.6.0"
 
-enzyme-matchers@^4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/enzyme-matchers/-/enzyme-matchers-4.0.1.tgz#f3fb5e5e5e5ec9a19144d172605433fc7e9d9f5a"
+enzyme-matchers@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/enzyme-matchers/-/enzyme-matchers-4.0.2.tgz#3f4457d0d0da3e268af4bee9f222439dfca26214"
   dependencies:
+    circular-json-es6 "^2.0.1"
     deep-equal-ident "^1.1.1"
 
-enzyme-to-json@^3.0.0:
-  version "3.1.4"
-  resolved "https://registry.yarnpkg.com/enzyme-to-json/-/enzyme-to-json-3.1.4.tgz#a4a85a8f7b561cb8c9c0d728ad1b619a3fed7df2"
+enzyme-to-json@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/enzyme-to-json/-/enzyme-to-json-3.3.0.tgz#553e23a09ffb4b0cf09287e2edf9c6539fddaa84"
   dependencies:
     lodash "^4.17.4"
 
@@ -4444,12 +4449,12 @@ jest-environment-node@^22.0.4:
     jest-mock "^22.0.3"
     jest-util "^22.0.4"
 
-jest-enzyme@^4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/jest-enzyme/-/jest-enzyme-4.0.1.tgz#9d13de2d194e09e12b71c9689afb2c066df30b0e"
+jest-enzyme@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/jest-enzyme/-/jest-enzyme-4.0.2.tgz#c3a87f311889819d51ae2639c9da412da07cfc4a"
   dependencies:
-    enzyme-matchers "^4.0.1"
-    enzyme-to-json "^3.0.0"
+    enzyme-matchers "^4.0.2"
+    enzyme-to-json "^3.3.0"
 
 jest-get-type@^21.2.0:
   version "21.2.0"
