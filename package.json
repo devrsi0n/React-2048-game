@@ -203,7 +203,7 @@
     "lint-staged": "^6.0.0",
     "node-sass": "^4.7.2",
     "postcss-flexbugs-fixes": "^3.2.0",
-    "postcss-loader": "^2.0.9",
+    "postcss-loader": "^2.0.10",
     "prettier": "^1.9.2",
     "react-dev-utils": "^4.2.1",
     "react-test-renderer": "^16.2.0",
