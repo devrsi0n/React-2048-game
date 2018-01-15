@@ -205,7 +205,7 @@
     "postcss-flexbugs-fixes": "^3.2.0",
     "postcss-loader": "^2.0.10",
     "prettier": "^1.10.2",
-    "react-dev-utils": "^4.2.1",
+    "react-dev-utils": "^5.0.0",
     "react-test-renderer": "^16.2.0",
     "sass-loader": "^6.0.6",
     "style-loader": "0.19.1",
