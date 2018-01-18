@@ -6,7 +6,7 @@
   "license": "MIT",
   "dependencies": {
     "classnames": "^2.2.5",
-    "echarts": "^3.8.5",
+    "echarts": "^4.0.2",
     "gitalk": "^1.2.0",
     "lodash.debounce": "^4.0.8",
     "promise": "8.0.1",
