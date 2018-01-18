@@ -2527,11 +2527,11 @@ ecc-jsbn@~0.1.1:
   dependencies:
     jsbn "~0.1.0"
 
-echarts@^3.8.5:
-  version "3.8.5"
-  resolved "https://registry.yarnpkg.com/echarts/-/echarts-3.8.5.tgz#58e4a51d2743c6fb75257b0dc0a9cf9f5378ac0e"
+echarts@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/echarts/-/echarts-4.0.1.tgz#59dbf1099acd299c1d221208eb9d41ae25f755f8"
   dependencies:
-    zrender "3.7.4"
+    zrender "4.0.0"
 
 ee-first@1.1.1:
   version "1.1.1"
@@ -9427,6 +9427,6 @@ yargs@~3.10.0:
     decamelize "^1.0.0"
     window-size "0.1.0"
 
-zrender@3.7.4:
-  version "3.7.4"
-  resolved "https://registry.yarnpkg.com/zrender/-/zrender-3.7.4.tgz#f847d53948481ef6d42906d1ea9aeec7acbefdf2"
+zrender@4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/zrender/-/zrender-4.0.0.tgz#908935151329fa95145a333d186edd4011cf86c5"
