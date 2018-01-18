@@ -210,7 +210,7 @@
     "sass-loader": "^6.0.6",
     "style-loader": "0.19.1",
     "stylelint": "^8.4.0",
-    "stylelint-config-sass-guidelines": "^4.0.1",
+    "stylelint-config-sass-guidelines": "^4.1.0",
     "stylelint-order": "^0.8.0",
     "stylelint-scss": "^2.2.0",
     "stylelint-webpack-plugin": "^0.10.0",
