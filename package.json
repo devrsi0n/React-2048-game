@@ -217,7 +217,7 @@
     "sw-precache-webpack-plugin": "0.11.4",
     "url-loader": "0.6.2",
     "webpack": "^3.10.0",
-    "webpack-dev-server": "^2.11.0",
+    "webpack-dev-server": "^2.11.1",
     "webpack-manifest-plugin": "^1.2.1",
     "webpack-monitor": "^1.0.14"
   }
