@@ -189,7 +189,7 @@
     "eslint-plugin-html": "^4.0.2",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "6.0.3",
-    "eslint-plugin-prettier": "^2.5.0",
+    "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.6.1",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "1.1.6",
