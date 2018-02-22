@@ -127,6 +127,10 @@ ajv-keywords@^2.0.0, ajv-keywords@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/ajv-keywords/-/ajv-keywords-2.1.0.tgz#a296e17f7bfae7c1ce4f7e0de53d29cb32162df0"
 
+ajv-keywords@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/ajv-keywords/-/ajv-keywords-3.1.0.tgz#ac2b27939c543e95d2c06e7f7f5c27be4aa543be"
+
 ajv@^4.9.1:
   version "4.11.8"
   resolved "https://registry.yarnpkg.com/ajv/-/ajv-4.11.8.tgz#82ffb02b29e662ae53bdc20af15947706739c536"
@@ -148,6 +152,14 @@ ajv@^5.3.0:
   resolved "https://registry.yarnpkg.com/ajv/-/ajv-5.3.0.tgz#4414ff74a50879c208ee5fdc826e32c303549eda"
   dependencies:
     co "^4.6.0"
+    fast-deep-equal "^1.0.0"
+    fast-json-stable-stringify "^2.0.0"
+    json-schema-traverse "^0.3.0"
+
+ajv@^6.1.0:
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/ajv/-/ajv-6.1.1.tgz#978d597fbc2b7d0e5a5c3ddeb149a682f2abfa0e"
+  dependencies:
     fast-deep-equal "^1.0.0"
     fast-json-stable-stringify "^2.0.0"
     json-schema-traverse "^0.3.0"
@@ -3263,12 +3275,12 @@ file-entry-cache@^2.0.0:
     flat-cache "^1.2.1"
     object-assign "^4.0.1"
 
-file-loader@1.1.6:
-  version "1.1.6"
-  resolved "https://registry.yarnpkg.com/file-loader/-/file-loader-1.1.6.tgz#7b9a8f2c58f00a77fddf49e940f7ac978a3ea0e8"
+file-loader@1.1.9:
+  version "1.1.9"
+  resolved "https://registry.yarnpkg.com/file-loader/-/file-loader-1.1.9.tgz#cf152aedbcfb3d67038d0845efb7cf11a96e53de"
   dependencies:
     loader-utils "^1.0.2"
-    schema-utils "^0.3.0"
+    schema-utils "^0.4.5"
 
 filename-regex@^2.0.0:
   version "2.0.1"
@@ -7846,6 +7858,13 @@ schema-utils@^0.4.0, schema-utils@^0.4.3:
     ajv "^5.0.0"
     ajv-keywords "^2.1.0"
 
+schema-utils@^0.4.5:
+  version "0.4.5"
+  resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-0.4.5.tgz#21836f0608aac17b78f9e3e24daff14a5ca13a3e"
+  dependencies:
+    ajv "^6.1.0"
+    ajv-keywords "^3.1.0"
+
 scss-tokenizer@^0.2.3:
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/scss-tokenizer/-/scss-tokenizer-0.2.3.tgz#8eb06db9a9723333824d3f5530641149847ce5d1"
@@ -8410,9 +8429,9 @@ strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
-style-loader@0.20.0:
-  version "0.20.0"
-  resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-0.20.0.tgz#394ecb2a8e1008b0dca5f55a44fabc195e7c11bb"
+style-loader@0.20.2:
+  version "0.20.2"
+  resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-0.20.2.tgz#851b373c187890331776e9cde359eea9c95ecd00"
   dependencies:
     loader-utils "^1.1.0"
     schema-utils "^0.4.3"
