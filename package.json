@@ -18,7 +18,7 @@
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
     "redux-saga": "^0.16.0",
-    "redux-undo": "^1.0.0-beta9-9-6",
+    "redux-undo": "^1.0.0-beta9",
     "whatwg-fetch": "2.0.3"
   },
   "scripts": {
