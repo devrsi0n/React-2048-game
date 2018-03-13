@@ -207,7 +207,7 @@
     "prettier": "^1.10.2",
     "react-dev-utils": "^5.0.0",
     "react-test-renderer": "^16.2.0",
-    "sass-loader": "^6.0.6",
+    "sass-loader": "^6.0.7",
     "style-loader": "0.20.2",
     "stylelint": "^9.0.0",
     "stylelint-config-sass-guidelines": "^4.1.0",
