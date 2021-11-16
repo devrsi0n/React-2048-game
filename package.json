@@ -19,7 +19,7 @@
     "redux": "3.7.2",
     "redux-saga": "0.16.0",
     "redux-undo": "1.0.1",
-    "whatwg-fetch": "2.0.3"
+    "whatwg-fetch": "2.0.4"
   },
   "scripts": {
     "precommit": "lint-staged",
