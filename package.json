@@ -178,7 +178,7 @@
     "chalk": "2.3.1",
     "compression-webpack-plugin": "1.1.12",
     "cross-env": "5.2.1",
-    "css-loader": "0.28.9",
+    "css-loader": "0.28.11",
     "dotenv": "5.0.0",
     "enzyme": "3.3.0",
     "enzyme-adapter-react-16": "1.1.1",
