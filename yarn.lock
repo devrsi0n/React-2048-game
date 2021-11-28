@@ -9634,10 +9634,10 @@ stylelint-order@0.8.1:
     postcss "^6.0.14"
     postcss-sorting "^3.1.0"
 
-stylelint-scss@2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/stylelint-scss/-/stylelint-scss-2.3.0.tgz#95089fa0c1cc5690be19ca80f901a4905c95dedc"
-  integrity sha512-gYLw1jma/BUZ9eQ3hsrL/7bddQN2BJ13oSp0A0kOqje4hBrSCrUjf7rmpnK8taRWoU3KASwMo4apWg+YopDK5Q==
+stylelint-scss@2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/stylelint-scss/-/stylelint-scss-2.5.0.tgz#ac4c83474c53b19cc1f9e93d332786cf89c8d217"
+  integrity sha512-+joZpza5nQxAyGwzRMancFEl0EH9+1Vy88YzBghRMS0wHulzDPE9fEkBi6ZOlz+I3tYIBI4x9NbqO5/LkbeE3Q==
   dependencies:
     lodash "^4.17.4"
     postcss-media-query-parser "^0.2.3"
