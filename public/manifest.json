@@ -3,7 +3,7 @@
   "name": "2048 game",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "favicon.png",
       "sizes": "450x450",
       "type": "image/png"
     }
