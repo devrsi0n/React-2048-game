@@ -56,3 +56,9 @@ This app has a rich development experience using the following technologies:
 ## License
 
 [MIT](http://opensource.org/licenses/MIT)
+
+## More products from author
+
+[![Quotion - Apple Notes to blogs in minutes](./.github/quotion.png)](https://quotion.co)
+
+[Chirpy - Open source & privacy-friendly Disqus alternate for your community](https://chirpy.dev/)

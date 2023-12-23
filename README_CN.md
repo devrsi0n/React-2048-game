@@ -295,3 +295,8 @@ keyDownHandler = e => {
 ## License
 
 [MIT](http://opensource.org/licenses/MIT)
+
+## 更多作者作品
+
+[![Quotion - Apple Notes to blogs in minutes](./.github/quotion.png)](https://quotion.co)
+[Chirpy - 注重隐私保护和定制化的评论系统](https://chirpy.dev/)
