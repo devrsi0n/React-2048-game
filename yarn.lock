@@ -9806,10 +9806,10 @@ stylelint-scss@2.3.0:
     postcss-selector-parser "^3.1.1"
     postcss-value-parser "^3.3.0"
 
-stylelint-webpack-plugin@0.10.3:
-  version "0.10.3"
-  resolved "https://registry.yarnpkg.com/stylelint-webpack-plugin/-/stylelint-webpack-plugin-0.10.3.tgz#1b80048df3b38a8559207e12b12c6e987b28f317"
-  integrity sha512-k6cyTedLl85Z+fHEZG4WhcZEXvsu7QyjbtUo1A9rKqNn0rFLpuuGaAlasuZ+dj42YBlKZ5bOLK1rPuct78R8fA==
+stylelint-webpack-plugin@0.10.5:
+  version "0.10.5"
+  resolved "https://registry.yarnpkg.com/stylelint-webpack-plugin/-/stylelint-webpack-plugin-0.10.5.tgz#0b6e0d373ff5e03baa8197ebe0f2625981bd266b"
+  integrity sha512-jtYx3aJ2qDMvBMswe5NRPTO7kJgAKafc6GilAkWDp/ewoAmnoxA6TsYMnIPtLECRLwXevaCPvlh2JEUMGZCoUQ==
   dependencies:
     arrify "^1.0.1"
     micromatch "^3.1.8"
